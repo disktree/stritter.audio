@@ -1,2 +1,2 @@
-# [https://stritter.audio/](stritter.audio)
+# [stritter.audio/](https://stritter.audio)
 
