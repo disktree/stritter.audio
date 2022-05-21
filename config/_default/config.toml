@@ -1,0 +1,21 @@
+baseURL = ""
+title = "stritter.audio"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+theme_color = "#000000"
+
+[params]
+	description = " "
+    customCSS = []
+    customJS  = []
+    author = ""
+    publisher = ""
+    email = "frederic@stritter.audio"
+#[params.social]
+    #bigcartel = { user = "drylungs", uri = "https://drylungs.bigcartel.com/" }
+    #discogs = { user = "KureKureTakora", uri = "https://www.discogs.com/seller/KureKureTakora" }
+    #instagram = { user = "drylungsrecords", uri = "https://www.instagram.com/drylungsrecords" }
+    #twitter = { user = "DryLungsRecords", uri = "https://twitter.com/DryLungsRecords" }
+
+#[taxonomies]
+    #artist = "artists"

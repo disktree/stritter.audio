@@ -1,0 +1,24 @@
+{
+
+  "name": "stritter.audio",
+  "version": "0.0.0",
+  "description": "https://stritter.audio",
+  "private": true,
+  "scripts": {
+    "clean": "rm -f web/style.css*",
+    "dev:style": "sass style/main.scss static/style.css --watch",
+    "dev:hugo": "hugo server -D",
+    "build:style": "sass style/main.scss static/style.css --no-source-map --style compressed",
+    "build:hugo": "hugo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/disktree/stritter.audio.git"
+  },
+  "author": "tong@disktree.net",
+  "license": "ISC",
+  "homepage": "https://github.com/disktree/stritter.audio/blob/master/README.md",
+  "devDependencies": {
+    "sass": "^1.51.0"
+  }
+}

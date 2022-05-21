@@ -1,0 +1,3 @@
+baseURL = "https://stritter.audio"
+[minify]
+  minifyOutput = true

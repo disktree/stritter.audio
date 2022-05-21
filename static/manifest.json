@@ -1,0 +1,16 @@
+{
+    "name": "stritter.audio",
+    "short_name": "stritter.audio",
+	"description": "stritter audio",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#000",
+    "background_color": "#000",
+    "icons": [
+        {
+			"src": "favicon.svg",
+			"sizes": "any",
+			"purpose": "maskable any"
+		}
+    ]
+}
