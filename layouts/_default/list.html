@@ -1,0 +1,16 @@
+{{ define "main" }}
+	{{ if .Title }}<h1>{{- .Title -}}</h1>{{ end }}
+	{{ if .Content }}<section class="content">{{- .Content -}}</section>{{ end }}
+    {{ $paginator := .Paginate .Pages }}
+	<ul>
+		{{ range $paginator.Pages }}
+           {{ .Render "li" }}
+            <li>
+                <h2>
+                    <a href="{{ .Permalink }}">{{- .Title -}}</a>
+                </h2>
+            </li>
+		{{ end }}
+	</ul>
+{{ end }}
+
