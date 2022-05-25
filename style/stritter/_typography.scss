@@ -44,8 +44,8 @@ h2 {
     font-size: 4rem;
     text-transform: uppercase;
     line-height: 0.8;
-    letter-spacing: -3px;
-    padding-bottom: 0.5rem;
+    letter-spacing: -5px;
+    padding-bottom: 0.5em;
 }
 h3 {
     font-size: 2rem;
@@ -79,8 +79,8 @@ img {
     display: block;
 }
 li {
-    list-style: none;
-    margin: 0;
+    //list-style: none;
+    margin: 0 0 0 1rem;
     padding: 0;
 }
 p,
@@ -88,9 +88,5 @@ ol,
 ul {
     margin-bottom: 1rem;
     /*margin-bottom: var(--line-height);*/
-}
-ol {
-    margin: 0;
-    padding: 0;
 }
 
