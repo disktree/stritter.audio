@@ -6,3 +6,4 @@ _old/
 nginx.conf
 .hugo_build.lock
 static/style.css*
+*.zip
