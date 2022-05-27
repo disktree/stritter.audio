@@ -1,0 +1,13 @@
+ol.projects {
+    > li {
+        list-style: none;
+        padding: 0px;
+        margin: 0;
+        h2.ui {
+            font-size: 7rem;
+            letter-spacing: -0.6rem;
+            //line-height: 0.5;
+            padding: 0;
+        }
+    }
+}

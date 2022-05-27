@@ -1,6 +1,6 @@
 :root {
     --line-height: 1.5;
-    --font-size: 16px;
+    --font-size: 14px;
 }
 
 @media (max-width: 600px) {
@@ -12,13 +12,13 @@
 @font-face {
 	font-family: "Inter";
 	font-weight: normal;
-	font-display: swap;
+	font-display: block;
 	src: url("font/Inter-Regular.ttf") format("truetype");
 }
 @font-face {
 	font-family: "Inter";
 	font-weight: bold;
-	font-display: swap;
+	font-display: block;
 	src: url("font/Inter-Bold.ttf") format("truetype");
 }
 
@@ -41,11 +41,15 @@ h1 {
     line-height: 0.8;
 }
 h2 {
-    font-size: 4rem;
-    text-transform: uppercase;
-    line-height: 0.8;
-    letter-spacing: -5px;
-    padding-bottom: 0.5em;
+    //font-size: 4rem;
+    //text-transform: uppercase;
+    //line-height: 0.8;
+    //letter-spacing: -5px;
+    //padding-bottom: 0.5em;
+    font-size: 7rem;
+            letter-spacing: -0.6rem;
+            line-height:  0.8;
+            padding: 0; 
 }
 h3 {
     font-size: 2rem;
@@ -66,14 +70,15 @@ a {
     color: var(--fg);
     text-decoration: none;
     font-family: "Inter";
-    border-bottom: 1px dotted var(--fg);
-}
-a:hover {
-    color: var(--acc);
-    background-repeat: repeat;
-    background-image: url("assets/void.pattern.2.png");
-
-    border-bottom: 1px solid var(--acc);
+    //border-bottom: 1px dotted var(--fg);
+    border: none;
+    &:hover {
+        text-decoration: none;
+        color: var(--acc);
+        background-repeat: repeat;
+        background-image: url("assets/void.pattern.2.png");
+        //border-bottom: 1px solid var(--acc);
+    }
 }
 img {
     display: block;
@@ -90,3 +95,16 @@ ul {
     /*margin-bottom: var(--line-height);*/
 }
 
+.ui {
+    font-size: 7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.6rem;
+    line-height:  0.8;
+    padding: 0; 
+    //word-break: break-word;
+  //white-space: nowrap; 
+  //overflow: hidden;
+  //text-overflow: ellipsis; 
+  //border: 1px solid #ff0000;
+}

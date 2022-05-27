@@ -10,12 +10,12 @@
 
 [class^="ic-"], [class*=" ic-"] {
   font-family: 'Icons' !important;
-  speak: never;
+  //speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
+  //line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -84,6 +84,7 @@ $ic-arrow_back_ios: "\eb82";
 $ic-arrow_forward_ios: "\eb83";
 $ic-share: "\ebcb";
 $ic-favorite: "\ebfd";
+$ic-copyright: "\ec69";
 $ic-compare_arrows: "\ec71";
 $ic-arrow_right_alt: "\ec98";
 $ic-sync_alt: "\ed25";
@@ -95,6 +96,8 @@ $ic-science: "\ee38";
 $ic-signal_cellular_0_bar: "\ee40";
 $ic-stop_circle: "\ee4e";
 $ic-wine_bar: "\ee69";
+
+
 
 .ic-warning {
   &:before {
@@ -416,6 +419,11 @@ $ic-wine_bar: "\ee69";
     content: $ic-favorite; 
   }
 }
+.ic-copyright {
+  &:before {
+    content: $ic-copyright; 
+  }
+}
 .ic-compare_arrows {
   &:before {
     content: $ic-compare_arrows; 
@@ -471,4 +479,5 @@ $ic-wine_bar: "\ee69";
     content: $ic-wine_bar; 
   }
 }
+
 
