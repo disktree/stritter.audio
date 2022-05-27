@@ -4,11 +4,8 @@
     {{ $paginator := .Paginate .Pages }}
 	<ul>
 		{{ range $paginator.Pages }}
-           {{ .Render "li" }}
             <li>
-                <h2>
-                    <a href="{{ .Permalink }}">{{- .Title -}}</a>
-                </h2>
+                <a href="{{ .Permalink }}">{{- .Title -}}</a>
             </li>
 		{{ end }}
 	</ul>

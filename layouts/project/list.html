@@ -1,13 +1,16 @@
 {{ define "main" }}
+    <nav class="breadcrumb">
+		{{ partial "breadcrumbs" . }}
+	</nav>
     {{ $paginator := .Paginate .Pages }}
-	<ul>
-		{{ range $paginator.Pages }}
+	<ol class="projects">
+		{{ range $paginator.Pages.ByDate.Reverse }}
         <li>
             <a href="{{ .Permalink }}">
                 <h2>{{- .Title -}}</h2>
             </a>
         </li>
 		{{ end }}
-	</ul>
+	</ol>
 {{ end }}
 

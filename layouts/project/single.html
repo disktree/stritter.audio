@@ -1,14 +1,21 @@
 {{ define "main" }}
 <article>
     <h2>{{ .Title }}</h2>
-    <ol>
-        {{ range .Params.links }}
+    <!--<ol class="links">-->
+        <!--{{ range .Params.links }}-->
+        <!--<li>-->
+            <!--<a href="{{ . }}">{{ . }}</a>-->
+        <!--</li>-->
+        <!--{{ end }}-->
+    <!--</ol>-->
+    <ol class=files>
+        {{ range .Params.files }}
         <li>
-            <a href="{{ . }}">{{ . }}</a>
+            <audio src="{{ . }}" controls>{{ . }}</audio>
         </li>
         {{ end }}
     </ol>
-	<div class="description">{{- .Description -}}</div>
+	<!--<div class="description">{{- .Description -}}</div>-->
 	<div class="content">{{- .Content -}}</div>
 </article>
 {{ end }}
