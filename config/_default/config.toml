@@ -4,18 +4,33 @@ languageCode = "en-us"
 defaultContentLanguage = "en"
 theme_color = "#000000"
 
+disableHugoGeneratorInject = true
+
+[taxonomies]
+    category = "categories"
+    tag = "tags"
+
 [params]
-	description = " "
+    description = " "
     customCSS = []
     customJS  = []
-    author = ""
-    publisher = ""
+    author = {  fullname = "frederic stritter", name = "stritter", email = "frederic@stritter.audio" }
     email = "frederic@stritter.audio"
-#[params.social]
-    #bigcartel = { user = "drylungs", uri = "https://drylungs.bigcartel.com/" }
-    #discogs = { user = "KureKureTakora", uri = "https://www.discogs.com/seller/KureKureTakora" }
-    #instagram = { user = "drylungsrecords", uri = "https://www.instagram.com/drylungsrecords" }
-    #twitter = { user = "DryLungsRecords", uri = "https://twitter.com/DryLungsRecords" }
+    publisher = ""
 
-#[taxonomies]
-    #artist = "artists"
+[menu]
+    [[menu.main]]
+        identifier = "home"
+        name = "stritter.audio"
+        url = "/"
+        weight = -100
+     [[menu.main]]
+        identifier = "projects"
+        name = "/projects"
+        url = "/project"
+        weight = -99
+    [[menu.main]]
+        identifier = "live"
+        name = "/live"
+        url = "/live"
+        weight = -98
