@@ -3,7 +3,7 @@ title: "Triangeln"
 date: 2020-09-23
 background: "vid1.mp4"
 files: [
-    triangeln.mp3
+    { name: Triangeln, file: triangeln.mp3 }
 ]
 ---
 All sounds recorded stereo in a dry swimming pool. The triangle sounds are mixed with sine waves.

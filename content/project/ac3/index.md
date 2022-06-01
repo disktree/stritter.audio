@@ -2,7 +2,12 @@
 title: "A Certain Trio"
 date: 2022-03-23
 description: "Live Improvisation project of Marcin Morga, Eugene Ignashev and Frederic Stritter"
-events: []
+live: [
+    
+    { date: 2020-12-11, venue: Alte Schmiede },
+    { date: 2020-09-10, venue: Ars Electronica },
+    { date: 2020-02-20, venue: Venster99, link: https://www.venster99.at/ },
+]
 tags: [arp,cutup]
 files: []
 links: [

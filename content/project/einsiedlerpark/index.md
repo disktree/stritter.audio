@@ -1,6 +1,9 @@
 ---
 title: "Einsiedlerpark"
 date: 2020-03-23
+files: [
+    { name: Einsiedlerpark, file: einsiedlerpark.mp3 }
+]
 ---
 The origin of the piece is a 24 hour recording I did in 2016. The recorded Einsiedlerpark is located in 1050 Vienna.
 

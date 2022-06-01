@@ -2,6 +2,8 @@ baseURL = ""
 title = "stritter.audio"
 languageCode = "en-us"
 defaultContentLanguage = "en"
+description = "This is some description"
+keywords = ["stritter","audio","artist"]
 theme_color = "#000000"
 
 disableHugoGeneratorInject = true
@@ -34,3 +36,8 @@ disableHugoGeneratorInject = true
         name = "/live"
         url = "/live"
         weight = -98
+    [[menu.main]]
+        identifier = "recordings"
+        name = "/recordings"
+        url = "/recordings"
+        weight = -97
