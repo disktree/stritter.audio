@@ -5,6 +5,9 @@ background: "vid1.mp4"
 files: [
     { name: Triangeln, file: triangeln.mp3 }
 ]
+live: [
+    { date: 2021-06-23, venue: Moquette V, Konzilsgedächtniskirche Lainz Speising, Vienna },
+]
 ---
 All sounds recorded stereo in a dry swimming pool. The triangle sounds are mixed with sine waves.
 The spatialisation, situated as triangles, fosters the beating.

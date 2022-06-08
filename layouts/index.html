@@ -1,4 +1,13 @@
 {{ define "main" }}
-{{ .Content }}
+<article>{{ .Content }}</article>
+<ol class="projects">
+    {{ range $project := where .Site.Pages "Type" "project" }}
+    <li class="project">
+        <h2>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+    </li>
+    {{ end }}
+</ol>
 {{ end }}
 

@@ -23,21 +23,21 @@ disableHugoGeneratorInject = true
 [menu]
     [[menu.main]]
         identifier = "home"
-        name = "stritter.audio"
+        name = "stritter"
         url = "/"
         weight = -100
      [[menu.main]]
-        identifier = "projects"
-        name = "/projects"
-        url = "/project"
+        identifier = "audio" 
+        name = "/audio"
+        url = "/audio"
         weight = -99
     [[menu.main]]
         identifier = "live"
         name = "/live"
         url = "/live"
         weight = -98
-    [[menu.main]]
-        identifier = "recordings"
-        name = "/recordings"
-        url = "/recordings"
-        weight = -97
+
+[sitemap]
+    changefreq = 'monthly'
+    filename = 'sitemap.xml'
+      priority = 0.5

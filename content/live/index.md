@@ -1,6 +1,8 @@
 ---
 title: Live
 type: live
-rss_ignore: true
+sitemap:
+    changefreq: monthly
+    priority: 0.8
 ---
 

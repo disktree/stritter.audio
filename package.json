@@ -5,11 +5,12 @@
   "description": "https://stritter.audio",
   "private": true,
   "scripts": {
-    "clean": "rm -f web/style.css*",
+    "clean": "rm -f static/style.css*",
     "dev:style": "sass style/main.scss static/style.css --watch",
     "dev:hugo": "hugo server -D",
     "build:style": "sass style/main.scss static/style.css --no-source-map --style compressed",
-    "build:hugo": "hugo"
+    "build:hugo": "hugo",
+    "build": "npm run build:style && npm run build:hugo"
   },
   "repository": {
     "type": "git",

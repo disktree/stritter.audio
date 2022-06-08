@@ -1,6 +1,10 @@
 ---
 title: "Wiener Arp Ensemble"
 date: 2020-10-23
+live: [
+    { date: 2020-08-20, venue: "VELAK #115, Symposion Lindabrunn" },
+    { date: 2019-12-04, venue: "Shut up and Listen Festival, Vienna" },
+]
 ---
 The Wiener ARP Ensemble is an international sound-art performing collective based in Vienna.
 Each member plays an ARP 2600 (TTSH) analog synthesizer. The number of players may vary.
