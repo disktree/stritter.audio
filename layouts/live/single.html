@@ -1,28 +1,51 @@
 {{ define "main" }}
 <article>
     <!--<h2>{{ .Title }}</h2>-->
-	<!--<div class="content">{{- .Content -}}</div>-->
+    <!--<div class="content">{{- .Content -}}</div>-->
+
     {{ range $project := where .Site.Pages "Type" "project" }}
-        {{ if $project.Params.live }}
-            {{ $project_name := $project.File.ContentBaseName }}
-            <ol>
-                {{ range $event := $project.Params.live }}
-                <li>
-                    <time>{{ .date }}</time>
-                    <a href="{{ .Site.BaseURL }}/project/{{ $project_name }}">{{ $project.Title }}</a>
-                    <span>{{ .venue }}</span>
+    {{ if $project.Params.live }}
+    {{ $project_name := $project.File.ContentBaseName }}
+    <ol>
+        {{ range $event := $project.Params.live }}
+        <li>
+            <time>{{ .date }}</time>
+            <a href="{{ .Site.BaseURL }}/project/{{ $project_name }}">{{ $project.Title }}</a>
+            <span>{{ .venue }}</span>
 
 
 
-                    <!--<div>Project: <a href="{{ .Site.BaseURL }}/project/{{ $project_name }}">{{ $project.Title }}</a></div>-->
-                    <!--{{ if .link }}-->
-                    <!--<a href="{{ .link }}" rel="external">{{ .link }}</a>-->
-                    <!--{{ end }}-->
-                </li>
-            {{ end }}
-            </ol>
+            <!--<div>Project: <a href="{{ .Site.BaseURL }}/project/{{ $project_name }}">{{ $project.Title }}</a></div>-->
+            <!--{{ if .link }}-->
+            <!--<a href="{{ .link }}" rel="external">{{ .link }}</a>-->
+            <!--{{ end }}-->
+        </li>
         {{ end }}
+    </ol>
+    {{ end }}
     {{ end }}
 </article>
-{{ end }}
 
+<hr>
+<table>
+    <tbody>
+        <tr>
+            <th>DATE</th>
+            <th>PROJECT</th>
+            <th>VENUE</th>
+        </tr>
+        {{ range $project := where .Site.Pages "Type" "project" }}
+        {{ if $project.Params.live }}
+        {{ $project_name := $project.File.ContentBaseName }}
+        {{ range $event := $project.Params.live }}
+        <tr>
+            <td>{{.date}}</td>
+            <td>{{ $project.Title }}</td>
+            <td>{{ .venue }}</td>
+        </tr>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+    </tbody>
+</table>
+{{ end }}

@@ -16,26 +16,9 @@ disableHugoGeneratorInject = true
     description = " "
     customCSS = []
     customJS  = []
-    author = {  fullname = "frederic stritter", name = "stritter", email = "frederic@stritter.audio" }
+    author = {  fullname = "Frederic Stritter", name = "Stritter", email = "frederic@stritter.audio" }
     email = "frederic@stritter.audio"
     publisher = ""
-
-[menu]
-    [[menu.main]]
-        identifier = "home"
-        name = "stritter"
-        url = "/"
-        weight = -100
-     [[menu.main]]
-        identifier = "audio" 
-        name = "/audio"
-        url = "/audio"
-        weight = -99
-    [[menu.main]]
-        identifier = "live"
-        name = "/live"
-        url = "/live"
-        weight = -98
 
 [sitemap]
     changefreq = 'monthly'

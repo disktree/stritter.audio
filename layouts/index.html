@@ -1,5 +1,4 @@
 {{ define "main" }}
-<article>{{ .Content }}</article>
 <ol class="projects">
     {{ range $project := where .Site.Pages "Type" "project" }}
     <li class="project">
@@ -9,5 +8,6 @@
     </li>
     {{ end }}
 </ol>
+<article>{{ .Content }}</article>
 {{ end }}
 
