@@ -11,13 +11,13 @@ Each member plays an ARP 2600 (TTSH) analog synthesizer. The number of players m
 
 Salih Dursun, Evgeny Ignashev, Sinan Ilhan, Wolfgang Musil, Frederic Stritter
 
-### 2019
+- ### 2019
 Shut up and listen festival
 Four ARP 2600 TTSH Synthesizers.
 Evgeny Ignashev, Sinan Ilhan, Wolfgang Musil, Frederic Stritter.
 http://sp-ce.net/sual/2019/wiener-arp-ensemble_de.html
 
-### 2018
+- ### 2018
 (16:49) [10 Channel]
 Steinergasse 8, Vienna
 

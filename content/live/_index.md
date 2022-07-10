@@ -1,6 +1,5 @@
 ---
 title: Live
-type: live
 menu:
   nav:
     name: Live

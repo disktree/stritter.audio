@@ -1,12 +1,9 @@
 ---
 title: "H.E.A.D."
 date: 2017-03-31
+video: { start: 0 }
 ---
-H.E.A.D live performance // Vienna, 31.3.2017.
-
 Inspired by the the H.E.A.D. Revolution - Hedonic Engineering And Development - The installation uses a closed feedback system of human brainwaves, measured using an EEG, and it’s visual perception input fed by a never ending stream of images collected by a synthetic intelligence mapping. The sounds the performer perceives as well as the images he views thru the VR-Glasses influence his brainwaves, which again produce the given images showed on the screen.
-
----
 
 Over the course of evolution, the human ego has developed and grown to allow us to survive within the impersonal environments of unrelenting Nature. Once a useful and necessary tool by which we could separate ourselves from the herd around us, this irrational concept now threatens to destroy humanity.
 
@@ -20,6 +17,5 @@ Without an ego structure as we know it, we would not need empathy, for we would 
 
 To let oneself go - or, perhaps, the sense of oneself - requires great achievement, great discipline and willingness in order to leave the dualistic world of self vs. other behind. Freed from this limitation, we will be able to regard dualisms as the fantasy of sub-Abyssal existence, and step effortlessly across the Abyss anytime we please, recognising immediately that we are no longer owned, manipulated or subservient to our mundane, human egos.
 
-{{< html >}}
-<iframe src="https://player.vimeo.com/video/211392344?h=da76b2cc1f" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-{{< / html >}}
+{{< vimeo 211392344 >}}
+

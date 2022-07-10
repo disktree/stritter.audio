@@ -5,7 +5,8 @@ files: [
     { name: Einsiedlerpark, file: einsiedlerpark.mp3 }
 ]
 ---
-The origin of the piece is a 24 hour recording I did in 2016. The recorded Einsiedlerpark is located in 1050 Vienna.
+The origin of the piece is a 24 hour recording I did in 2016.  
+The recorded Einsiedlerpark is located in 1050 Vienna.
 
 The work examines the translation of sonic material. By translation i imply a creative process of transformation, transcription and visualisation.
 Translation will never be objective, it will always add or remove.
