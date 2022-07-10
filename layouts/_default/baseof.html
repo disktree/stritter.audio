@@ -8,36 +8,37 @@
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width,minimum-scale=1">
-        <meta name="publisher" content="{{ .Site.Params.publisher }}">
-        <meta name="title" content="{{ .Site.Title }}">
         <meta name="mobile-web-app-capable" content="yes">
-        <meta name="keywords" content="{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ .Site.Params.Keywords }}{{ end }}">
-        <meta name="description" content='{{ .Param "description" }}'>
+        <meta name="title" content="{{ .Site.Title }}">
+		{{ if isset .Params "description" }}<meta name="description" content="{{ .Param "description" }}">{{ end }}
+		{{ if isset .Site.Params "theme_color" }}<meta name="theme-color" content="{{ .Site.Param "theme_color" }}">{{ end }}
+        {{ if isset .Site.Params "publisher" }}<meta name="publisher" content="{{ .Site.Params.publisher }}">{{ end }}
+        {{ with .Param "keywords" }}<meta name="keywords" content='{{ delimit . ","}}'>{{ end }}
+
+        <meta name="twitter:title" content="{{ .Site.Title }}"/>
+        {{ template "_internal/twitter_cards.html" . }}
+        {{ template "_internal/opengraph.html" . }}
 
         <title>{{block "title" .}}{{.Site.Title}}{{end}}{{with .Page.Title}}/{{.}}{{end}}</title>
 
-        <link rel="stylesheet" href="{{ $root }}/style.css">
         {{ partial "site/favicons" . }}
+        <link rel="stylesheet" href="{{ $root }}/style.css">
         <link rel="alternate" href="feed" type="application/atom+xml" title="stritter.audio"/>
         <link rel="manifest" href="{{ $root }}/manifest.json">
 
-        {{ if ne (getenv "HUGO_ENV") "production" | or (ne .Site.Params.env "production") }}
-        <script>console.log('PageType: {{ .Page.Type }}');</script>
+        {{ range $val := $.Site.Params.customJS }}
+		{{ if gt (len $val) 0 }}<script src="{{ $root }}{{ $val }}" async></script>{{ end }}
+		{{ end }}
+        {{ range $val := .Params.customJS }}
+		{{ if gt (len $val) 0 }}<script src="{{ $root }}{{ $val }}" async></script>{{ end }}
         {{ end }}
+
 	</head>
 	<body>
         <header>{{ block "header" . }}{{- partial "site/header.html" . -}}{{ end }}</header>
-		<!--<nav>{{ block "nav" . }}{{- partial "site/nav.html" . -}}{{ end }}</nav>-->
+        <nav>{{ block "nav" . }}{{- partial "site/nav.html" . -}}{{ end }}</nav>
 		<main>{{ block "main" . }}{{- partial "site/main.html" . -}}{{ end }}</main>
 		<footer>{{ block "footer" . }}{{- partial "site/footer.html" . -}}{{ end }}</footer>
-
-
-        <div id="background-media">
-            {{ with .Params.background }}
-            <img src="{{.}}">
-            {{ . }}
-            {{ end }}
-        </div>
-	</body>
+    </body>
 </html>
 

@@ -1,26 +1,45 @@
 {{ define "main" }}
+{{ $id := .File.ContentBaseName }}
+
+{{ if .Params.video }}
+    {{ $video := resources.Get (print "video/" $id ".mp4") }}
+    {{ if $video }}
+        {{ $start := .Params.video.start | default 0 }}
+        {{ $src := print $video.Permalink "#t=" $start }}
+        <div id="background-video">
+            <video src="{{ $src }}" autoplay muted></video>
+            <div class="gradient"></div>
+
+        </div>
+    {{ end }}
+{{ end }}
+
 <article class="project">
-    <h2>{{ .Title }}</h2>
+    <header>
+        <h2>{{- .Title -}}</h2>
+     <!--<div>{{ $id }}</div>-->
+
+    </header>
+
     <!--<ol class="links">-->
-        <!--{{ range .Params.links }}-->
-        <!--<li>-->
-            <!--<a href="{{ . }}">{{ . }}</a>-->
-        <!--</li>-->
-        <!--{{ end }}-->
+    <!--{{ range .Params.links }}-->
+    <!--<li>-->
+    <!--<a href="{{ . }}">{{ . }}</a>-->
+    <!--</li>-->
+    <!--{{ end }}-->
     <!--</ol>-->
-    <ol class=files>
+    <!--<ol class=files>
         {{ range .Params.files }}
         <li>
             <audio src="{{ . }}" controls>{{ . }}</audio>
         </li>
         {{ end }}
-    </ol>
-	<!--<div class="description">{{- .Description -}}</div>-->
-	<div class="content">{{- .Content -}}</div>
+    </ol>-->
+    <!--<div class="description">{{- .Description -}}</div>-->
+    <section class="content">{{- .Content -}}</section>
 
 
-
+    
 </article>
 
 {{ end }}
-

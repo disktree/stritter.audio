@@ -1,13 +1,49 @@
 {{ define "main" }}
+
+<section data-name="live">
+<!--{{ partial "lives" . }}-->
+    <ol class="live">
+    {{ range $event := where .Site.Pages "Type" "live" }}
+        {{ if $event.Params.time }}
+        {{ $time := (time $event.Params.time)}}
+        {{ if $time.After now }}
+        <li class="event">
+            <time>{{ .Date.Format "2006.06.01"  }}</time>
+            <div>{{ .Title }}</div>
+        </li>
+        {{ end }}
+        {{ end }}
+    {{ end }}
+    </ol>
+</section>
+
+<section data-name="projects">
+{{ partial "projects" . }}
+</section>
+
+<!--<section data-name="files">
+    <ol>
+    {{ range os.ReadDir "static/record" }}
+        <li>
+            <a href="record/{{ .Name }}">{{ .Name }}</a>
+        </li>
+    {{ end }}
+    </ol>
+</section>-->
+
+<!--
 <ol class="projects">
     {{ range $project := where .Site.Pages "Type" "project" }}
-    <li class="project">
-        <h2>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h2>
-    </li>
+        {{ if $project.IsPage }}
+        <li class="project">
+            <h2>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
+        </li>
+        {{ end }}
     {{ end }}
 </ol>
+-->
 <article>{{ .Content }}</article>
 {{ end }}
 
