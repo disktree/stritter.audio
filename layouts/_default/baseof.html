@@ -19,13 +19,14 @@
         {{ template "_internal/twitter_cards.html" . }}
         {{ template "_internal/opengraph.html" . }}
 
-        <title>{{block "title" .}}{{.Site.Title}}{{end}}{{with .Page.Title}}/{{.}}{{end}}</title>
+        <title>{{block "title" .}}{{.Site.Title}}{{end}}{{with .Page.Title}} | {{.}}{{end}}</title>
 
         {{ partial "site/favicons" . }}
         <link rel="stylesheet" href="{{ $root }}/style.css">
-        <link rel="alternate" href="feed" type="application/atom+xml" title="stritter.audio"/>
+        <link rel="alternate" href="feed" type="application/atom+xml" title="Stritter Audio"/>
         <link rel="manifest" href="{{ $root }}/manifest.json">
-
+        
+        <script src="{{ (resources.Get "script/app.js").Permalink }}" async></script>
         {{ range $val := $.Site.Params.customJS }}
 		{{ if gt (len $val) 0 }}<script src="{{ $root }}{{ $val }}" async></script>{{ end }}
 		{{ end }}
@@ -35,10 +36,20 @@
 
 	</head>
 	<body>
-        <header>{{ block "header" . }}{{- partial "site/header.html" . -}}{{ end }}</header>
-        <nav>{{ block "nav" . }}{{- partial "site/nav.html" . -}}{{ end }}</nav>
-		<main>{{ block "main" . }}{{- partial "site/main.html" . -}}{{ end }}</main>
-		<footer>{{ block "footer" . }}{{- partial "site/footer.html" . -}}{{ end }}</footer>
+        <header>
+            {{ block "header" . }}{{- partial "site/header.html" . -}}{{ end }}
+        </header>
+        <nav>
+            {{ block "nav" . }}{{- partial "site/nav.html" . -}}{{ end }}
+        </nav>
+		<main>
+            {{ block "main" . }}{{- partial "site/main.html" . -}}{{ end }}
+        </main>
+		<footer>
+            {{ block "footer" . }}{{- partial "site/footer.html" . -}}{{ end }}
+        </footer>
+        <div id="background-media">{{ block "background-media" .}}{{ end }}</div>
+        <!--<div id="background-overlay">{{ block "background-overlay" .}}{{ end }}</div>-->
     </body>
 </html>
 

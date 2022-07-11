@@ -1,0 +1,5 @@
+{{ $url := .Get 0 }}
+{{ $res := resources.Get $url }}
+{{ if $res }}
+    <video src="{{ $res.Permalink }}" controls></video>
+{{ end }}
