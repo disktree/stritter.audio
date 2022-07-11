@@ -6,5 +6,5 @@ menu:
   nav:
     name: Audio
     weight: 200
+customJS: [script/audioplayer.js]
 ---
-Some (optional) if you want.

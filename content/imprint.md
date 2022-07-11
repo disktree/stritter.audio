@@ -3,6 +3,8 @@ title: Imprint
 rss_ignore: true
 ---
 Frederic Stritter  
-Mariengasse 39, 1170 Vienna  
-Austria
 
+https://stritter.audio  
+frederic@stritter.audio
+
+Oesterleingasse 13, 1140 Vienna, Austria
