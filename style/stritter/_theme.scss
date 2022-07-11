@@ -1,3 +1,5 @@
+$bg: #999999;
+
 :root {
     
     //--bg: #070706;
@@ -17,11 +19,33 @@
     //--acc: #26936F;
     //--acc2: #A5435A;
 
-    --bg: #eeefee;
-    --fg: #999999;
-    --acc: #000000;
+    --bg: #{$bg};
+    --fg: #eeefee;
+    //--bg: #eeefee;
+    //--fg: #999999;
+    --acc: #303030; //ed2c3e
     --acc2: #545454;
 
-
+    --hi_fg: #ff0000;
+    --hi_bg: #000000;
 }
 
+body {
+    background: var(--bg); 
+    color: var(--fg);
+    -webkit-tap-highlight-color: var(--fg);
+}
+*::selection {
+    background: var(--fg);
+    color: var(--acc);
+}
+
+*::inactive-selection {
+    background: red;
+    color: blue;
+}
+
+*::spelling-error {
+    background: red;
+    color: blue;
+}

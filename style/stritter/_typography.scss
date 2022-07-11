@@ -1,12 +1,11 @@
+@use 'breakpoint';
+
 :root {
     --line-height: 1.5;
     --font-size: 14px;
-}
-
-@media (max-width: 600px) {
-  :root {
-    --font-size: 14px;
-  }
+    @media screen and (min-width: breakpoint.$tablet) {
+        --font-size: 16px;
+    }
 }
 
 /*
@@ -42,6 +41,42 @@ html {
     font-style: normal;
     line-height: var(--line-height);
 }
+
+body {
+	letter-spacing: normal;
+	text-rendering: optimizeLegibility;
+}
+
+a {
+    background: transparent;
+    //color: inherit;
+	color: var(--fg);
+    text-decoration: none;
+    //font-family: "Inter";
+    //border-bottom: 1px dotted var(--fg);
+    border: none;
+    outline: none;
+    &:hover {
+        text-decoration: none;
+        color: var(--acc);
+        //border-bottom: 1px solid black;
+        //border-bottom: 1px solid var(--acc);
+    }
+    &:focus {
+        font-style: italic;
+        color: var(--acc);
+    }
+    &:visited {
+		color: var(--fg);
+    }
+}
+
+blockquote {
+    padding-left: 1em;
+    font-style: italic;
+    border-left: 4px solid var(--fg);
+}
+
 h1, h2, h3, h4 {
     font-variation-settings: 'wght' 600, 'GRAD' 88;
     text-transform: uppercase;
@@ -53,12 +88,7 @@ h1 {
     line-height: 0.8;
 }
 h2 {
-    //font-size: 4rem;
-    //text-transform: uppercase;
-    //line-height: 0.8;
-    //letter-spacing: -5px;
-    //padding-bottom: 0.5em;
-    font-size: 5rem;
+    font-size: 4rem;
     letter-spacing: -0.05em;
     line-height:  0.8;
     padding: 0; 
@@ -71,44 +101,41 @@ h3 {
 h4 {
     line-height: 1.25;
 }
+h5 {
+    font-size: var(--text-sm, 1rem);
+}
+h6 {
+    font-size: 0.5rem;
+    font-family: monospace;
+    text-transform: uppercase;
+}
 
 hr {
     border-top: 1px solid var(--fg);
     margin: 1.5rem 0;
 }
 
-a {
-    background: transparent;
-    color: var(--fg);
-    text-decoration: none;
-    //font-family: "Inter";
-    //border-bottom: 1px dotted var(--fg);
-    border: none;
-    &:hover {
-        text-decoration: none;
-        color: var(--acc);
-        //background: var(--acc2);
-        //background-repeat: repeat;
-        //background-image: url("assets/void.pattern.2.png");
-        //border-bottom: 1px solid var(--acc);
-    }
+iframe {
+	height: 100%;
+    //overflow-x: hidden;
 }
-img {
-    display: block;
-}
+
 li {
-    //list-style: none;
-    margin: 0 0 0 1rem;
+    margin: 0;
     padding: 0;
 }
-p,
-ol,
-ul {
+
+ol, ul {
+    list-style: none;
+    margin: 0 0 1rem 0;
+}
+
+p {
     margin-bottom: 1rem;
     /*margin-bottom: var(--line-height);*/
 }
 
-.ui {
+/*.ui {
     font-size: 7rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -120,9 +147,10 @@ ul {
   //overflow: hidden;
   //text-overflow: ellipsis; 
   //border: 1px solid #ff0000;
-}
+}*/
 
 table {
     border: none;
 
 }
+

@@ -1,34 +1,31 @@
+@use 'sass:color';
 @use 'sass:math';
+@use 'theme';
 
-$thick: math.div(1rem, 3) !default;
-// $scrollbar-min-thick: 4px;
-// $scrollbar-max-thick: 8px;
+$thick: math.div(1rem, 2.5) !default;
 
 *::-webkit-scrollbar {
-  border: none;
-  &:horizontal {
-    display: none;
-  }
-  &:vertical {
-    width: $thick;
-  }
+    border: none;
+    &:horizontal {
+        display: none;
+    }
+    &:vertical {
+        width: $thick;
+    }
 }
 ::-webkit-scrollbar-button,
 ::-webkit-scrollbar-corner {
-  display: none !important;
+    display: none !important;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg);
+    background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  //border-radius: math.div($thick, 2);
-  background: var(--fg);
-  //border: 2px solid var(--bg);
-
-  &:hover {
-    background: var(--acc);
-  }
-  &:active {
-    background: var(--acc);
-  }
+    background: color.adjust(theme.$bg, $lightness: -20%);
+    &:hover {
+        background: var(--acc);
+    }
+    &:active {
+        background: var(--acc);
+    }
 }
