@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -f static/style.css*",
     "build:style": "sass style/main.scss static/style.css --no-source-map --style compressed",
-    "build:hugo": "hugo",
+    "build:hugo": "hugo --environment production -D --verbose",
     "build:videos": "node script/encode-videos.js",
     "build": "npm run build:style && npm run build:hugo",
     "dev:style": "sass style/main.scss static/style.css --watch",
