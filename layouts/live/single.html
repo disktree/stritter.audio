@@ -1,51 +1,18 @@
 {{ define "main" }}
-<article>
-    <!--<h2>{{ .Title }}</h2>-->
-    <!--<div class="content">{{- .Content -}}</div>-->
+{{ $id := .File.ContentBaseName }}
+{{ $time := (time .Params.time) }}
+{{ $upcoming := $time.After now }}
+<article class="live">
+    {{ .Render "li" }}
+    <section class="content">{{- .Content -}}</section>
+    <!--{{ $id }}-->
+    <!--<h2>{{- .Title -}}</h2>-->
+    <!--<time>{{ .Date.Format "2006-06-01" }}</time>-->
+    <!--<div>VENUE: {{- .Params.venue -}}</div>-->
+    <!--<div>LINK: {{- .Params.link -}}</div>-->
+    <!--<div>UPCOMING: {{ $upcoming }}</div>-->
+    <!--<div>PROJECT: {{- .Params.project -}}</div>-->
 
-    {{ range $project := where .Site.Pages "Type" "project" }}
-    {{ if $project.Params.live }}
-    {{ $project_name := $project.File.ContentBaseName }}
-    <ol>
-        {{ range $event := $project.Params.live }}
-        <li>
-            <time>{{ .date }}</time>
-            <a href="{{ .Site.BaseURL }}/project/{{ $project_name }}">{{ $project.Title }}</a>
-            <span>{{ .venue }}</span>
-
-
-
-            <!--<div>Project: <a href="{{ .Site.BaseURL }}/project/{{ $project_name }}">{{ $project.Title }}</a></div>-->
-            <!--{{ if .link }}-->
-            <!--<a href="{{ .link }}" rel="external">{{ .link }}</a>-->
-            <!--{{ end }}-->
-        </li>
-        {{ end }}
-    </ol>
-    {{ end }}
-    {{ end }}
+    {{ partial "prev_next" . }}
 </article>
-
-<hr>
-<table>
-    <tbody>
-        <tr>
-            <th>DATE</th>
-            <th>PROJECT</th>
-            <th>VENUE</th>
-        </tr>
-        {{ range $project := where .Site.Pages "Type" "project" }}
-        {{ if $project.Params.live }}
-        {{ $project_name := $project.File.ContentBaseName }}
-        {{ range $event := $project.Params.live }}
-        <tr>
-            <td>{{.date}}</td>
-            <td>{{ $project.Title }}</td>
-            <td>{{ .venue }}</td>
-        </tr>
-        {{ end }}
-        {{ end }}
-        {{ end }}
-    </tbody>
-</table>
 {{ end }}

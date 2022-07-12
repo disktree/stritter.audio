@@ -1,43 +1,11 @@
 {{ define "main" }}
 {{ $id := .File.ContentBaseName }}
-
-<!--{{ if .Params.video }}-->
-    <!--{{ $video := resources.Get (print "video/" $id ".mp4") }}-->
-    <!--{{ if $video }}-->
-        <!--{{ $start := .Params.video.start | default 0 }}-->
-        <!--{{ $src := print $video.Permalink "#t=" $start }}-->
-        <!--<div id="background-media">-->
-            <!--<video src="{{ $src }}" autoplay muted></video>-->
-            <!--<div class="gradient"></div>-->
-
-        <!--</div>-->
-    <!--{{ end }}-->
-<!--{{ end }}-->
-
 <article class="project">
     <header>
         <h2>{{- .Title -}}</h2>
-     <!--<div>{{ $id }}</div>-->
     </header>
-
-    {{ partial "list-files" .}}
-    <!--<ol class="links">-->
-    <!--{{ range .Params.links }}-->
-    <!--<li>-->
-    <!--<a href="{{ . }}">{{ . }}</a>-->
-    <!--</li>-->
-    <!--{{ end }}-->
-    <!--</ol>-->
-    <!--<ol class=files>
-        {{ range .Params.files }}
-        <li>
-            <audio src="{{ . }}" controls>{{ . }}</audio>
-        </li>
-        {{ end }}
-    </ol>-->
-    <!--<div class="description">{{- .Description -}}</div>-->
     <section class="content">{{- .Content -}}</section>
-    
+    {{ partial "prev_next" . }}
 </article>
 {{ end }}
 
@@ -55,3 +23,4 @@
     {{ end }}
 {{ end }}
 {{ end }}
+

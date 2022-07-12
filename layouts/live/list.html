@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article>
+    <ol class="live">
+        {{ $paginator := .Paginate .Data.Pages }}
+		{{ range $event := $paginator.Pages }}
+            <li>
+                <h2><a href="{{ .RelPermalink }}">{{- .Title -}}</a></h2>
+                <div class="meta">
+                    {{ .Render "summary" }}
+                </div>
+            </li>
+        <!--{{ $time := (time .Params.time) }}-->
+        <!--{{ $upcoming := $time.After now }}-->
+        <!--<li class="event {{ if $upcoming }} upcoming{{end}}">-->
+            <!--<h2>{{- .Title -}}</h2>-->
+            <!--<time>{{ .Date.Format "2006-01-06"  }}</time>-->
+            <!--<div>VENUE: {{- .Params.venue -}}</div>-->
+            <!--<div>LINK: {{- .Params.link -}}</div>-->
+            <!--<div>UPCOMING: {{ $upcoming }}</div>-->
+            <!--<div>PROJECT: {{- .Params.project -}}</div>-->
+            <!--<section>{{- .Content -}}</section>-->
+            <!--<a href="{{ .Permalink }}">{{ .Permalink }}</a>-->
+        <!--</li>-->
+		{{ end }}
+	</ol>
+</article>
+{{ end }}
+

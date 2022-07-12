@@ -1,6 +1,19 @@
 {{ define "main" }}
 <article>
-    {{ partial "list-project" . }}
+    <ol class="events">
+        {{ range first 5 (where .Site.Pages "Section" "live") }}
+        <li>{{ .Render "li" }}</li>
+        {{ end }}
+    </ol>
+    <ol class="projects">
+        {{ range $projects := where .Site.Pages "Section" "project" }}
+        <li>{{ .Render "li" }}</li>
+        {{ end }}
+    </ol>
+    <ol class="files">
+        {{ range where .Site.Pages "Section" "audio" }}
+        <li>{{ . }}</li>
+        {{ end }}
+    </ol>
 </article>
 {{ end }}
-

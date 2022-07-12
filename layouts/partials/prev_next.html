@@ -1,0 +1,8 @@
+<nav class="prev_next">
+    {{ with .PrevInSection }}
+    <a href="{{ .RelPermalink }}" rel="prev" title="{{ .Title }}">&#60;</a>
+    {{ end }}
+    {{ with .NextInSection }}
+    <a href="{{ .RelPermalink }}" rel="next" title="{{ .Title }}">&#62;</a>
+    {{ end }}
+</nav>
