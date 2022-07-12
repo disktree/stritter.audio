@@ -7,7 +7,9 @@
     "clean": "rm -f static/style.css*",
     "build:style": "sass style/main.scss static/style.css --no-source-map --style compressed",
     "build:hugo": "hugo --environment production -D --verbose",
-    "build:videos": "node script/encode-videos.js",
+    "build:videos": "node script/video_encode.js",
+    "build:metadata": "node script/music_metadata.js static/file data/meta",
+    "build:prepare": "npm run build:videos && npm run build:metadata",
     "build": "npm run build:style && npm run build:hugo",
     "dev:style": "sass style/main.scss static/style.css --watch",
     "dev:hugo": "hugo server -D",
@@ -22,6 +24,7 @@
   "homepage": "https://github.com/disktree/stritter.audio/blob/master/README.md",
   "devDependencies": {
     "ffmpeg-static": "^5.0.2",
+    "music-metadata": "^7.12.4",
     "sass": "^1.53.0"
   }
 }
