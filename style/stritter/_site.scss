@@ -16,7 +16,7 @@ body {
     > header {
     }
     > nav {
-        > ol {
+        > ul {
             display: flex;
             align-items: center;
             height: 100%;
@@ -54,18 +54,26 @@ body {
         //position: relative;
         height: 100%;
         //margin: 0 2rem;
+        /*
         > article {
             position: relative;
-/*inline-size: min-content;*/
-/*min-width: 320px;*/
             top: 1rem;
             > header {
                 margin-bottom: 2em;
             }
             //max-width: 800px;
-            height: 100%;
             margin: 0 2rem;
             padding: 1rem 0 3rem 0;
+            ol {
+                &.projects {
+                    > li {
+                        > h2 {
+                            //font-family: monospace;
+                        } 
+                        //display: flex;
+                    } 
+                }
+            }
             li {
                 //list-style: circle;
             } 
@@ -80,7 +88,9 @@ body {
 
                 }
             }
+
         }
+        */
     }
 
     > footer {
@@ -109,7 +119,7 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1;
+    z-index: 0;
     user-select: none;
     > video {
         width: 100%;
@@ -145,14 +155,13 @@ body {
 
 }
 
-ol.live {
-    > li.event {
-        //padding: 1rem 0;
-        list-style: none;
-        &.upcoming {
-            color: red;
-            background: black;
-        }
-    }
-}
+//ol.live {
+    //> li.event {
+        //list-style: none;
+        //&.upcoming {
+            //color: red;
+            //background: black;
+        //}
+    //}
+//}
 

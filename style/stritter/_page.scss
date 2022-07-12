@@ -1,0 +1,52 @@
+body > main > article {
+    position: relative;
+    top: 1rem;
+    max-width: 960px;
+    margin: 0 2rem;
+    padding: 1rem 0 3rem 0;
+    > header {
+        //display: flex;
+        margin-bottom: 2em;
+    }
+
+    img, video {
+        width: 100%;
+        height: auto;
+    }
+    .footnotes {
+        font-size: 75%;
+        p {
+            margin: 0;
+
+        }
+    }
+    ol {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        > li {
+            //margin-bottom: 2rem;
+        }
+        &.live {
+            > li {
+                display: grid;
+                margin-bottom: 1rem;
+                //background: red;
+                > .meta {
+                    line-height: 1;
+                    display: flex;
+
+                    flex-wrap: nowrap;
+
+                    //background: green;
+                    > * {
+                    }
+                    > *::after {
+                        margin: 0 0.5ch;
+                        content: "/";
+                    }
+                }
+            }
+        }
+    }
+}
