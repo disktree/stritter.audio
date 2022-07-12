@@ -2,7 +2,7 @@
 title: "A Certain Trio"
 date: 2022-03-23
 description: "Live Improvisation project of Marcin Morga, Eugene Ignashev and Frederic Stritter"
-video: { start: 300 }
+video: { start: 1999 }
 live: [
     { date: 2023-12-11, venue: Future Date },
     { date: 2020-12-11, venue: Alte Schmiede },

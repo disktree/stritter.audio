@@ -1,6 +1,7 @@
 ---
 title: "Wiener Arp Ensemble"
 date: 2020-10-23
+video: { start: 5 }
 live: [
     { date: 2020-08-20, venue: "VELAK #115, Symposion Lindabrunn" },
     { date: 2019-12-04, venue: "Shut up and Listen Festival, Vienna" },
@@ -25,4 +26,3 @@ Three ARP 2600 TTSH synthesizers + two amplified metal plates and a 20-meter lon
 
 Evgeny Ignashev, Wolfgang Musil, Frederic Stritter.
 
-![](fsk-7.jpg)
