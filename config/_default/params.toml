@@ -1,0 +1,17 @@
+title = "Stritter Audio"
+description = "Frederic Stritter is a Sound Artist that lives and works in Vienna."
+keywords = ["stritter","audio","artist"]
+images = ['feature.jpg']
+author = { fullname = "Frederic Stritter", firstname = "Frederic", lastname = "Stritter", name = "Stritter", email = "frederic@stritter.audio" }
+email = "frederic@stritter.audio"
+publisher = "frederic@stritter.audio"
+customCSS = []
+customJS  = []
+[contact]
+    email = "frederic@stritter.audio"
+    web = "https://stritter.audio"
+    [contact.address]
+        street = "Oesterleingasse 13/21"
+        postal_code = "1150"
+        city = "Vienna"
+        country = "Austria"

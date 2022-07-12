@@ -1,26 +1,24 @@
 baseURL = ""
-title = "stritter.audio"
+title = "Stritter"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-description = "This is some description"
-keywords = ["stritter","audio","artist"]
+description = "Frederic Stritter is a Sound Artist that lives and works in Vienna."
 theme_color = "#000000"
-
 disableHugoGeneratorInject = true
+paginate = 100
+
+#[permalinks]
+    #live = '/:year/:month/:day/'
 
 [taxonomies]
     category = "categories"
     tag = "tags"
 
-[params]
-    description = " "
-    customCSS = []
-    customJS  = []
-    author = {  fullname = "Frederic Stritter", name = "Stritter", email = "frederic@stritter.audio" }
-    email = "frederic@stritter.audio"
-    publisher = ""
-
 [sitemap]
     changefreq = 'monthly'
     filename = 'sitemap.xml'
-      priority = 0.5
+    priority = 0.5
+
+[author]
+    email="tong@disktree.net"
+    web = "https://disktree.net"
