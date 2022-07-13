@@ -1,7 +1,9 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-description:
-keywords: []
-links: []
+file: 
+microphone: 
+recorder: 
+draft: true
 ---
+

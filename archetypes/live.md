@@ -1,7 +1,9 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
+description: ""
 date: {{ .Date }}
-description:
-keywords: []
-links: []
+time:
+venue:
+link:
+project:
 ---
