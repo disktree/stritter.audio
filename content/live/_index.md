@@ -1,5 +1,6 @@
 ---
 title: Live
+date: 2022-01-01
 menu:
   nav:
     name: Live

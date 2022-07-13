@@ -3,8 +3,7 @@ title: "Sinfonie Aspern Seestadt"
 date: 2022-03-23
 video: { end: 0 }
 ---
-### Soundscape Composition
-### Echoes Around Me Festival 2021
+### Soundscape Composition Echoes Around Me Festival 2021
 
 Based on various recordings - March - September 2021
 
