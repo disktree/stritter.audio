@@ -17,11 +17,18 @@ jobs:
       #- name: Test
         #run: npm test
       - name: Build style
-        run: npm run build:style
+        run: npm run prod:style
       - name: Build site
-        run: npm run build:hugo
+        run: npm run prod:hugo -- --baseURL https://disktree.github.io/stritter.audio
       #- name: Store
         #uses: actions/upload-artifact@v3
         #with:
           #name: stritter.audio
           #path: public
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.3.4
+        with:
+          branch: gh-pages
+          folder: public
+          clean: true
+          single-commit: true
