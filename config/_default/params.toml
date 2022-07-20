@@ -1,4 +1,3 @@
-title = "Stritter Audio"
 description = "Frederic Stritter is a Sound Artist that lives and works in Vienna."
 keywords = ["stritter","audio","artist"]
 images = ['feature.jpg']
@@ -7,6 +6,9 @@ email = "frederic@stritter.audio"
 publisher = "frederic@stritter.audio"
 customCSS = []
 customJS  = []
+
+repository = "https://github.com/disktree/stritter.audio/"
+
 [contact]
     email = "frederic@stritter.audio"
     web = "https://stritter.audio"
@@ -14,4 +16,8 @@ customJS  = []
         street = "Oesterleingasse 13/21"
         postal_code = "1150"
         city = "Vienna"
-        country = "Austria"
+        country = "AT"
+
+[developer]
+    email = "tong@disktree.net"
+    url = "https://disktree.net"

@@ -1,4 +1,4 @@
 baseURL = "https://stritter.audio"
 cleandestinationdir = true
 [minify]
-  minifyOutput = true
+    minifyOutput = true

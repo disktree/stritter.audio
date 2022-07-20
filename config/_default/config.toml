@@ -1,17 +1,20 @@
 baseURL = ""
-title = "Stritter"
+title = "stritter.audio"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 description = "Frederic Stritter is a Sound Artist that lives and works in Vienna."
+keywords =  ["velak","verein","akustik","musik","events"]
 theme_color = "#000000"
+
 disableHugoGeneratorInject = true
-paginate = 100
+enableGitInfo = true
+paginate = 1000
+rssLimit = 100
 
 #[permalinks]
     #live = '/:year/:month/:day/'
 
 [taxonomies]
-    category = "categories"
     tag = "tags"
 
 [sitemap]
@@ -19,6 +22,3 @@ paginate = 100
     filename = 'sitemap.xml'
     priority = 0.5
 
-[author]
-    email="tong@disktree.net"
-    web = "https://disktree.net"
