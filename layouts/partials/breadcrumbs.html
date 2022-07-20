@@ -1,6 +1,0 @@
-{{ with .Parent }}
-	{{ partial "breadcrumbs.html" . }}
-    {{ if .Parent }}<span class="ui">/</span>{{ end }}
-	<a href="{{ .Permalink }}" class="ui">{{ .Title }}</a>
-{{ end }}
-

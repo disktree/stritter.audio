@@ -1,8 +1,9 @@
 {{ define "main" }}
 <article>
-{{- .Content -}}
-    <!--<h2>{{ .Title }}</h2>-->
-	<!--<div class="content">{{- .Content -}}</div>-->
+    <header>
+        <h2>{{- .Title -}}</h2>
+    </header>
+	<div class="content">{{- .Content -}}</div>
 </article>
 {{ end }}
 

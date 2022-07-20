@@ -9,8 +9,8 @@
         <meta name="viewport" content="width=device-width,minimum-scale=1">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="title" content="{{ .Site.Title }}">
-		{{ if isset .Params "description" }}<meta name="description" content="{{ .Param "description" }}">{{ end }}
-		{{ if isset .Site.Params "theme_color" }}<meta name="theme-color" content="{{ .Site.Param "theme_color" }}">{{ end }}
+        {{ if isset .Params "description" }}<meta name="description" content="{{ .Param "description" }}">{{ end }}
+        {{ if isset .Site.Params "theme_color" }}<meta name="theme-color" content="{{ .Site.Param "theme_color" }}">{{ end }}
         {{ if isset .Site.Params "publisher" }}<meta name="publisher" content="{{ .Site.Params.publisher }}">{{ end }}
         {{ with .Param "keywords" }}<meta name="keywords" content='{{ delimit . ","}}'>{{ end }}
 
@@ -21,7 +21,7 @@
 
         {{ partial "site/favicons" . }}
         <link rel="stylesheet" href="{{ $root }}/style.css">
-        <link rel="alternate" href="feed" type="application/atom+xml" title="Stritter Audio"/>
+        <!--<link rel="alternate" href="feed" type="application/atom+xml" title="Stritter Audio"/>-->
         <link rel="manifest" href="{{ $root }}/manifest.json">
         
         <script src="{{ (resources.Get "script/app.js").Permalink }}" async></script>
@@ -36,16 +36,11 @@
 	<body>
         <header>
             {{ block "header" . }}{{- partial "site/header.html" . -}}{{ end }}
+            <nav data-id="nav">{{ block "nav" . }}{{- partial "site/nav.html" . -}}{{ end }}</nav>
+            <nav data-id="subnav">{{ block "subnav" . }}{{ end }}</nav>
         </header>
-        <nav>
-            {{ block "nav" . }}{{- partial "site/nav.html" . -}}{{ end }}
-        </nav>
-		<main>
-            {{ block "main" . }}{{- partial "site/main.html" . -}}{{ end }}
-        </main>
-		<footer>
-            {{ block "footer" . }}{{- partial "site/footer.html" . -}}{{ end }}
-        </footer>
+        <main>{{ block "main" . }}{{- partial "site/main.html" . -}}{{ end }}</main>
+		<footer>{{ block "footer" . }}{{- partial "site/footer.html" . -}}{{ end }}</footer>
         <div id="background-media">{{ block "background-media" .}}{{ end }}</div>
     </body>
 </html>

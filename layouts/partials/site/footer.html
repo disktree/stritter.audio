@@ -1,6 +1,8 @@
 <div>
-    <copyright>
-        <i class="ic-copyright"></i>&nbsp;{{ now.Format "2006" }}&nbsp;<a href="{{ .Site.BaseURL }}/imprint">{{ .Site.Params.author.fullname }}</a>, Vienna/AT&nbsp;
-    </copyright>
-    <a href="{{ .Site.BaseURL }}/index.xml"><i class="ic-rss_feed"></i></a>
+        <!--<i class="ic-copyright"></i>&nbsp;{{ now.Format "2006" }}&nbsp;<a href="{{ .Site.BaseURL }}/imprint">{{ .Site.Params.author.fullname }}</a>, Vienna/AT&nbsp;-->
+        <!--&nbsp;{{ now.Format "2006" }}&nbsp;-->
+    <a href="{{ .Site.BaseURL }}/imprint"><i class="ic-copyright"></i><span>© {{ now.Format "2006" }} {{ .Site.Params.author.fullname }}</span>, Vienna/AT</a>
+    <!--<a href="mailto:{{ .Site.Params.contact.email }}" class="icon-link"><i class="ic-email"></i><span>EMAIL</span></a>-->
+    <a href="{{ .Site.BaseURL }}/index.xml" class="icon-link"><i class="ic-rss_feed"></i><tui>RSS</tui></a>
 </div>
+

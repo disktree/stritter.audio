@@ -1,18 +1,30 @@
 {{ define "main" }}
-{{ $id := .File.ContentBaseName }}
-{{ $time := (time .Params.time) }}
-{{ $upcoming := $time.After now }}
+{{ $date := (time .Params.date) }}
+{{ $upcoming := $date.After now }}
+{{ $project := .GetPage (print "/project/" .Params.project) }}
 <article class="live">
-    {{ .Render "li" }}
-    <section class="content">{{- .Content -}}</section>
-    <!--{{ $id }}-->
-    <!--<h2>{{- .Title -}}</h2>-->
-    <!--<time>{{ .Date.Format "2006-06-01" }}</time>-->
-    <!--<div>VENUE: {{- .Params.venue -}}</div>-->
-    <!--<div>LINK: {{- .Params.link -}}</div>-->
-    <!--<div>UPCOMING: {{ $upcoming }}</div>-->
-    <!--<div>PROJECT: {{- .Params.project -}}</div>-->
+    
+    <header>
+    {{ if $upcoming }}
+    <h2>
+        <span>{{- .Title -}}</span>
+        <time>{{ $date.Format "2006/01/02" }}</time>
+    </h2>
+    {{ else }}
+
+    <h2>{{- .Title -}}</h2> 
+    <time>{{ $date.Format "2006-01-02" }}</time>
+    {{ with $project }}<a href="{{ .RelPermalink }}">{{- .Title | safeHTML -}}</div>{{ end }}
+    {{ end }}
+
+    </header>
+
+    <div class="content">{{- .Content -}}</div>
+
+    <footer></footer>
 
     {{ partial "prev_next" . }}
+
+
 </article>
 {{ end }}

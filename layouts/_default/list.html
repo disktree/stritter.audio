@@ -1,13 +1,17 @@
 {{ define "main" }}
-	{{ if .Title }}<h1>{{- .Title -}}</h1>{{ end }}
-	{{ if .Content }}<section class="content">{{- .Content -}}</section>{{ end }}
+<article>
+    <header>
+	    {{ with .Title }}<h2>{{- . -}}</h2>{{ end }}
+    </header>
+    {{ if .Content }}<div class="content">{{- .Content | safeHTML -}}</div>{{ end }}
     {{ $paginator := .Paginate .Pages }}
 	<ul>
-		{{ range $paginator.Pages }}
-            <li>
-                <a href="{{ .Permalink }}">{{- .Title -}}</a>
-            </li>
-		{{ end }}
+        {{ range $paginator.Pages }}
+        <li>
+            <a href="{{ .RelPermalink }}">{{- .Title | safeHTML -}}</a>
+        </li>
+        {{ end }}
 	</ul>
+</article>
 {{ end }}
 

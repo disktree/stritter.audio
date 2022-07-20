@@ -1,4 +1,5 @@
 <time>{{ .Date.Format "2006-01-02" }}</time>
 {{ with .Params.venue }}<div>{{.}}</div>{{ end }}
+<!--{{ with .Params.project }}<div>{{.}}</div>{{ end }}-->
 {{ with .Params.link }}<a href="{{.}}" rel="external">{{.}}</a>{{ end }}
 
