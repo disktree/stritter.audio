@@ -1,6 +1,7 @@
 ---
 title: "Bauer & Stritter"
 date: 2022-03-23
+weight: 1000
 description: Live Performance Project 
 video: { start: 23 }
 live: [
@@ -11,5 +12,3 @@ live: [
 Live Performance Project 
 Nina Bauer, Frederic Stritter
 
-{{< video "video/bauer_stritter.mp4" >}} 
-{{< youtube "cAn961_2BSM" >}} 

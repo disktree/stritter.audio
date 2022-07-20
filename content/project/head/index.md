@@ -1,6 +1,7 @@
 ---
 title: "H.E.A.D."
 date: 2017-03-31
+weight: 1000
 video: { start: 0 }
 ---
 Inspired by the the H.E.A.D. Revolution - Hedonic Engineering And Development - The installation uses a closed feedback system of human brainwaves, measured using an EEG, and it’s visual perception input fed by a never ending stream of images collected by a synthetic intelligence mapping. The sounds the performer perceives as well as the images he views thru the VR-Glasses influence his brainwaves, which again produce the given images showed on the screen.

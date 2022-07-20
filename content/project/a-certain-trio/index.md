@@ -1,6 +1,7 @@
 ---
 title: "A Certain Trio"
 date: 2022-03-23
+weight: 10000
 description: "Live Improvisation project of Marcin Morga, Eugene Ignashev and Frederic Stritter"
 video: { start: 1999 }
 live: [
@@ -33,5 +34,5 @@ Live Improvisation project of Marcin Morga, Eugene Ignashev and Frederic Stritte
 
 Instruments may vary.
 
-![AC3](a_certain_trio_big.jpg)
+///![AC3](a_certain_trio_big.jpg)
 

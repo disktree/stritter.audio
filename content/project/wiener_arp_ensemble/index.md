@@ -1,6 +1,7 @@
 ---
 title: "Wiener Arp Ensemble"
 date: 2020-10-23
+weight: 1000
 video: { start: 5 }
 live: [
     { date: 2020-08-20, venue: "VELAK #115, Symposion Lindabrunn" },

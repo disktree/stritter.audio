@@ -1,6 +1,7 @@
 ---
 title: "Kickers"
 date: 2019-03-23
+weight: 1000
 background: copy_cover_with_tapes.jpg
 ---
 

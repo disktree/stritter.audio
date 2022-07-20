@@ -1,6 +1,7 @@
 ---
 title: "Sinfonie Aspern Seestadt"
 date: 2022-03-23
+weight: 1000
 video: { end: 0 }
 ---
 ### Soundscape Composition Echoes Around Me Festival 2021

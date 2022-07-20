@@ -1,6 +1,7 @@
 ---
 title: "Triangeln"
 date: 2020-09-23
+weight: 1000
 video: { start: 1 }
 files: [
     { name: Triangeln, file: triangeln.mp3 }

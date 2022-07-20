@@ -1,6 +1,7 @@
 ---
 title: "Recordings"
 date: 2000-01-01
+weight: 1000
 files: [
     { name: AMT Files, file: amt_files.mp3 },
     { name: Atlantic Avenue, file: atlantic_avenue.mp3 },
