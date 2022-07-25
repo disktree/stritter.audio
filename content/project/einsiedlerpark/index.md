@@ -16,4 +16,8 @@ The demographic or technical conditions, the history or the context of the sound
 The following work is the result of translating an eight minute part of the recording to text, sound drawings and sound objects.
 This work is a mix of strategies. I imitate single sound objects with synthesizers, a violin and acoustic objects and spread the initial recording to more than 60 different channels assigned to different Bandpass Filters.
 
-> Spatialisation: One or two speakers in the middle of the room pointing to the ceiling. 8 or more speakers as far on the outside of the room as possible.
+> Spatialisation: One or two speakers in the middle of the room pointing to the ceiling.  
+8 or more speakers as far on the outside of the room as possible.
+
+
+{{< youtube "zXlyt6Qu7CQ" >}}

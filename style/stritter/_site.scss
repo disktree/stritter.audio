@@ -36,25 +36,21 @@ body {
         height: 100%;
         border-bottom: 1px solid var(--f_med);
         text-transform: uppercase;
-
-
         > h1 {
             all: unset;
             display: inline-block;
             font-size: 1rem;
             font-weight: bold;
             a {
-
                 color: var(--f_med);
             }
         }
         > nav {
             display: inline-block;
-
             display: flex;
             text-transform: uppercase;
             position: relative;
-            //top: 1px;
+            margin-right: 1rem;
             > ul {
                 display: flex;
                 list-style: none;

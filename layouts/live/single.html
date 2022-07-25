@@ -3,28 +3,22 @@
 {{ $upcoming := $date.After now }}
 {{ $project := .GetPage (print "/project/" .Params.project) }}
 <article class="live">
-    
     <header>
-    {{ if $upcoming }}
-    <h2>
-        <span>{{- .Title -}}</span>
-        <time>{{ $date.Format "2006/01/02" }}</time>
-    </h2>
-    {{ else }}
-
-    <h2>{{- .Title -}}</h2> 
-    <time>{{ $date.Format "2006-01-02" }}</time>
-    {{ with $project }}<a href="{{ .RelPermalink }}">{{- .Title | safeHTML -}}</div>{{ end }}
-    {{ end }}
-
+        {{ if $upcoming }}
+        <h2>
+            <span>{{- .Title -}}</span>
+            <time>{{ $date.Format "2006/01/02" }}</time>
+        </h2>
+        {{ else }}
+        <h2>{{- .Title -}}</h2> 
+        <time>{{ $date.Format "2006-01-02" }}</time>
+        {{ with $project }}<a href="{{ .RelPermalink }}">{{- .Title | safeHTML -}}</div>{{ end }}
+        {{ end }}
     </header>
-
     <div class="content">{{- .Content -}}</div>
-
-    <footer></footer>
-
-    {{ partial "prev_next" . }}
-
-
 </article>
+{{ end }}
+
+{{ define "subnav" }}
+    {{ partial "prev_next" . }}
 {{ end }}

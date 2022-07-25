@@ -6,6 +6,18 @@
     </header>
     <div class="content">{{- .Content | safeHTML -}}</div>
 
+    {{ $events := where (where .Site.RegularPages "Section" "live") "Params.project" "==" $id }}
+    {{ $n_events := len $events }}
+    {{ if gt $n_events 0 }}
+        <label>project events</label>
+        <table>
+            {{ range $event := $events }}
+                {{ if eq $event.Params.project $id }}
+                    {{ .Render "tr" }}
+                {{ end }}
+            {{ end }}
+        </table>
+    {{ end }}
 
     <!--{{ $audiofiles := .Resources.ByType "audio" }}
     {{ with $audiofiles }}
@@ -26,13 +38,12 @@
     {{ end }}-->
 
     <!--{{ partial "gallery" .}}-->
-
     <!--{{ partial "prev_next" . }}-->
 </article>
 {{ end }}
 
 {{ define "subnav" }}
-    <!--{{ partial "prev_next" . }}-->
+    {{ partial "prev_next" . }}
 {{ end }}
 
 

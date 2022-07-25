@@ -17,6 +17,5 @@ It is a conceptual trap, long-outlived its purpose as an evolutionary tool, with
 Without an ego structure as we know it, we would not need empathy, for we would share each other's' pain; we would not need compassion, for helping others is, in fact, the same as helping ourselves. There would be no thought of reward for good deeds, for the deed along would be payment enough, in seeing others well, and happy. This cannot come to be, so long as our egos insist that we are separate creatures and independent in thought, and existence; separate from each other, separate from our planet, separate from the universe, and separate from god, however it is chosen to be defined.
 
 To let oneself go - or, perhaps, the sense of oneself - requires great achievement, great discipline and willingness in order to leave the dualistic world of self vs. other behind. Freed from this limitation, we will be able to regard dualisms as the fantasy of sub-Abyssal existence, and step effortlessly across the Abyss anytime we please, recognising immediately that we are no longer owned, manipulated or subservient to our mundane, human egos.
-<!--
+
 {{< vimeo 211392344 >}}
--->

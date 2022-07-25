@@ -1,39 +1,27 @@
 {{ define "main" }}
 <article>
+    <label>Upcoming events</label>
     {{ $paginator := .Paginate .Data.Pages }}
-    <ul class="events nolist">
+    <ol class="upcoming events nolist">
         {{ range $event := $paginator.Pages }}
             {{ $date := (time $event.Params.date) }}
             {{ $upcoming := $date.After now }}
             {{ $project := .GetPage (print "/project/" .Params.project) }}
             {{ if $upcoming }}
             <li class="upcoming">
-                <h2 class="title">
-                    <time>{{ $date.Format "2006/01/02" }}</time>
-                    <!--<a href="{{ .RelPermalink }}">{{- .Title | safeHTML -}}</a>-->
-                </h2>
-                <h3>
-                    <a href="{{ .RelPermalink }}">{{- .Title | safeHTML -}}</a>
-                </h3>
-                {{ with $event.Params.location }} {{.}} {{ end }}
-                {{ with $project }}<a href="{{ .RelPermalink }}">{{- .Title | safeHTML -}}</div>{{ end }}
+                <a href="{{ .RelPermalink }}">
+                    <h2>
+                        <time>{{ $date.Format "2006/01/02" }}</time>
+                    </h2>
+                    <h3>{{- .Title | markdownify | safeHTML -}}</h3>
+                </a>
+                {{ with $event.Params.location }}<div style="color: var(--f_low);">{{- . | markdownify -}}</div>{{ end }}
             </li>
             {{ end }}
         {{ end }}
-    </ul>
+    </ol>
     <hr>
-    <ul class="events nolist">
-        {{ range $event := $paginator.Pages }}
-        {{ $date := (time $event.Params.date) }}
-        {{ $upcoming := $date.After now }}
-        {{ if not $upcoming }}
-        <li class="inactive">
-            <time>{{ $date.Format "2006.01.02" }}</time>
-            <a href="{{ .RelPermalink }}">{{- .Title | safeHTML -}}</a>
-        </li>
-        {{ end }}
-        {{ end }}
-    </ul>
-
-</article>
+    <label>Past events</label>
+    {{ .Render "table" }}
+  </article>
 {{ end }}

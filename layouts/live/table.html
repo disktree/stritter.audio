@@ -1,0 +1,9 @@
+<table>
+    {{ range $event := where .Site.RegularPages "Section" "live" }}
+    {{ $date := (time $event.Params.date) }}
+    {{ $upcoming := $date.After now }}
+    {{ if not $upcoming }}
+        {{ .Render "tr" }}
+    {{ end }}
+    {{ end }}
+</table>

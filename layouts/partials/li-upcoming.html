@@ -1,0 +1,13 @@
+{{ if (time .Date).After now }}
+<li class="upcoming">
+    <a href="{{ .RelPermalink }}">
+        <h2>
+            <time>{{ .Date.Format "2006/01/02" }}</time>
+
+        </h2>
+        <h3>
+            {{- .Title | safeHTML -}}
+        </h3>
+    </a>
+</li>
+{{ end }}
