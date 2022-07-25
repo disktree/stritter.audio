@@ -1,14 +1,9 @@
 {{ define "main" }}
 <article>
     {{ with .Content }}<div class="content">{{- . | safeHTML -}}</div>{{ end }}
-    {{ $paginator := .Paginate .Pages }}
-	<ul class="projects">
-        {{ range $paginator.Pages }}
-        <li>
-            <h2 class="title">
-                <a href="{{ .RelPermalink }}">{{- .Title | safeHTML -}}</a>
-            </h2>
-        </li>
+	<ul class="big">
+         {{ range $project := where .Site.RegularPages "Section" "project" }}
+            {{ .Render "li" }}
         {{ end }}
 	</ul>
 </article>
