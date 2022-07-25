@@ -4,7 +4,6 @@ languageCode = "en-us"
 defaultContentLanguage = "en"
 description = "Frederic Stritter is a Sound Artist that lives and works in Vienna."
 keywords =  ["velak","verein","akustik","musik","events"]
-theme_color = "#000000"
 
 disableHugoGeneratorInject = true
 enableGitInfo = true

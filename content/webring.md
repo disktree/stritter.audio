@@ -1,6 +1,6 @@
 ---
 title: Webring
-type: ring
+type: webring
 keywords: [webring,links,network,friends,artists]
 ---
 - https://acertaintrio.com/

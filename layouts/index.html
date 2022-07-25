@@ -1,39 +1,35 @@
 {{ define "main" }}
 <article data-page="home">
-    <h1>☩☩☩☩☩☩☩</h1>
-
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <!--<h3>UPCOMING EVENTS</h3>-->
-    <!--<ol class="events">-->
-        <!--{{ range where .Site.RegularPages "Section" "live" }}-->
-        <!--{{ if (time .Params.date).After now }} -->
-            <!--{{ .Render "li" }}-->
-        <!--{{ end }}-->
-        <!--{{ end }}-->
-    <!--</ol>-->
+    <!--<label>news</label>-->
+    <!--<ol class="nolist">
+        {{ range $post := where .Site.RegularPages "Section" "news" }}
+        <li>
+            <a href="{{.RelPermalink}}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+    </ol>
+    <hr>-->
+    <!--<label>updates</label>
+    <ol class="nolist">
+        {{ range (where .Site.RegularPages "Section" "news") }}
+            <li>{{ .Title }}</li>
+        {{ end }}
+    </ol>
+    <hr>-->
+    <label>upcoming events</label>
+    <ol class="upcoming events nolist">
+        {{ range (where .Site.RegularPages "Section" "live") }}
+            {{ partial "li-upcoming" . }}
+        {{ end }}
+    </ol>
     <!--<a href="{{ .Site.BaseURL }}/live/" class="more"><i class="ic-double_arrow"></i><span>[…]</span></a>-->
-    <!--<h3>PROJECTS</h3>
-    <ul class="ui projects">
-        {{ range $project := where .Site.Pages "Section" "project" }}
-            {{ if .IsPage }}
-            {{ .Render "li" }}
-            {{ end }}
-        {{ end }}
-    </ul>
     <hr>
-    <h3>RECORDINGS</h3>
-    <ul class="ui files">
-        {{ range first 5 (where .Site.Pages "Section" "audio") }}
-        {{ if .IsPage }}
-        {{ .Render "li" }}
-        {{ end }}
+    <label>projects</label>
+    <ul class="projects nolist">
+        {{ range $project := where .Site.RegularPages "Section" "project" }}
+            {{ .Render "li" }}
         {{ end }}
     </ul>
-    <a href="{{ .Site.BaseURL }}/audio/" class="more"><i class="ic-double_arrow"></i><span>[…]</span></a>-->
 </article>
 
 <style>

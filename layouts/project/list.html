@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article>
+    {{ with .Content }}<div class="content">{{- . | safeHTML -}}</div>{{ end }}
+    {{ $paginator := .Paginate .Pages }}
+	<ul class="projects">
+        {{ range $paginator.Pages }}
+        <li>
+            <h2 class="title">
+                <a href="{{ .RelPermalink }}">{{- .Title | safeHTML -}}</a>
+            </h2>
+        </li>
+        {{ end }}
+	</ul>
+</article>
+{{ end }}
+

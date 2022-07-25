@@ -7,36 +7,37 @@
     <div class="content">{{- .Content | safeHTML -}}</div>
 
 
-    {{ $audiofiles := .Resources.ByType "audio" }}
+    <!--{{ $audiofiles := .Resources.ByType "audio" }}
     {{ with $audiofiles }}
     <ol class="nolist">
         {{ range $audiofiles }}
         <li>
-            <audio src="{{ .RelPermalink }}" controls></audio>            
-            <!--<i class="ic-audiotrack"></i>
-            <a href="{{.RelPermalink}}">{{- .Name | safeHTML -}}</a>-->
+            <audio src="{{ .RelPermalink }}" controls></audio>
+            <i class="ic-audiotrack"></i>
+            <a href="{{.RelPermalink}}">{{- .Name | safeHTML -}}</a>
         </li>
         {{ end }}
     </ol>
-    {{ end }}
+    {{ end }}-->
     
     
     <!--{{ range $res := .Resources.ByType "image" }}
     <img src="{{ .RelPermalink }}">
     {{ end }}-->
 
-    {{ partial "gallery" .}}
+    <!--{{ partial "gallery" .}}-->
 
     <!--{{ partial "prev_next" . }}-->
 </article>
 {{ end }}
 
 {{ define "subnav" }}
-    {{ partial "prev_next" . }}
+    <!--{{ partial "prev_next" . }}-->
 {{ end }}
 
 
 {{ define "background-media" }}
+<!--
 {{ $id := .File.ContentBaseName }}
 {{ if .Params.video }}
     {{ $video := resources.Get (print "video/" $id ".mp4") }}
@@ -49,5 +50,5 @@
         </div>
     {{ end }}
 {{ end }}
+-->
 {{ end }}
-

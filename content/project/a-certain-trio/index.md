@@ -21,18 +21,18 @@ links: [
 ---
 Live Improvisation project of Marcin Morga, Eugene Ignashev and Frederic Stritter.
 
-- Marcin
+- **Marcin**
     - No Input Mixer
     - Voice and various Effect Pedals
-- Eugene
+- **Eugene**
     - Lyra
     - Acoustic Objects and Electronic
-- Frederic
+- **Frederic**
     - Arp 2600
     - Voice
     - Electromagnetic Pick Up and Electronics
 
 Instruments may vary.
 
-///![AC3](a_certain_trio_big.jpg)
+![AC3](a_certain_trio_big.jpg)
 

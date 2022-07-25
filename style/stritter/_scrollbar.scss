@@ -18,14 +18,15 @@ $thick: math.div(1rem, 2.5) !default;
     display: none !important;
 }
 ::-webkit-scrollbar-track {
-    background: var(--bg);
+    background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-    background: color.adjust(theme.$bg, $lightness: -20%);
+    background: var(--f_low);
+    //background: color.adjust(theme.$bg, $lightness: -20%);
     &:hover {
-        background: var(--acc);
+        background: var(--f_med);
     }
     &:active {
-        background: var(--acc);
+        background: var(--f_high);
     }
 }

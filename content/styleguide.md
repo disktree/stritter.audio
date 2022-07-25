@@ -80,14 +80,14 @@ ol.theme > li.color {
 </style>
 <ol class="theme">
     <li class="color" style="background:var(--background);">background</li>
-    <li class="color" style="background:var(--f-hi);">f-hi</li>
-    <li class="color" style="background:var(--f);">f</li>
-    <li class="color" style="background:var(--f-low);">f-low</li>
-    <li class="color" style="background:var(--f-inv);">f-inv</li>
-    <li class="color" style="background:var(--b-hi);">b-hi</li>
-    <li class="color" style="background:var(--b);">b</li>
-    <li class="color" style="background:var(--b-low);">b-low</li>
-    <li class="color" style="background:var(--b-inv);">b-inv</li>
+    <li class="color" style="background:var(--f_high);">f-hi</li>
+    <li class="color" style="background:var(--f_med);">f</li>
+    <li class="color" style="background:var(--f_low);">f-low</li>
+    <li class="color" style="background:var(--f_inv);">f-inv</li>
+    <li class="color" style="background:var(--b_high);">b-hi</li>
+    <li class="color" style="background:var(--b_med);">b</li>
+    <li class="color" style="background:var(--b_low);">b-low</li>
+    <li class="color" style="background:var(--b_inv);">b-inv</li>
 </ol>
 {{< / html >}}
 

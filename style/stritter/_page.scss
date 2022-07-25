@@ -1,51 +1,70 @@
-body > main > article {
-    position: relative;
-    top: 1rem;
-    max-width: 960px;
-    margin: 0 2rem;
-    padding: 1rem 0 3rem 0;
-    > header {
-        //display: flex;
-        margin-bottom: 2em;
-    }
 
-    img, video {
-        width: 100%;
-        height: auto;
-    }
-    .footnotes {
-        font-size: 75%;
-        p {
-            margin: 0;
-
+ol.bold, ul.bold {
+    a {
+        transition: color 0.3s;
+        &:hover {
+            font-style: italic;
+            font-weight: 100;
+            transition: none;
         }
     }
-    ol {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+}
+
+ul.projects {
+    list-style: none;
+    > li {
+        //position: relative;
+        //width: 100%;
+        //direction: ltr;
+        a {
+            transition: color 0.3s;
+            &:hover {
+                font-style: italic;
+                font-weight: 200;
+
+                transition: none;
+            }
+        }
+        .title {
+            //font-size: 2rem;
+        }
+        h2 {
+            //font-size: 2rem;
+            //width: 100%;
+            //white-space: nowrap;
+            //overflow: hidden;
+            //text-overflow: ellipsis;
+        }   
+    }
+}
+
+ol.events {
+    list-style: none;
+    &.upcoming {
         > li {
-            //margin-bottom: 2rem;
+            //background: red;
+            margin: 0 0 1rem 0;
+            .date {
+                font-weight: 700;
+                letter-spacing: -0.05em;
+                font-size: 3rem;
+            }
+            .title {
+                //font-size:  1rem;
+            }
+
+            h2 {
+            }
+            h3 {
+                line-height: 1;
+            }
         }
-        &.live {
-            > li {
-                display: grid;
-                margin-bottom: 1rem;
-                //background: red;
-                > .meta {
-                    line-height: 1;
-                    display: flex;
-
-                    flex-wrap: nowrap;
-
-                    //background: green;
-                    > * {
-                    }
-                    > *::after {
-                        margin: 0 0.5ch;
-                        content: "/";
-                    }
-                }
+    }
+    &.past {
+        > li {
+            * {
+                //color: var(--f_low);
+                //background: var(--b_med);
             }
         }
     }
