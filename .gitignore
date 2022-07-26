@@ -10,4 +10,5 @@ nginx.conf
 static/style.css*
 *.zip
 *.[0-9]
-
+_data/
+_script/

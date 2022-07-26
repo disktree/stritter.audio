@@ -5,12 +5,6 @@
   "private": true,
   "scripts": {
     "clean": "rm -rf public && rm -f static/style.css*",
-    "build:style": "sass style/main.scss static/style.css",
-    "build:hugo": "hugo --environment production -D --verbose",
-    "build:videos": "node script/video_encode.js",
-    "build:metadata": "node script/music_metadata.js static/file data/meta",
-    "build:prepare": "npm run build:videos && npm run build:metadata",
-    "build": "npm run build:style && npm run build:hugo",
     "prod:hugo": "hugo --environment production --buildFuture --verbose",
     "prod:style": "sass style/main.scss static/style.css --no-source-map --style compressed",
     "prod": "npm run clean && npm run prod:style && npm run prod:hugo",
@@ -26,8 +20,6 @@
   "license": "ISC",
   "homepage": "https://github.com/disktree/stritter.audio/blob/master/README.md",
   "devDependencies": {
-    "ffmpeg-static": "^5.0.2",
-    "music-metadata": "^7.12.4",
     "sass": "^1.53.0"
   }
 }

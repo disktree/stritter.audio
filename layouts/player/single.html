@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article>
+    <header>
+        <h2>{{- .Title -}}</h2>
+    </header>
+	<div class="content">{{- .Content -}}</div>
+    {{ range .Site.Pages }}
+        <div>
+            <h5>{{.Title}}</h5>
+            {{ range .Resources.ByType "audio" }}
+            <audio src="{{.RelPermalink}}" controls></audio>
+
+            {{ end }}
+        </div>
+    {{ end }}
+</article>
+{{ end }}
+
+
