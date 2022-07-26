@@ -1,31 +1,27 @@
 {{ define "main" }}
 <article data-page="home">
-    <!--<label>news</label>-->
-    <!--<ol class="nolist">
-        {{ range $post := where .Site.RegularPages "Section" "news" }}
+    <label>News</label>
+    <ol class="nolist">
+        {{ range first 5 (where .Site.RegularPages "Section" "news") }}
         <li>
-            <a href="{{.RelPermalink}}">{{ .Title }}</a>
+            <a href="{{ .RelPermalink }}">
+                <time>{{ .Date.Format "2006/01/02" }}</time>
+                <span style="font-weight: bold;">{{- .Title | safeHTML -}}</span>
+            </a>
         </li>
         {{ end }}
     </ol>
-    <hr>-->
-    <label>updates</label>
-    <ol class="nolist">
-        {{ range (where .Site.RegularPages "Section" "news") }}
-            <li>{{ .Title }}</li>
-        {{ end }}
-    </ol>
     <hr>
-    <label>upcoming events</label>
-    <ol class="upcoming events big nolist">
+    <label>Upcoming Events</label>
+    <ol class="upcoming events big">
         {{ range (where .Site.RegularPages "Section" "live") }}
             {{ partial "li-upcoming" . }}
         {{ end }}
     </ol>
-    <!--<a href="{{ .Site.BaseURL }}/live/" class="more"><i class="ic-double_arrow"></i><span>[…]</span></a>-->
+    <a href="{{ .Site.BaseURL }}/live/" class="more"><i class="ic-double_arrow"></i><span>[…]</span></a>
     <hr>
-    <label>projects</label>
-    <ul class="projects big nolist">
+    <label>Projects</label>
+    <ul class="projects big">
         {{ range $project := where .Site.RegularPages "Section" "project" }}
             {{ .Render "li" }}
         {{ end }}

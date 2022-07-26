@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article>
+    <header>
+        <h2>{{- .Title | safeHTML -}}</h2>
+        <div>
+            <time>{{ .Date.Format "2006/01/02" }}</time>
+        </div>
+    </header>
+    <div class="content">{{- .Content | safeHTML -}}</div>
+</article>
+{{ end }}
+
+{{ define "subnav" }}
+    {{ partial "prev_next" . }}
+{{ end }}
+

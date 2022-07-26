@@ -1,25 +1,32 @@
 {{ define "main" }}
 <article>
-	<ol>
+    <ul class="files nolist">
         {{ $paginator := .Paginate .Pages }}
 		{{ range $paginator.Pages }}
-        <li>
-            {{ $id := .File.ContentBaseName }}
-            <h2>
-                <a href="{{ .Permalink }}">{{- .Title -}}</a>
-            </h2>
-            {{ range $.Site.Data.meta }}
-            <section class="meta">
-                    {{ if eq .file (print $id ".mp3") }}
+        {{ if .IsPage }}
+        {{ .Render "li" }}
+        {{ end }}
+        {{ end }}
+    </ul>
+	<!--<ol>-->
+        <!--{{ $paginator := .Paginate .Pages }}-->
+		<!--{{ range $paginator.Pages }}-->
+        <!--<li>-->
+            <!--{{ $id := .File.ContentBaseName }}-->
+            <!--<h2>-->
+                <!--<a href="{{ .Permalink }}">{{- .Title -}}</a>-->
+            <!--</h2>-->
+            <!--{{ range $.Site.Data.meta }}-->
+            <!--<section class="meta">-->
+                    <!--{{ if eq .file (print $id ".mp3") }}-->
                     <!--<div>{{ .file }}</div>-->
-                    <pre>{{ .meta }}</pre>
-                    {{ end }}
-            </section>
-            {{ end }}
-        </li>
-		{{ end }}
-	</ol>
+                    <!--<pre>{{ .meta }}</pre>-->
+                    <!--{{ end }}-->
+            <!--</section>-->
+            <!--{{ end }}-->
+        <!--</li>-->
+		<!--{{ end }}-->
+	<!--</ol>-->
 </article>
 {{ end }}
-
 

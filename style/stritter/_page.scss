@@ -5,7 +5,7 @@ ol.big, ul.big {
             transition: color 0.3s;
             &:hover {
                 font-style: italic;
-                font-weight: 200;
+                font-weight: 100 !important;
                 transition: none;
             }
         }
@@ -18,23 +18,19 @@ ol.events {
         > li {
             margin: 0 0 1rem 0;
             .date {
-                font-weight: 700;
+                //font-weight: 700;
                 letter-spacing: -0.05em;
                 font-size: 3rem;
             }
             h3 {
                 line-height: 1;
             }
-        }
-    }
-    &.past {
-        > li {
-            * {
-                //color: var(--f_low);
-                //background: var(--b_med);
+            a {
+                background: red;
             }
         }
     }
+    //&.past {
 }
 
 body > main > article {

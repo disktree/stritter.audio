@@ -1,32 +1,16 @@
 {{ define "main" }}
 <article>
     <label>Upcoming events</label>
-    {{ $paginator := .Paginate .Data.Pages }}
-    <ol class="upcoming events nolist">
-        {{ range $event := $paginator.Pages }}
-            {{ $date := (time $event.Params.date) }}
-            {{ $upcoming := $date.After now }}
-            {{ $project := .GetPage (print "/project/" .Params.project) }}
+    <ol class="upcoming events big">
+        {{ range $event := .RegularPages }}
+            {{ $upcoming := (time $event.Params.date).After now }}
             {{ if $upcoming }}
-            <li class="upcoming">
-                <a href="{{ .RelPermalink }}">
-                    <h2>
-                        <time>{{ $date.Format "2006/01/02" }}</time>
-                    </h2>
-                    <h3>{{- .Title | markdownify | safeHTML -}}</h3>
-                </a>
-                {{ with $event.Params.location }}
-                <div style="color: var(--f_low);">
-                    <i class="ic-location_on"></i>
-                    <span>{{- . | markdownify -}}</span>
-                </div>
-                {{ end }}
-            </li>
+                {{ partial "li-upcoming" .}}
             {{ end }}
         {{ end }}
     </ol>
     <hr>
     <label>Past events</label>
     {{ .Render "table" }}
-  </article>
+</article>
 {{ end }}

@@ -1,9 +1,7 @@
 baseURL = ""
-title = "stritter.audio"
+title = "Stritter.Audio"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-description = "Frederic Stritter is a Sound Artist that lives and works in Vienna."
-keywords =  ["velak","verein","akustik","musik","events"]
 
 disableHugoGeneratorInject = true
 enableGitInfo = true

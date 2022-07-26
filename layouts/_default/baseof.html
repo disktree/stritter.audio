@@ -22,6 +22,20 @@
         {{ template "_internal/twitter_cards.html" . }}
 
         <title>{{block "title" .}}{{.Site.Title}}{{end}}{{with .Page.Title}} | {{.}}{{end}}</title>
+        
+        <style>
+            :root {
+                --background: #eeefee;
+                --f_high: #222222;
+                --f_med: #999999;
+                --f_low: #bbbcbb;
+                --f_inv: #545454;
+                --b_high: #545454;
+                --b_med: #ced0ce;
+                --b_low: #f5f5f5;
+                --b_inv: #ed2c3e;  
+            }
+        </style>
 
         <link rel="stylesheet" href="{{ $root }}/style.css">
         <!--<link rel="alternate" href="feed" type="application/atom+xml" title="Stritter Audio"/>-->

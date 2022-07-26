@@ -4,8 +4,8 @@
 {{ $project := .GetPage (print "/project/" .Params.project) }}
 <article>
     <header>
-        <h2><time>{{ .Date.Format "2006/01/02" }}</time></h2>
-        <h1>{{- .Title | safeHTML -}}</h1>
+        <h3><time>{{ .Date.Format "2006/01/02" }}</time></h3>
+        <h2>{{- .Title | safeHTML -}}</h2>
         <!--{{ with .Params.description }}<h4>{{- . | markdownify -}}</h4/>{{ end }}-->
         {{ with $project }}
         <div>

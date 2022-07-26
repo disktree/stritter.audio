@@ -1,18 +1,22 @@
 {{ define "main" }}
+{{ $id := .File.ContentBaseName }}
+{{ $url := print .Site.BaseURL "file/" .Params.file }}
+{{ $meta := (getJSON (print "data/meta/" $id ".json")).format }}
 <article>
-    <h2>{{ .Title }}</h2>
-    {{ .Site.Data.meta.einsiedlerpark.meta.codec }}    
-
-    <!--{{ $id := .File.ContentBaseName }}-->
-
-
-    <!--{{ $slice := slice $.Site.Data.audio_metadata }}-->
-    <!--{{ range $.Site.Data.audio_metadata }}-->
-		<!--<div>{{.meta.codec}}</div>-->
-    <!--{{ end }}-->
-	<section class="content">{{- .Content -}}</section>
-    <a href="{{ .Site.BaseURL }}file/{{ .Params.file }}">{{ .Params.file }}</a>
+    <h2>{{- .Title -}}</h2>
+    <div>
+        <!--<div>{{ $meta.format.duration }}</div>-->
+        {{ with .Params.microphone }}<div>Microphone: {{ . }}</div>{{end}}
+        {{ with .Params.recorder }}<div>Recorder: {{ . }}</div>{{end}}
+        <div>Duration: {{ math.Round $meta.duration }}secs</div>
+        <div>Download: <a href="{{ $url }}">{{ .Params.file }}</a></div>
+    </div>
+    <!--<div>-->
+        <!--<i class="ic-file_download"></i>-->
+        <!--<a href="{{ $url }}">{{ .Params.file }}</a>-->
+    <!--</div>-->
+    <section class="content">{{- .Content -}}</section>
+    <hr>
+    <pre>{{ $meta | jsonify (dict "indent" "  ") }}</pre>
 </article>
 {{ end }}
-
-

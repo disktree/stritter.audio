@@ -1,26 +1,8 @@
 {{ $date := time .Params.date }}
 {{ $upcoming := $date.After now }}
-
-
-<!--<li {{ with $upcoming }}class="upcoming"{{ end }}>
-    <table>
-        <tr>
-            <td>
-
-                <time>{{ $date.Format "2006-01-02" }}</time>
-            </td>
-            <td>
-                <a href="{{ .RelPermalink }}" class="title">{{- .Title -}}</a>
-            </td>
-        </tr>
-    </table>
-</li>-->
 <li class="{{ with $upcoming }}upcoming{{ end }}">
-   
-
     <a href="{{ .RelPermalink }}" class="title">{{- .Title -}}</a>
     <div class="details">
-
         <time>{{ $date.Format "2006-01-02" }}</time>
         <address class="location">
             {{ with .Params.location }}
@@ -29,6 +11,4 @@
             {{ end }} 
         </address>
     </div>
-
-
 </li>
