@@ -1,6 +1,7 @@
 ---
 title: "H.E.A.D."
 date: 2017-03-31
+description: "H.E.A.D. Revolution - Hedonic Engineering And Development"
 weight: 1000
 video: { start: 0 }
 ---
