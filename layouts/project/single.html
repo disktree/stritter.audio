@@ -7,16 +7,15 @@
     <div class="content">{{- .Content | safeHTML -}}</div>
 
     {{ $events := where (where .Site.RegularPages "Section" "live") "Params.project" "==" $id }}
-    {{ $n_events := len $events }}
-    {{ if gt $n_events 0 }}
-        <label>project events</label>
-        <table>
-            {{ range $event := $events }}
-                {{ if eq $event.Params.project $id }}
-                    {{ .Render "tr" }}
-                {{ end }}
+    {{ if gt (len $events) 0 }}
+    <label>project events</label>
+    <table>
+        {{ range $event := $events }}
+            {{ if eq $event.Params.project $id }}
+                {{ .Render "tr" }}
             {{ end }}
-        </table>
+        {{ end }}
+    </table>
     {{ end }}
 
     <!--{{ $audiofiles := .Resources.ByType "audio" }}

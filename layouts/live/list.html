@@ -15,7 +15,12 @@
                     </h2>
                     <h3>{{- .Title | markdownify | safeHTML -}}</h3>
                 </a>
-                {{ with $event.Params.location }}<div style="color: var(--f_low);">{{- . | markdownify -}}</div>{{ end }}
+                {{ with $event.Params.location }}
+                <div style="color: var(--f_low);">
+                    <i class="ic-location_on"></i>
+                    <span>{{- . | markdownify -}}</span>
+                </div>
+                {{ end }}
             </li>
             {{ end }}
         {{ end }}

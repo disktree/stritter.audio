@@ -9,15 +9,15 @@
         {{ end }}
     </ol>
     <hr>-->
-    <!--<label>updates</label>
+    <label>updates</label>
     <ol class="nolist">
         {{ range (where .Site.RegularPages "Section" "news") }}
             <li>{{ .Title }}</li>
         {{ end }}
     </ol>
-    <hr>-->
+    <hr>
     <label>upcoming events</label>
-    <ol class="upcoming events nolist">
+    <ol class="upcoming events big nolist">
         {{ range (where .Site.RegularPages "Section" "live") }}
             {{ partial "li-upcoming" . }}
         {{ end }}
@@ -25,7 +25,7 @@
     <!--<a href="{{ .Site.BaseURL }}/live/" class="more"><i class="ic-double_arrow"></i><span>[…]</span></a>-->
     <hr>
     <label>projects</label>
-    <ul class="projects nolist">
+    <ul class="projects big nolist">
         {{ range $project := where .Site.RegularPages "Section" "project" }}
             {{ .Render "li" }}
         {{ end }}
