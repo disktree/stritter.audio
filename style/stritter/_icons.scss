@@ -9,16 +9,21 @@
 }
 
 [class^="ic-"], [class*=" ic-"] {
-  font-family: 'Icons' !important;
-  //speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  //line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Icons' !important;
+    //speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    //line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
+/*[class^="ic-"].x2, [class*=" ic-"].x2 {
+    font-size: 150%;
+    display: inline;
+}*/
 
 $ic-warning: "\e900";
 $ic-album: "\e969";
