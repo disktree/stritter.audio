@@ -1,4 +1,4 @@
-{{ $src := .Get "src" }}
+{{ $src := .Get 0 }}
 {{ if $src }}
 <audio src="{{ $src }}" controls></audio>
 {{ end }}

@@ -1,32 +1,59 @@
 {{ define "main" }}
 <article>
+    <header>
+        <!--<h1>Recordings</h1>  -->
+    </header>
     <ul class="files nolist">
-        {{ $paginator := .Paginate .Pages }}
-		{{ range $paginator.Pages }}
-        {{ if .IsPage }}
-        {{ .Render "li" }}
-        {{ end }}
+		{{ range .RegularPages }}
+        <li>
+            <h3><i class="ic-audiotrack"></i> <span>{{- .Title -}}</span></h3>
+            <!--{{ with .Params.microphone }}<div>Microphone: {{- . | safeHTML -}}</div>{{ end }}
+            {{ with .Params.recorder }}<div>Recorder: {{- . | safeHTML -}}</div>{{ end }}
+            {{ with .Params.files }}
+                {{ range $file := . }}
+                    {{ $path := print "audio/" $file }}
+                    {{ $res := resources.Get $path }}
+                    <div>
+                        <i class="ic-file_download"></i>
+                        <a href="{{ $res.Permalink }}">{{ $file }}</a>
+                    </div>
+                {{ end }}
+            {{ end }}-->
+            <table class="audio">
+                {{ with .Params.microphone }}
+                <tr>
+                    <th>Microphone:</th>
+                    <td>{{- . | safeHTML -}}</td>
+                </tr>
+                {{ end }}
+                {{ with .Params.recorder }}
+                <tr>
+                    <th>Recorder:</th>
+                    <td>{{- . | safeHTML -}}</td>
+                </tr>
+                {{ end }}
+                {{ with .Params.details }}
+                <tr>
+                    <th></th>
+                    <td>{{- . | safeHTML -}}</td>
+                </tr>
+                {{ end }}
+
+                {{ with .Params.files }}
+                    {{ range $file := . }}
+                        {{ $path := print "audio/" $file }}
+                        {{ $res := resources.Get $path }}
+                        <tr>
+                            <th><i class="ic-file_download"></i></th>
+                            <td><a href="{{ $res.Permalink }}" download>{{ $file | safeHTML }}</a></td>
+                        </tr>
+                    {{ end }}
+                {{ end }}
+            </table>
+        </li>
+        <br>
         {{ end }}
     </ul>
-	<!--<ol>-->
-        <!--{{ $paginator := .Paginate .Pages }}-->
-		<!--{{ range $paginator.Pages }}-->
-        <!--<li>-->
-            <!--{{ $id := .File.ContentBaseName }}-->
-            <!--<h2>-->
-                <!--<a href="{{ .Permalink }}">{{- .Title -}}</a>-->
-            <!--</h2>-->
-            <!--{{ range $.Site.Data.meta }}-->
-            <!--<section class="meta">-->
-                    <!--{{ if eq .file (print $id ".mp3") }}-->
-                    <!--<div>{{ .file }}</div>-->
-                    <!--<pre>{{ .meta }}</pre>-->
-                    <!--{{ end }}-->
-            <!--</section>-->
-            <!--{{ end }}-->
-        <!--</li>-->
-		<!--{{ end }}-->
-	<!--</ol>-->
 </article>
 {{ end }}
 

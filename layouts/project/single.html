@@ -1,10 +1,24 @@
 {{ define "main" }}
 {{ $id := .File.ContentBaseName }}
 <article class="project">
+    
     <header>
         <h2>{{- .Title | safeHTML -}}</h2>
     </header>
+
     <div class="content">{{- .Content | safeHTML -}}</div>
+
+    {{ with .Params.links }}
+        <ul class="nolist">
+        {{ range . }}
+            <li>
+                <i class="ic-double_arrow"></i>
+                <a href="{{- . -}}">{{- . -}}</a>
+            </li> 
+        {{ end }}
+        </ul>
+        <br>
+    {{ end }}
 
     {{ $events := where (where .Site.RegularPages "Section" "live") "Params.project" "==" $id }}
     {{ if gt (len $events) 0 }}
@@ -17,13 +31,13 @@
         {{ end }}
     </table>
     {{ end }}
-
-    <!--{{ $audiofiles := .Resources.ByType "audio" }}
-    {{ with $audiofiles }}
+    
+    <!--{{ with .Resources.ByType "audio" }}
+    <br>
+    <label>audio files</label>
     <ol class="nolist">
-        {{ range $audiofiles }}
+        {{ range . }}
         <li>
-            <audio src="{{ .RelPermalink }}" controls></audio>
             <i class="ic-audiotrack"></i>
             <a href="{{.RelPermalink}}">{{- .Name | safeHTML -}}</a>
         </li>
@@ -31,13 +45,10 @@
     </ol>
     {{ end }}-->
     
-    
     <!--{{ range $res := .Resources.ByType "image" }}
     <img src="{{ .RelPermalink }}">
     {{ end }}-->
 
-    <!--{{ partial "gallery" .}}-->
-    <!--{{ partial "prev_next" . }}-->
 </article>
 {{ end }}
 
