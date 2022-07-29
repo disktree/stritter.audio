@@ -4,6 +4,9 @@ date: 2017-03-31
 description: "H.E.A.D. Revolution - Hedonic Engineering And Development"
 weight: 1000
 video: { start: 0 }
+theme: {
+    f_high: "#fff"
+}
 ---
 Virtual Reality and Sound Performance with [Tong](https://disktree.net) and Linus Barta.
 

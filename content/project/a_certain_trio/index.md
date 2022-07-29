@@ -25,4 +25,5 @@ Live Improvisation project of Marcin Morga, Eugene Ignashev and Frederic Stritte
 Instruments may vary.
 
 ![AC3](a_certain_trio.jpg)
+![AC3](a_certain_trio-pipe.jpg)
 

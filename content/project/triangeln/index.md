@@ -12,7 +12,7 @@ All sounds recorded stereo in a dry swimming pool.
 The triangle sounds are mixed with sine waves.  
 The spatialisation, situated as triangles, fosters the beating.
 
-#### 3x3 Speakers routed
+##### 3x3 Speakers routed
 - Triangles to A/B, D/E, G/H
 - Sine to C, F, I
 
