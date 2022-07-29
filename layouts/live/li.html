@@ -1,5 +1,5 @@
 <li class="upcoming">
-    <a href="{{ .RelPermalink }}">
+    <a href="{{ .RelPermalink }}" class="fade">
         <h3>
             <div>{{ .Date.Format "2006/01/02" }}</div>
             <div>{{- .Title | markdownify | safeHTML -}}</div>

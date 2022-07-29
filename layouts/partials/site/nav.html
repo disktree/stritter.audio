@@ -3,11 +3,11 @@
     {{ range .Site.Menus.nav }}
         {{ if or ( $page.IsMenuCurrent "nav" .) ( $page.HasMenuCurrent "nav" .) }}
         <li class="active">
-            <a href="{{ .URL }}" class="active">{{- .Name | safeHTML -}}</a>
+            <a href="{{ .URL }}" class="active fade">{{- .Name | safeHTML -}}</a>
         </li>
         {{ else }}
         <li>
-            <a href="{{ .URL }}">{{- .Name | safeHTML -}}</a>
+            <a href="{{ .URL }}" class="fade">{{- .Name | safeHTML -}}</a>
         </li>
         {{ end }}
     {{ end }}

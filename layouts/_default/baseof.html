@@ -40,7 +40,10 @@
         </header>
         <main>{{ block "main" . }}{{- partial "site/main.html" . -}}{{ end }}</main>
 		<footer class="meta">{{ block "footer" . }}{{- partial "site/footer.html" . -}}{{ end }}</footer>
-        <div id="background-media">{{ block "background-media" .}}{{ end }}</div>
+        <div id="background-media">
+            {{ block "background-media" .}}{{ end }}
+            <!--<div class="gradient"></div>-->
+        </div>
         {{ with .Params.theme }}
         <style>
             :root {
@@ -56,6 +59,7 @@
             }
         </style>
         {{ end }}
+		<div id="vignette"></div>
     </body>
 </html>
 

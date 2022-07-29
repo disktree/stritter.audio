@@ -14,22 +14,24 @@
     <section>
         <label>Past Events</label>
         <table>
+            <tbody>
             {{ range $event := where .Site.RegularPages "Section" "live" }}
-            {{ $date := (time $event.Params.date) }}
-            {{ $upcoming := $date.After now }}
-            {{ if not $upcoming }}
-            <tr>
-                <td>{{ .Date.Format "2006/01/02" }}</td>
-                <td>
-                    <a href="{{ .RelPermalink }}"><strong>{{ .Title | markdownify | safeHTML -}}</strong></a>
-                    {{ with .Params.location }}
-                    <i class="ic-location_on"></i>
-                    <span>{{- . | markdownify | safeHTML -}}</span>
-                    {{ end }}
-                </td>
-            </tr>
+                {{ $date := (time $event.Params.date) }}
+                {{ $upcoming := $date.After now }}
+                {{ if not $upcoming }}
+                <tr>
+                    <td class="f_low">{{ .Date.Format "2006/01/02" }}</td>
+                    <td>
+                        <a href="{{ .RelPermalink }}"><strong>{{ .Title | markdownify | safeHTML -}}</strong></a>
+                        {{ with .Params.location }}
+                        <i class="ic-location_on f_low"></i>
+                        <span class="f_low">{{- . | markdownify | safeHTML -}}</span>
+                        {{ end }}
+                    </td>
+                </tr>
+                {{ end }}
             {{ end }}
-            {{ end }}
+            </tbody>
         </table>
     </section>
     <!--<style>

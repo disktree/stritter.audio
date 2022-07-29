@@ -5,33 +5,33 @@
     </header>
     <div class="content">{{- .Content | safeHTML -}}</div>
 
-
-    <!--
     {{ $id := .File.ContentBaseName }}
+
     {{ $events := where (where .Site.RegularPages "Section" "live") "Params.project" "==" $id }}
     {{ if gt (len $events) 0 }}
-    <label>project events</label>
-    <table>
-        {{ range $event := $events }}
-            {{ if eq $event.Params.project $id }}
-                {{ .Render "tr" }}
+    <section>
+        <!--<label>Upcoming Events</label>-->
+        <ol class="nolist">
+            {{ range $event := $events }}
+                {{ $upcoming := (time $event.Params.date).After now }}
+                {{ if $upcoming }}
+                    {{ .Render "li" }}
+                {{ end }}
             {{ end }}
-        {{ end }}
-    </table>
+        </ol>
+    </section>
     {{ end }}
 
- <section>
-        <label>Past events</label>
+    <section>
+        <label>Past Events</label>
         <table>
             {{ range $event := $events }}
-            {{ $date := (time $event.Params.date) }}
-            {{ $upcoming := $date.After now }}
+            {{ $upcoming := (time $event.Params.date).After now }}
             {{ if not $upcoming }}
-            {{ if eq $event $id }}
             <tr>
-                <td style="text-align: right;">{{ .Date.Format "2006/01/02" }}</td>
+                <td>{{ .Date.Format "2006/01/02" }}</td>
                 <td>
-                    <a href="{{ .RelPermalink }}">{{ .Title | markdownify | safeHTML -}}</a>
+                    <a href="{{ .RelPermalink }}"><strong>{{ .Title | markdownify | safeHTML -}}</strong></a>
                     {{ with .Params.location }}
                     <i class="ic-location_on"></i>
                     <span>{{- . | markdownify | safeHTML -}}</span>
@@ -40,12 +40,8 @@
             </tr>
             {{ end }}
             {{ end }}
-            {{ end }}
         </table>
     </section>
--->
-
-
 
 </article>
 {{ end }}
@@ -55,15 +51,14 @@
 {{ end }}
 
 {{ define "background-media" }}
-{{ $id := .File.ContentBaseName }}
 {{ if .Params.video }}
+    {{ $id := .File.ContentBaseName }}
     {{ $video := resources.Get (print "video/" $id ".mp4") }}
     {{ if $video }}
         {{ $start := .Params.video.start | default 0 }}
         {{ $src := print $video.Permalink "#t=" $start }}
         <div id="background-media">
             <video src="{{ $src }}" autoplay muted loop></video>
-            <!--<div class="gradient"></div>-->
         </div>
     {{ end }}
 {{ end }}

@@ -27,10 +27,11 @@
         </div>
         {{ end }}
     </header>
+    {{ with .Params.description }}<div class="description">{{- . -}}</div>{{ end }}
     <div class="content">{{- .Content -}}</div>
 </article>
 {{ end }}
 
 {{ define "subnav" }}
-{{ partial "prev_next" . }}
+    {{ partial "prev_next" . }}
 {{ end }}
