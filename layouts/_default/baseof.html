@@ -20,37 +20,17 @@
 
         {{ template "_internal/opengraph.html" . }}
         {{ template "_internal/twitter_cards.html" . }}
-
-        <title>{{block "title" .}}{{.Site.Title}}{{end}}{{with .Page.Title}} | {{.}}{{end}}</title>
+        {{ template "_internal/schema.html" . }}
         
-        <style>
-            :root {
-                --background: #eeefee;
-                --f_high: #222222;
-                --f_med: #999999;
-                --f_low: #bbbcbb;
-                --f_inv: #545454;
-                --b_high: #545454;
-                --b_med: #ced0ce;
-                --b_low: #f5f5f5;
-                --b_inv: #ed2c3e;  
-            }
-        </style>
-
+        <title>{{block "title" .}}{{.Site.Title}}{{end}}{{with .Page.Title}} | {{.}}{{end}}</title>
+       
         <link rel="stylesheet" href="{{ $root }}/style.css">
-        <!--<link rel="alternate" href="feed" type="application/atom+xml" title="Stritter Audio"/>-->
+        <link rel="alternate" href="feed" type="application/atom+xml" title="Stritter Audio"/>
         <link rel="manifest" href="{{ $root }}/manifest.json">
         {{ partial "site/favicons" . }}
        
         <script src="{{ (resources.Get "script/app.js").Permalink }}" async></script>
-        <script src="{{ (resources.Get "script/theme.js" | resources.Minify).RelPermalink }}" async></script>
-        {{ range $val := $.Site.Params.customJS }}
-		    {{ if gt (len $val) 0 }}<script src="{{ $root }}{{ $val }}" async></script>{{ end }}
-		{{ end }}
-        {{ range $val := .Params.customJS }}
-		    {{ if gt (len $val) 0 }}<script src="{{ $root }}{{ $val }}" async></script>{{ end }}
-        {{ end }}
-
+        
 	</head>
 	<body>
         <header>
@@ -61,6 +41,21 @@
         <main>{{ block "main" . }}{{- partial "site/main.html" . -}}{{ end }}</main>
 		<footer class="meta">{{ block "footer" . }}{{- partial "site/footer.html" . -}}{{ end }}</footer>
         <div id="background-media">{{ block "background-media" .}}{{ end }}</div>
+        {{ with .Params.theme }}
+        <style>
+            :root {
+                {{ with .background }}--background: {{.}};{{ end }}
+                {{ with .f_high }}--f_high: {{.}};{{ end }}
+                {{ with .f_med }}--f_med: {{.}};{{ end }}
+                {{ with .f_low }}--f_low: {{.}};{{ end }}
+                {{ with .f_inv }}--f_inv: {{.}};{{ end }}
+                {{ with .b_high }}--b_high: {{.}};{{ end }}
+                {{ with .b_med }}--b_med: {{.}};{{ end }}
+                {{ with .b_low }}--b_low: {{.}};{{ end }}
+                {{ with .b_inv }}--b_inv: {{.}};{{ end }}
+            }
+        </style>
+        {{ end }}
     </body>
 </html>
 

@@ -1,25 +1,13 @@
 {{ define "main" }}
-{{ $id := .File.ContentBaseName }}
-<article class="project">
-    
+<article data-page="project">
     <header>
         <h2>{{- .Title | safeHTML -}}</h2>
     </header>
-
     <div class="content">{{- .Content | safeHTML -}}</div>
 
-    {{ with .Params.links }}
-        <ul class="nolist">
-        {{ range . }}
-            <li>
-                <i class="ic-double_arrow"></i>
-                <a href="{{- . -}}">{{- . -}}</a>
-            </li> 
-        {{ end }}
-        </ul>
-        <br>
-    {{ end }}
 
+    <!--
+    {{ $id := .File.ContentBaseName }}
     {{ $events := where (where .Site.RegularPages "Section" "live") "Params.project" "==" $id }}
     {{ if gt (len $events) 0 }}
     <label>project events</label>
@@ -31,23 +19,33 @@
         {{ end }}
     </table>
     {{ end }}
-    
-    <!--{{ with .Resources.ByType "audio" }}
-    <br>
-    <label>audio files</label>
-    <ol class="nolist">
-        {{ range . }}
-        <li>
-            <i class="ic-audiotrack"></i>
-            <a href="{{.RelPermalink}}">{{- .Name | safeHTML -}}</a>
-        </li>
-        {{ end }}
-    </ol>
-    {{ end }}-->
-    
-    <!--{{ range $res := .Resources.ByType "image" }}
-    <img src="{{ .RelPermalink }}">
-    {{ end }}-->
+
+ <section>
+        <label>Past events</label>
+        <table>
+            {{ range $event := $events }}
+            {{ $date := (time $event.Params.date) }}
+            {{ $upcoming := $date.After now }}
+            {{ if not $upcoming }}
+            {{ if eq $event $id }}
+            <tr>
+                <td style="text-align: right;">{{ .Date.Format "2006/01/02" }}</td>
+                <td>
+                    <a href="{{ .RelPermalink }}">{{ .Title | markdownify | safeHTML -}}</a>
+                    {{ with .Params.location }}
+                    <i class="ic-location_on"></i>
+                    <span>{{- . | markdownify | safeHTML -}}</span>
+                    {{ end }}
+                </td>
+            </tr>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+        </table>
+    </section>
+-->
+
+
 
 </article>
 {{ end }}
@@ -57,7 +55,6 @@
 {{ end }}
 
 {{ define "background-media" }}
-<!--
 {{ $id := .File.ContentBaseName }}
 {{ if .Params.video }}
     {{ $video := resources.Get (print "video/" $id ".mp4") }}
@@ -65,10 +62,9 @@
         {{ $start := .Params.video.start | default 0 }}
         {{ $src := print $video.Permalink "#t=" $start }}
         <div id="background-media">
-            <video src="{{ $src }}" autoplay muted></video>
-            <div class="gradient"></div>
+            <video src="{{ $src }}" autoplay muted loop></video>
+            <!--<div class="gradient"></div>-->
         </div>
     {{ end }}
 {{ end }}
--->
 {{ end }}

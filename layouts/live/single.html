@@ -7,12 +7,6 @@
         <h3><time>{{ .Date.Format "2006/01/02" }}</time></h3>
         <h2>{{- .Title | safeHTML -}}</h2>
         <!--{{ with .Params.description }}<h4>{{- . | markdownify -}}</h4/>{{ end }}-->
-        {{ with $project }}
-        <div>
-            <i class="ic-stop_circle"></i>
-            <a href="{{ .RelPermalink }}">{{- .Title -}}</a>
-        </div>
-        {{ end }}
         {{ with .Params.location }}
         <div>
             <i class="ic-location_on"></i>
@@ -25,11 +19,18 @@
             <span>{{- . | markdownify -}} </span>
         </div>
         {{ end }}
+
+        {{ with $project }}
+        <div>
+            <i class="ic-stop_circle"></i>
+            <a href="{{ .RelPermalink }}">{{- .Title -}}</a>
+        </div>
+        {{ end }}
     </header>
     <div class="content">{{- .Content -}}</div>
 </article>
 {{ end }}
 
 {{ define "subnav" }}
-    {{ partial "prev_next" . }}
+{{ partial "prev_next" . }}
 {{ end }}

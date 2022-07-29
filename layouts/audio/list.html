@@ -1,24 +1,9 @@
 {{ define "main" }}
 <article>
-    <header>
-        <!--<h1>Recordings</h1>  -->
-    </header>
-    <ul class="files nolist">
+    <ul>
 		{{ range .RegularPages }}
         <li>
-            <h3><i class="ic-audiotrack"></i> <span>{{- .Title -}}</span></h3>
-            <!--{{ with .Params.microphone }}<div>Microphone: {{- . | safeHTML -}}</div>{{ end }}
-            {{ with .Params.recorder }}<div>Recorder: {{- . | safeHTML -}}</div>{{ end }}
-            {{ with .Params.files }}
-                {{ range $file := . }}
-                    {{ $path := print "audio/" $file }}
-                    {{ $res := resources.Get $path }}
-                    <div>
-                        <i class="ic-file_download"></i>
-                        <a href="{{ $res.Permalink }}">{{ $file }}</a>
-                    </div>
-                {{ end }}
-            {{ end }}-->
+            <h4 class="title"><i class="ic-audiotrack"></i> <span>{{- .Title -}}</span></h4>
             <table class="audio">
                 {{ with .Params.microphone }}
                 <tr>
@@ -38,20 +23,18 @@
                     <td>{{- . | safeHTML -}}</td>
                 </tr>
                 {{ end }}
-
                 {{ with .Params.files }}
                     {{ range $file := . }}
                         {{ $path := print "audio/" $file }}
                         {{ $res := resources.Get $path }}
                         <tr>
                             <th><i class="ic-file_download"></i></th>
-                            <td><a href="{{ $res.Permalink }}" download>{{ $file | safeHTML }}</a></td>
+                            <td><a href="{{ $res.Permalink }}">{{ $file | safeHTML }}</a></td>
                         </tr>
                     {{ end }}
                 {{ end }}
             </table>
         </li>
-        <br>
         {{ end }}
     </ul>
 </article>

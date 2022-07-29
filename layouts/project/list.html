@@ -1,11 +1,18 @@
 {{ define "main" }}
 <article>
-    {{ with .Content }}<div class="content">{{- . | safeHTML -}}</div>{{ end }}
-	<ul class="big">
-         {{ range $project := where .Site.RegularPages "Section" "project" }}
-            {{ .Render "li" }}
-        {{ end }}
-	</ul>
+    <!--{{ with .Content }}<div class="content">{{- . | safeHTML -}}</div>{{ end }}-->
+
+    <section>
+        <ul>
+             {{ range $project := .RegularPages }}
+            <li>
+                <a href="{{ .RelPermalink }}">
+                    <h3>{{- .Title -}}</h3>
+                </a> 
+            </li>
+            {{ end }}
+        </ul>
+    </section>
 </article>
 {{ end }}
 

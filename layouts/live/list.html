@@ -1,16 +1,42 @@
 {{ define "main" }}
 <article>
-    <label>Upcoming events</label>
-    <ol class="upcoming events big">
-        {{ range $event := .RegularPages }}
+    <section>
+        <label>Upcoming Events</label>
+        <ol class="nolist">
+            {{ range $event := .RegularPages }}
             {{ $upcoming := (time $event.Params.date).After now }}
             {{ if $upcoming }}
-                {{ partial "li-upcoming" .}}
+                {{ .Render "li" }}
             {{ end }}
-        {{ end }}
-    </ol>
-    <hr>
-    <label>Past events</label>
-    {{ .Render "table" }}
+            {{ end }}
+        </ol>
+    </section>
+    <section>
+        <label>Past Events</label>
+        <table>
+            {{ range $event := where .Site.RegularPages "Section" "live" }}
+            {{ $date := (time $event.Params.date) }}
+            {{ $upcoming := $date.After now }}
+            {{ if not $upcoming }}
+            <tr>
+                <td>{{ .Date.Format "2006/01/02" }}</td>
+                <td>
+                    <a href="{{ .RelPermalink }}"><strong>{{ .Title | markdownify | safeHTML -}}</strong></a>
+                    {{ with .Params.location }}
+                    <i class="ic-location_on"></i>
+                    <span>{{- . | markdownify | safeHTML -}}</span>
+                    {{ end }}
+                </td>
+            </tr>
+            {{ end }}
+            {{ end }}
+        </table>
+    </section>
+    <!--<style>
+article > section > ol > li > a {
+pointer-events: none;
+        }
+    </style>-->
 </article>
+
 {{ end }}

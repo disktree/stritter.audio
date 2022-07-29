@@ -1,14 +1,14 @@
-{{ $date := time .Params.date }}
-{{ $upcoming := $date.After now }}
-<li class="{{ with $upcoming }}upcoming{{ end }}">
-    <a href="{{ .RelPermalink }}" class="title">{{- .Title -}}</a>
-    <div class="details">
-        <time>{{ $date.Format "2006-01-02" }}</time>
-        <address class="location">
-            {{ with .Params.location }}
-                {{- . | markdownify -}}
-
-            {{ end }} 
-        </address>
+<li class="upcoming">
+    <a href="{{ .RelPermalink }}">
+        <h3>
+            <div>{{ .Date.Format "2006/01/02" }}</div>
+            <div>{{- .Title | markdownify | safeHTML -}}</div>
+        </h3>
+    </a>
+    {{ with .Params.location }}
+    <div style="color: var(--f_low);">
+        <i class="ic-location_on"></i>
+        <span>{{- . | markdownify -}}</span>
     </div>
+    {{ end }}
 </li>
