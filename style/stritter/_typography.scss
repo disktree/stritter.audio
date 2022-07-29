@@ -9,7 +9,7 @@
     --text-scale-ratio: 1.25;
     --body-font-weight: 500;
 	--heading-line-height: 2;
-	--heading-font-weight: 700;
+    --heading-font-weight: 700;
 	--text-unit: var(--text-base-size); // if Em units → --text-unit: 1em;
     --text-space-y-multiplier: 1;
 
@@ -43,41 +43,9 @@
     }
 }
 
-@font-face {
-	font-family: "Inter";
-    font-weight: var(--body-font-weight);
-	font-display: block;
-	src:
-        url("font/Inter-Regular.woff2") format("woff2"),
-        url("font/Inter-Regular.ttf") format("truetype");
-}
-@font-face {
-	font-family: "Inter";
-	font-weight: bold;
-	font-display: block;
-	src:
-        url("font/Inter-Bold.woff2") format("woff2"),
-        url("font/Inter-Bold.ttf") format("truetype");
-}
-@font-face {
-	font-family: "Inter";
-	font-weight: 100;
-	font-display: block;
-	src:
-        url("font/Inter-Light.woff2") format("woff2"),
-        url("font/Inter-Light.ttf") format("truetype");
-}
-@font-face {
-	font-family: "RobotoMono";
-	font-display: block;
-	src:
-        url("font/RobotoMono-Regular.woff2") format("woff2"),
-        url("font/RobotoMono-Regular.ttf") format("truetype");
-}
-
 html {
-    font-size: var(--text-base-size);
     font-family: var(--font-primary);
+    font-size: var(--text-base-size);
     font-weight: var(--body-font-weight, normal);
     font-optical-sizing: auto;
     line-height: var(--line-height);
@@ -88,15 +56,26 @@ html {
 a {
     border: none;
     outline: none;
+            //font-weight: 100;
+    //transition: color 0.4s;
     &:hover, &:focus {
-            //    background: var(--acc);
-        //color: var(--acc);
+        //color: var(--f_high);
+            //font-weight: 100;
+
+            //font-style: italic;
         > h3 {
             //transition: color 0.3s;
             font-style: italic;
-            font-weight: 100;
-        } 
+            font-weight: 300;
+        }
     }
+    //&.fade {
+        //transition: color 0.4s;
+        //&:hover {
+            //color: var(--f_high);
+        //}
+    //}
+
 }
 
 address {
@@ -107,18 +86,6 @@ blockquote {
     padding-left: 1em;
     font-style: italic;
     border-left: 0.25rem solid var(--f_med);
-}
-
-button {
-    //display: flex;
-    //width:  ;
-    padding: 0.5rem;
-    background: var(--fg);
-    color: var(--bg);
-    cursor: pointer;
-    &.disabled {
-		cursor: default;
-	}
 }
 
 code, pre {
@@ -136,37 +103,33 @@ dl {
 }
 
 em {
-  font-style: italic;
+    font-style: italic;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: var(--heading-font-weight);
     line-height: var(--heading-line-height);
     text-transform: uppercase;
+    letter-spacing: -0.05em;
     word-break: break-word;
 }
 h1 {
     font-size: var(--text-xxxxl);
-    letter-spacing: -0.06em;
 }
 h2 {
     font-size: var(--text-xxxl);
-    letter-spacing: -0.06em;
 }
 h3 {
     font-size: var(--text-xxl);
-    letter-spacing: -0.07em;
 }
 h4 {
     font-size: var(--text-xl);
 }
 h5 {
     font-size: var(--text-lg);
-    text-transform: uppercase;
 }
 h6 {
     font-size: var(--text-md);
-    text-transform: uppercase;
 }
 
 hr {
@@ -181,18 +144,21 @@ p, ol, ul {
 
 label {
     display: inline-block;
-    padding: 0.35em 1.25em 0.35em 1.25em;
+    //padding: 0.35em 1.25em 0.42em 1.25em;
     margin-bottom: 1em;
     font-family: var(--font-mono);
     font-size: 11px;
     text-transform: uppercase;
-    background: var(--f_med);
-    color: var(--background);
-    border-radius: 1.5em;
+    //background: var(--f_low);
+    color: var(--f_med);
+    //border-radius: 1.5em; 
+//background-clip: text;
+//color: transparent;
+//-webkit-background-clip: text;
+  //-webkit-text-fill-color: transparent;
 }
 
 ol, ul {
-    //list-style: none;
     margin-left: 1em;
     margin-bottom: 1em;
     ol, ul {
@@ -216,6 +182,35 @@ sub, sup {
 }
 
 
+/*table {
+    tbody {
+    }
+    tr {
+        //display: flex;
+        //overflow: auto;
+        //text-overflow: ellipsis;
+        //padding: 2px 5px;
+        //white-space: nowrap;
+        //overflow: hidden;
+    }
+    &, td, th {
+        border: 1px solid var(--fg);
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 0.25rem;
+    }
+    th {
+        text-align: left;
+    }
+    td {
+        white-space: nowrap;
+        //display: flex;
+        //div.location {
+            //display: flex;
+        //}
+    }
+}*/
 table {
 
     &, td, th {
@@ -224,7 +219,6 @@ table {
     }
     th, td {
         padding: 0.25rem;
-        //white-space: nowrap;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -232,19 +226,7 @@ table {
     th {
         text-align: left;
     }
-    &.raw {
-        th {
-            font-weight: bold;
-            text-transform: uppercase;
-            background: var(--fg);
-            color: var(--bg);
-            border: 1px solid var(--bg);
-        }
-        font-family: var(--font-mono);
-    }
 }
-
-
 tui {
     display: none;
 }

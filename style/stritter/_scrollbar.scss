@@ -7,7 +7,7 @@ $thick: math.div(1rem, 2.5) !default;
 *::-webkit-scrollbar {
     border: none;
     &:horizontal {
-        display: none;
+        //display: none;
     }
     &:vertical {
         width: $thick;

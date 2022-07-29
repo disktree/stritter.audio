@@ -17,11 +17,9 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
-    overflow-x: hidden;
     height: 100%;
     min-height: 100%;
-
-
+    overflow-x: hidden;
     > * {
         height: 100%;
     }
@@ -41,7 +39,6 @@ body {
             }
         }
         > nav[data-id="nav"] {
-            //width: 100%;
             margin-left: 1rem;
             > ul {
                 display: flex;
@@ -51,10 +48,7 @@ body {
                 list-style: none;
                 > li {
                     display: table;
-                    //margin-left: 0.5rem;
-                    //margin: 0 1rem;
                     border-left: 1px solid var(--f_med);
-                    //padding: 0 0 0 0.5rem;
                     color: var(--f_low);
                     a {
                         margin: 0 1rem;
@@ -85,28 +79,38 @@ body {
     }
     > main {
         position: relative;
-        //width: 100%;
+        width: 100%;
         //margin: 0 var(--site-margin);
         > article {
     //mix-blend-mode: color-dodge;
+
+                //position: relative;
+            //width: 100%;
             height: 100%;
             margin: 0 var(--site-margin);
             //padding: 1rem 0;
             //background: var(--f_low);
             > header {
                 padding: 3rem 0 2rem 0;
-                h1, h2, h3, h4 {
+                h1, h2, h3, h4, h5, h6 {
                     line-height: 1;
-
                 }
+            }
+            > div.description {
+                max-width: 700px;
+                font-weight: bold;
+                margin-bottom: 1rem;
             }
             > div.content {
                 max-width: 700px;
             }
             > section {
+                //position: relative;
+                //max-width: 700px;
                 padding: 2rem 0;
+                 //width: 100%;
                 &:not(:last-child) {
-                    border-bottom: 1px solid var(--f_med);
+                    border-bottom: 1px dotted var(--f_med);
                 }
                 h1, h2, h3, h4 {
                     line-height: 1;
@@ -114,6 +118,39 @@ body {
                 li.upcoming {
                     margin-bottom: 1rem;
                 }
+
+                /*ol.past-events {
+                    background: red;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+                li.past-event {
+                    //overflow: hidden;
+                    display: flex;
+                    //flex-wrap: nowrap;
+                    //white-space: nowrap;
+                    //width: 500px;
+                    //overflow: hidden;
+                    //text-overflow: ellipsis;
+                    //position: relative;
+                    //width: 100%;
+                    //word-break: break-all;
+                    //overflow-x: hidden;
+                    > span {
+                        font-family: var(--font-mono);
+                        //width: 11ch;
+                        margin-right: 1ch;
+                    }
+                    > a {
+                        white-space: nowrap;
+                    }
+                    > div.location {
+                        display: flex; 
+                        //white-space: nowrap;
+                        //overflow: hidden;
+                        color:var(--f_low);
+                    }
+                }*/
             }
             img {
                 width: 100%;
@@ -123,15 +160,34 @@ body {
     }
     > footer {
         display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
         margin: 0 var(--site-margin);
-        padding: calc(var(--site-margin)/2) 0 var(--site-margin) 0;
+        padding: 1em 0 2em 0;
         font-family: var(--font-mono);
-        font-size: var(--text-xs);
         text-transform: uppercase;
         border-top: 1px solid var(--f_med);
+        > * {
+            white-space: nowrap;
+            &:first-child {
+                margin-right: 1ch;
+            }
+        }
     }
     @media screen and (min-width: breakpoint.$tablet) {
        --site-margin: var(--space-lg);
+       > footer {
+            justify-content: flex-start;
+            font-size: 75%;
+       }
+    }
+    @media screen and (min-width: breakpoint.$desktop) {
+       --site-margin: var(--space-xl);
+    }
+    @media screen and (display-mode: fullscreen) {
+       > header, > footer {
+           border: none;
+       }
     }
 }
 
@@ -140,6 +196,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 nav.prev_next {
     display: flex;
     font-size: 1rem;
@@ -163,6 +220,7 @@ nav.prev_next {
         width: 100%;
         height: 100%;
         object-fit: cover;
+
     }
     > div.gradient {
         position: absolute;
@@ -179,15 +237,39 @@ nav.prev_next {
         //background: #B73B20;
          //background: linear-gradient(to bottom right, #B73B20, #71FECF);
         //background: linear-gradient(to bottom right, rgba(0,0,0,0), red);
-        //background-image: radial-gradient(
-            //circle at 51% 41%,
-            //rgba(89, 209, 78, 0.69) 0%,
-            //rgba(215, 33, 58, 0.76) 91%
-          //);
+        /*background-image: radial-gradient(
+            circle at 51% 41%,
+            rgba(89, 209, 78, 0.69) 0%,
+            rgba(215, 33, 58, 0.76) 91%
+          );*/
+
+        background-image: radial-gradient(
+            circle at 51% 41%,
+            var(--f_high) 0%,
+            black 91%
+          );
         /*background-image: radial-gradient(
             circle at 51% 41%,
             var(--b_med) 0%,
             var(--b_high) 29%
           );*/
     }
+}
+
+#vignette {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	pointer-events: none;
+    z-index: 1000;
+    //@media screen and (min-width: breakpoint.$medium) {
+        box-shadow:
+            1vw 1vh 10vw rgba(0,0,0,0.1) inset,
+            -1vw -1vh 10vw rgba(0,0,0,0.1) inset;
+        &.power {
+            box-shadow: 20px 20px 40vmax rgba(0,0,0,0.7) inset;
+        }
+    //}
 }

@@ -1,7 +1,7 @@
 @font-face {
 	font-family: "Icons";
-	font-display: block;
     font-style: normal;
+	font-display: block;
 	src:
         url("font/icons.woff2") format("woff2"),
         url("font/icons.woff") format("woff"),
@@ -15,15 +15,12 @@
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
-    //line-height: 1;
+    line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    top: 1px;
 }
-
-/*[class^="ic-"].x2, [class*=" ic-"].x2 {
-    font-size: 150%;
-    display: inline;
-}*/
 
 $ic-warning: "\e900";
 $ic-album: "\e969";

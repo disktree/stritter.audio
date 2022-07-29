@@ -1,55 +1,25 @@
 :root {
-
- 	// Noir
-    //--background: #222222;
-    //--f-hi: #fff;
-    //--f: #ccc;
-    //--f-low: #999;
-    //--f-inv: #fff;
-    //--b-hi: #888;
-    //--b: #666;
-    //--b-low: #444;
-    //--b-inv: #000;  
-
-    //--background: #29272b;
-    //--f_high: #696861;
-    //--f_med: #ffffff;
-    //--f_low: #b3b2ac;
-    //--f_inv: #43423e;
-    //--b_high: #43423e;
-    //--b_med: #c2c1bb;
-    //--b_low: #e5e3dc;
-    //--b_inv: #eb3f48;
-
     --background: #999999;
-    //--f_high: #696861;
-    --f_high: #000;
+    --f_high: #101010;
     --f_med: #eeefee;
     --f_low: #b3b2ac;
     --f_inv: #43423e;
     --b_high: #43423e;
     --b_med: #c2c1bb;
-    --b_low: #e5e3dc;
+    --b_low: #6c6c6c;
     --b_inv: #eb3f48;
 }
 
-
 body {
-    //background: -moz-linear-gradient(center top, #316494 0%,#366fcd 100%);
-    //background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #606060),color-stop(1, #999999));
-    //background: linear-gradient(left top, left bottom, color-stop(0, #606060), color-stop(1, #999999));
-        
     background: linear-gradient(to bottom, #666666, var(--background));
-
     background-attachment: fixed;
-
     color: var(--f_med);
-    -webkit-tap-highlight-color: var(--f_inv);
+    -webkit-tap-highlight-color: var(--f_med);
 }
 
 a {
     color: var(--f_med);
-    //transition: color 0.4s;
+    transition: color 0.3s;
     &:focus, &:hover {
         transition: none;
         color: var(--f_high);
@@ -57,11 +27,37 @@ a {
 }
 
 hr {
-    background: var(--f_med);
+    background: var(--f_low);
 }
 
 *::selection {
     background: var(--b_high);
     color: var(--f_inv);
 
+}
+
+.f_high {
+    color: var(--f_high);
+}
+.f_med {
+    color: var(--f_med);
+}
+.f_low {
+    color: var(--f_low);
+}
+.f_inv {
+    color: var(--f_inv);
+}
+
+.b_high {
+    background: var(--b_high);
+}
+.b_med {
+    background: var(--b_med);
+}
+.b_low {
+    background: var(--b_low);
+}
+.b_inv {
+    background: var(--b_inv);
 }
