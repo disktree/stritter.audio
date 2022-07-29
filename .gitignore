@@ -1,7 +1,5 @@
-assets/video/
-data/
 media/
-misc/
+tmp/
 node_modules/
 public/
 resources/
