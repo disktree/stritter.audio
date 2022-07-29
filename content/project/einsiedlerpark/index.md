@@ -1,9 +1,10 @@
 ---
 title: "Einsiedlerpark"
 date: 2020-03-23
-files: [
-    { name: Einsiedlerpark, file: einsiedlerpark.mp3 }
-]
+video: { start: 0 }
+theme: {
+    f_med: "#ed2c3e"
+}
 ---
 The origin of the piece is a 24 hour recording I did in 2016.  
 The recorded Einsiedlerpark is located in 1050 Vienna.
@@ -19,5 +20,3 @@ This work is a mix of strategies. I imitate single sound objects with synthesize
 > Spatialisation: One or two speakers in the middle of the room pointing to the ceiling.  
 8 or more speakers as far on the outside of the room as possible.
 
-
-{{< youtube "zXlyt6Qu7CQ" >}}

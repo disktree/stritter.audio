@@ -5,8 +5,8 @@ weight: 1000
 description: Live Performance Project 
 video: { start: 23 }
 ---
-Live Performance Project.  
-Nina Bauer, Frederic Stritter
+Live performance project by Nina Bauer & Frederic Stritter
 
-
+<!--
 {{< youtube "cAn961_2BSM" >}}
+-->
