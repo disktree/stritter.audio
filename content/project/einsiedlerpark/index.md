@@ -1,6 +1,7 @@
 ---
 title: "Einsiedlerpark"
 date: 2020-03-23
+weight: 300
 video: { start: 0 }
 theme: {
     f_med: "#ed2c3e"
