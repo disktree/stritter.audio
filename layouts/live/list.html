@@ -13,7 +13,7 @@
     </section>
     <section>
         <label>Past Events</label>
-        <table>
+         <table>
             <tbody>
             {{ range $event := where .Site.RegularPages "Section" "live" }}
                 {{ $date := (time $event.Params.date) }}

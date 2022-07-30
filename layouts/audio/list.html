@@ -2,11 +2,14 @@
 <article>
     {{ range .RegularPages }}
     <section>
-        <h4>
-            <!--<i class="ic-audiotrack"></i>-->
-            {{- .Title | safeHTML -}}
+        <h4 style="margin-bottom: 4px">
+            {{ $res := resources.Get (print "audio/" .Params.file) }}
+            <a href="{{ $res.Permalink }}">
+                <i class="ic-file_download" style="position:relative;top:3px;"></i>
+                <span>{{- .Title | safeHTML -}}</span>
+            </a>
         </h4>
-        <ol class="nolist">
+        <ol class="nolist" style="font-family: monospace; font-size: 75%; position:relative; left: 0.5rem;">
             {{ with .Params.microphone }}
             <li>
                 <span>Microphone:</span>
@@ -21,25 +24,25 @@
             {{ end }}
             {{ with .Params.details }}
             <li>
-                <span>Details:</span>
+                <span></span>
                 <strong>{{ . }}</strong>
             </li>
             {{ end }}
-            {{ with .Params.files }}
-            <li>
-                <ol class="nolist">
-                    {{ range $file := . }}
-                    {{ $res := resources.Get (print "audio/" $file) }}
-                    <li>
-                        <a href="{{ $res.Permalink }}">
-                            <i class="ic-volume_up"></i>
-                            <strong>{{ $file | safeHTML }}</strong>
-                        </a>
-                    {{ end }}
-                    </li>
-                <ol>
-            </li>
-            {{ end }}
+            <!--{{ with .Params.files }}-->
+            <!--<li>-->
+                <!--<ol class="nolist">-->
+                    <!-- range $file := . }}-->
+                    <!-- $res := resources.Get (print "audio/" $file) }}-->
+                    <!--<li>-->
+                        <!--<a href=" $res.Permalink }}">-->
+                            <!--<i class="ic-file_download" style="font-size: 2rem;"></i>-->
+                            <!--<strong> $file | safeHTML }}</strong>-->
+                        <!--</a>-->
+                    <!--{{ end }}-->
+                    <!--</li>-->
+                <!--<ol>-->
+            <!--</li>-->
+            <!-- end }}-->
         </ol>
     </section>
     {{ end }}

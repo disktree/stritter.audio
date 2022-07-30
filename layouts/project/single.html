@@ -1,11 +1,25 @@
 {{ define "main" }}
 <article data-page="project">
+    {{ $id := .File.ContentBaseName }}
     <header>
         <h2>{{- .Title | safeHTML -}}</h2>
     </header>
     <div class="content">{{- .Content | safeHTML -}}</div>
 
-    {{ $id := .File.ContentBaseName }}
+
+
+    {{ $images := .Resources.ByType "image" }}
+    {{ if gt (len $images) 0 }}
+        <ul class="gallery">
+            {{ range $img := $images }}
+            {{ if hasPrefix $img.Name "_" }} <!----> {{ else }}
+                <li>
+                    <img src="{{.RelPermalink}}">
+                </li>
+            {{ end }}
+            {{ end }}
+        </ul>
+    {{ end }}
 
     {{ $events := where (where .Site.RegularPages "Section" "live") "Params.project" "==" $id }}
     {{ if gt (len $events) 0 }}
@@ -23,7 +37,7 @@
     {{ end }}
 
     <section>
-        <label>Past Events</label>
+        <!--<label>Past Events</label>-->
         <table>
             {{ range $event := $events }}
             {{ $upcoming := (time $event.Params.date).After now }}
@@ -31,7 +45,9 @@
             <tr>
                 <td>{{ .Date.Format "2006/01/02" }}</td>
                 <td>
-                    <a href="{{ .RelPermalink }}"><strong>{{ .Title | markdownify | safeHTML -}}</strong></a>
+                    <a href="{{ .RelPermalink }}">
+                        <strong>{{ .Title | markdownify | safeHTML -}}</strong>
+                    </a>
                     {{ with .Params.location }}
                     <i class="ic-location_on"></i>
                     <span>{{- . | markdownify | safeHTML -}}</span>
@@ -57,9 +73,7 @@
     {{ if $video }}
         {{ $start := .Params.video.start | default 0 }}
         {{ $src := print $video.Permalink "#t=" $start }}
-        <div id="background-media">
-            <video src="{{ $src }}" autoplay muted loop></video>
-        </div>
+        <video src="{{ $src }}" autoplay muted loop></video>
     {{ end }}
 {{ end }}
 {{ end }}
