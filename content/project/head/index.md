@@ -7,6 +7,7 @@ video: { start: 0 }
 theme: {
     f_high: "#fff"
 }
+rss_ignore: true
 ---
 Virtual Reality and Sound Performance with [Tong](https://disktree.net) and Linus Barta.
 

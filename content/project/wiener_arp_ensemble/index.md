@@ -3,6 +3,7 @@ title: "Wiener Arp Ensemble"
 date: 2020-10-23
 weight: 1000
 video: { start: 25 }
+rss_ignore: true
 ---
 The Wiener ARP Ensemble is an international sound-art performing collective based in Vienna.
 Each member plays an ARP 2600 (TTSH) analog synthesizer. The number of players may vary.

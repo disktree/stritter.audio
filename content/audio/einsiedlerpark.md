@@ -1,7 +1,8 @@
 ---
 title: "24h Recording Einsiedlerpark, Vienna"
-microphone: "ms neumann rsm 191 [m/s]"
-recorder: "tascam hd-p2"
+file: "einsiedlerpark.mp3"
+microphone: "MS Neumann rsm 191 [m/s]"
+recorder: "Tascam HD-P2"
 details: "96kHz, 24bit"
-file: einsiedlerpark.mp3
+rss_ignore: true
 ---

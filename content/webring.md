@@ -1,6 +1,7 @@
 ---
 title: Webring
 keywords: [webring,links,network,friends,artists]
+rss_ignore: true
 ---
 - https://acertaintrio.com/
 - https://dieb13.klingt.org/

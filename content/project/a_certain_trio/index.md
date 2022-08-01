@@ -12,6 +12,7 @@ video: { start: 0 }
 theme: {
     f_high: "#a3baa8"
 }
+rss_ignore: true
 ---
 Live Improvisation project of Marcin Morga, Eugene Ignashev and Frederic Stritter.
 

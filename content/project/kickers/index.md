@@ -4,6 +4,7 @@ date: 2019-03-23
 weight: 500 
 links: [
 ]
+rss_ignore: true
 ---
 Tape coming out soon on [Goldgelb Record](https://soundcloud.com/goldgelbrecords/).
 

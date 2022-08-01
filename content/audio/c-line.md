@@ -1,7 +1,8 @@
 ---
 title: "C-Line, Tokyo"
-microphone: "ms neumann rsm 191 [m/s]"
-recorder: "tascam hd-p2"
+file: "c-line.mp3"
+microphone: "MS Neumann rsm 191 [m/s]"
+recorder: "Tascam hd-p2"
 details: "96kHz, 24bit"
-file: c-line.mp3
+rss_ignore: true
 ---

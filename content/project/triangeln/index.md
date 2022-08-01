@@ -7,6 +7,7 @@ theme: {
     f_high: "#ffffff",
     f_med: "#000000"
 }
+rss_ignore: true
 ---
 All sounds recorded stereo in a dry swimming pool.  
 The triangle sounds are mixed with sine waves.  
