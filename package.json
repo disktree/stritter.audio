@@ -20,6 +20,7 @@
   "license": "ISC",
   "homepage": "https://github.com/disktree/stritter.audio/blob/master/README.md",
   "devDependencies": {
+    "hugo-bin": "^0.89.0",
     "sass": "^1.53.0"
   }
 }
