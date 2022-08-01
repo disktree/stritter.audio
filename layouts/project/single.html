@@ -8,7 +8,8 @@
 
     {{ $images := .Resources.ByType "image" }}
     {{ if gt (len $images) 0 }}
-        <ul class="gallery">
+    <section class="gallery">
+        <ul >
             {{ range $img := $images }}
             {{ if hasPrefix $img.Name "_" }} <!----> {{ else }}
                 <li>
@@ -17,12 +18,16 @@
             {{ end }}
             {{ end }}
         </ul>
+        {{ with .Params.photos }}
+        <div class="photos">Photos by <span>{{- . | markdownify -}}</span></div>
+        {{ end }}
+    </section>
     {{ end }}
 
     {{ $events := where (where .Site.RegularPages "Section" "live") "Params.project" "==" .File.ContentBaseName }}
     {{ if gt (len $events) 0 }}
     <section>
-        <label>Upcoming Events</label>
+        <!--<label>Upcoming Events</label>-->
         <ol class="nolist">
             {{ range $event := $events }}
                 {{ $upcoming := (time $event.Params.date).After now }}
@@ -35,7 +40,7 @@
     {{ end }}
 
     <section>
-        <label>Past Events</label>
+        <!--<label>Past Events</label>-->
         <table>
             {{ range $event := $events }}
             {{ $upcoming := (time $event.Params.date).After now }}
@@ -43,9 +48,9 @@
             <tr>
                 <td>{{ .Date.Format "2006/01/02" }}</td>
                 <td>
-                    <a href="{{ .RelPermalink }}">
+                    <!--<a href="{{ .RelPermalink }}">-->
                         <strong>{{ .Title | markdownify | safeHTML -}}</strong>
-                    </a>
+                    <!--</a>-->
                     {{ with .Params.location }}
                     <i class="ic-location_on"></i>
                     <span>{{- . | markdownify | safeHTML -}}</span>
@@ -69,7 +74,7 @@
 {{ if $param }}
     {{ $res := .Resources.Get (print .File.ContentBaseName ".mp4") }}
     {{ with $res }}
-        <video src="{{ print $res.Permalink "#t=" $param.start | default 0 }}" autoplay muted loop></video>
+        <!--<video src="{{ print $res.Permalink "#t=" $param.start | default 0 }}" autoplay muted loop></video>-->
     {{ end }}
 {{ end }}
 {{ end }}

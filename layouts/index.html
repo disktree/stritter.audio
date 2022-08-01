@@ -17,7 +17,7 @@
     <section>
         <label>Upcoming Events</label>
         <ol class="link-menu">
-            {{ range where .Site.RegularPages "Section" "live" }}
+            {{ range (where .Site.RegularPages "Section" "live").ByDate }}
             {{ if (time .Date).After now }}
                 {{ .Render "li" }}
             {{ end }}

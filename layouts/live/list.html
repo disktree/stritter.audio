@@ -2,8 +2,8 @@
 <article>
     <section>
         <label>Upcoming Events</label>
-        <ol class="nolist">
-            {{ range $event := .RegularPages }}
+        <ol class="link-menu">
+            {{ range $event := .RegularPages.ByDate }}
             {{ $upcoming := (time $event.Params.date).After now }}
             {{ if $upcoming }}
                 {{ .Render "li" }}
@@ -15,7 +15,7 @@
         <label>Past Events</label>
          <table>
             <tbody>
-            {{ range $event := where .Site.RegularPages "Section" "live" }}
+            {{ range $event := (where .Site.RegularPages "Section" "live").ByDate.Reverse }}
                 {{ $date := (time $event.Params.date) }}
                 {{ $upcoming := $date.After now }}
                 {{ if not $upcoming }}
