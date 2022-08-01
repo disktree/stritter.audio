@@ -1,0 +1,34 @@
+<section>
+    {{ $rec := . }}
+    <h4 class="link-menu" style="margin-bottom: 4px">
+        {{ with resources.Get (print "audio/" .Params.file) }}
+        <a href="{{ .Permalink }}" title="{{ .MediaType }}">
+            <i class="ic-file_download" style="position:relative;top:3px;left:-4px;"></i>
+            {{- $rec.Title | safeHTML -}}
+        </a>
+        {{ end }}
+    </h4>
+    <ol class="nolist meta">
+        {{ with .Params.microphone }}
+        <li>
+            <span>Microphone:</span>
+            <strong>{{- . | safeHTML -}}</strong>
+        </li>
+        {{ end }}
+        {{ with .Params.recorder }}
+        <li>
+            <span>Recorder:</span>
+            <strong>{{- . | safeHTML -}}</strong>
+        </li>
+        {{ end }}
+        {{ with .Params.details }}
+        <li>
+            <strong>{{- . | safeHTML -}}</strong>
+        </li>
+        {{ end }}
+    </ol>
+    {{ with .Content }}
+    <br>
+    <div class="content">{{- . | safeHTML -}}</div>
+    {{ end }}
+</section>

@@ -23,6 +23,9 @@
         {{ end }}
     </section>
     {{ end }}
+    
+    <!--{{ range .Resources.ByType "audio"  }}
+    {{ end }}-->
 
     {{ $events := where (where .Site.RegularPages "Section" "live") "Params.project" "==" .File.ContentBaseName }}
     {{ if gt (len $events) 0 }}
