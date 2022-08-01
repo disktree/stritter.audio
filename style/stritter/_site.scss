@@ -10,7 +10,7 @@ html {
 body {
 
     --site-margin: var(--space-md);
-    --max-content-width: 700px;
+    --max-content-width: 800px;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -113,9 +113,38 @@ body {
                     line-height: 1;
                 }
                 li.upcoming {
-                    margin-bottom: 1rem;
+                    margin: 0 0 2rem 0;
                     > a {
                         display: table;
+                    }
+                }
+                &.gallery {
+                    margin: 1rem 0 1rem 0;
+                    border: none;
+                    ul {
+                        column-count: 2; 
+                        column-gap: 0.5rem;
+                        margin: 2rem 0 0 0;
+                        list-style: none;
+                        max-width: 1024px;
+                        > li {
+                            margin: 0 0 1rem 0; 
+                            > img {
+                                width: 100%;
+                                margin: 0;
+                                box-shadow: 
+                                    -2px -2px 4px rgba(0,0,0,0.3),
+                                    2px 2px 6px rgba(0,0,0,0.4);
+                            }
+                        }
+                        @media (max-width: breakpoint.$hd ) { column-count: 3; } 
+                        @media (max-width: breakpoint.$desktop ) { column-count: 2; } 
+                        @media (max-width: breakpoint.$tablet ) { column-count: 1; } 
+                    }
+                    .photos {
+                        position: absolute;
+                        font-family: var(--font-mono);
+                        font-size: 75%;
                     }
                 }
             }
@@ -159,31 +188,15 @@ body {
     }
 }
 
+.meta {
+    font-family: var(--font-mono);
+    font-size: 75%;
+}
+
 .nolist {
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-ul.gallery {
-    column-count: 2; 
-    column-gap: 0.5rem;
-    margin: 2rem 0;
-    list-style: none;
-    max-width: 1024px;
-    > li {
-        margin: 0 0 1rem 0; 
-        > img {
-            width: 100%;
-            margin: 0;
-            box-shadow: 
-                -2px -2px 4px rgba(0,0,0,0.3),
-                2px 2px 6px rgba(0,0,0,0.4);
-        }
-    }
-    @media (max-width: breakpoint.$hd ) { column-count: 3; } 
-    @media (max-width: breakpoint.$desktop ) { column-count: 2; } 
-    @media (max-width: breakpoint.$tablet ) { column-count: 1; } 
 }
 
 nav.prev_next {
@@ -204,7 +217,7 @@ nav.prev_next {
     bottom: 0;
     left: 0;
     z-index: -1;
-    //z-index: 10000 ;
+    //z-index: 10000;
     //mix-blend-mode: lighten;
     user-select: none;
     pointer-events: none;
