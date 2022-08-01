@@ -7,6 +7,5 @@ nginx.conf
 .hugo_build.lock
 static/style.css*
 *.zip
-*.[0-9]
 _data/
 _script/
