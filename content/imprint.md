@@ -14,6 +14,3 @@ Source: [{{< param "repository" >}}]({{< param "repository" >}})
 
 This website is optimized for the [lynx browser](https://lynx.browser.org/).
 
----
-
-[Webring](/webring/)

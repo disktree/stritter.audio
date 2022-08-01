@@ -12,6 +12,7 @@ video: { start: 0 }
 theme: {
     f_high: "#a3baa8"
 }
+photos: ""
 rss_ignore: true
 ---
 Live Improvisation project of Marcin Morga, Eugene Ignashev and Frederic Stritter.
@@ -19,7 +20,7 @@ Live Improvisation project of Marcin Morga, Eugene Ignashev and Frederic Stritte
 - **Marcin**
     - No Input Mixer
     - Voice and various Effect Pedals
-- **Eugene**
+- **[Eugene](https://ignashev.com/)**
     - Lyra
     - Acoustic Objects and Electronic
 - **Frederic**
