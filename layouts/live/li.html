@@ -1,14 +1,12 @@
 <li class="upcoming">
-    <a href="{{ .RelPermalink }}" class="fade">
-        <h3>
-            <div>{{ .Date.Format "2006/01/02" }}</div>
-            <div>{{- .Title | markdownify | safeHTML -}}</div>
-        </h3>
-    </a>
+    <h4>{{ .Date.Format "2006/01/02" }}</h4>
+    <h3>
+        <a href="{{ .RelPermalink }}">{{- .Title | markdownify | safeHTML -}}</a> 
+    </h3>
     {{ with .Params.location }}
     <div style="color: var(--f_low);">
         <i class="ic-location_on"></i>
-        <span>{{- . | markdownify -}}</span>
+        <span>{{- . | markdownify | safeHTML -}}</span>
     </div>
     {{ end }}
 </li>

@@ -1,51 +1,39 @@
 {{ define "main" }}
-<article>
-    {{ range .RegularPages }}
+<article data-page="audio">
+    {{ range $rec := .RegularPages }}
     <section>
-        <h4 style="margin-bottom: 4px">
-            {{ $res := resources.Get (print "audio/" .Params.file) }}
-            <a href="{{ $res.Permalink }}">
-                <i class="ic-file_download" style="position:relative;top:3px;"></i>
-                <span>{{- .Title | safeHTML -}}</span>
+        <h4 class="link-menu" style="margin-bottom: 4px">
+            {{ with resources.Get (print "audio/" .Params.file)  }}
+            <a href="{{ .Permalink }}" title="{{ .MediaType }}">
+                <i class="ic-file_download" style="position:relative;top:3px;left:-4px;"></i>
+                {{- $rec.Title | safeHTML -}}
             </a>
+            {{ end }}
         </h4>
-        <ol class="nolist" style="font-family: monospace; font-size: 75%; position:relative; left: 0.5rem;">
+        <ol class="nolist" style="font-family: monospace; font-size: 75%;">
             {{ with .Params.microphone }}
             <li>
                 <span>Microphone:</span>
-                <strong>{{ . }}</strong>
+                <strong>{{- . | safeHTML -}}</strong>
             </li>
             {{ end }}
             {{ with .Params.recorder }}
             <li>
                 <span>Recorder:</span>
-                <strong>{{ . }}</strong>
+                <strong>{{- . | safeHTML -}}</strong>
             </li>
             {{ end }}
             {{ with .Params.details }}
             <li>
-                <span></span>
-                <strong>{{ . }}</strong>
+                <strong>{{- . | safeHTML -}}</strong>
             </li>
             {{ end }}
-            <!--{{ with .Params.files }}-->
-            <!--<li>-->
-                <!--<ol class="nolist">-->
-                    <!-- range $file := . }}-->
-                    <!-- $res := resources.Get (print "audio/" $file) }}-->
-                    <!--<li>-->
-                        <!--<a href=" $res.Permalink }}">-->
-                            <!--<i class="ic-file_download" style="font-size: 2rem;"></i>-->
-                            <!--<strong> $file | safeHTML }}</strong>-->
-                        <!--</a>-->
-                    <!--{{ end }}-->
-                    <!--</li>-->
-                <!--<ol>-->
-            <!--</li>-->
-            <!-- end }}-->
         </ol>
+        {{ with .Content }}
+        <br>
+        <div class="content">{{- . | safeHTML -}}</div>
+        {{ end }}
     </section>
     {{ end }}
 </article>
 {{ end }}
-

@@ -16,7 +16,7 @@
 
     <section>
         <label>Upcoming Events</label>
-        <ol class="nolist">
+        <ol class="link-menu">
             {{ range where .Site.RegularPages "Section" "live" }}
             {{ if (time .Date).After now }}
                 {{ .Render "li" }}
@@ -27,12 +27,14 @@
     
     <section>
         <label>Projects</label>
-        <ul class="nolist">
+        <ul class="link-menu">
             {{ range where .Site.RegularPages "Section" "project" }}
             <li>
-                <a href="{{ .RelPermalink }}" class="fade">
-                    <h3>{{- .Title -}}</h3>
-                </a>
+                <h3>
+                    <a href="{{ .RelPermalink }}">
+                        {{- .Title -}}
+                    </a>
+                </h3>
             </li>
             {{ end }}
         </ul>

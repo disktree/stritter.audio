@@ -1,12 +1,10 @@
 {{ define "main" }}
 <article data-page="project">
-    {{ $id := .File.ContentBaseName }}
+
     <header>
         <h2>{{- .Title | safeHTML -}}</h2>
     </header>
     <div class="content">{{- .Content | safeHTML -}}</div>
-
-
 
     {{ $images := .Resources.ByType "image" }}
     {{ if gt (len $images) 0 }}
@@ -14,17 +12,17 @@
             {{ range $img := $images }}
             {{ if hasPrefix $img.Name "_" }} <!----> {{ else }}
                 <li>
-                    <img src="{{.RelPermalink}}">
+                    <img src="{{.RelPermalink}}" alt="">
                 </li>
             {{ end }}
             {{ end }}
         </ul>
     {{ end }}
 
-    {{ $events := where (where .Site.RegularPages "Section" "live") "Params.project" "==" $id }}
+    {{ $events := where (where .Site.RegularPages "Section" "live") "Params.project" "==" .File.ContentBaseName }}
     {{ if gt (len $events) 0 }}
     <section>
-        <!--<label>Upcoming Events</label>-->
+        <label>Upcoming Events</label>
         <ol class="nolist">
             {{ range $event := $events }}
                 {{ $upcoming := (time $event.Params.date).After now }}
@@ -37,7 +35,7 @@
     {{ end }}
 
     <section>
-        <!--<label>Past Events</label>-->
+        <label>Past Events</label>
         <table>
             {{ range $event := $events }}
             {{ $upcoming := (time $event.Params.date).After now }}
@@ -58,7 +56,7 @@
             {{ end }}
         </table>
     </section>
-
+ 
 </article>
 {{ end }}
 
@@ -67,13 +65,11 @@
 {{ end }}
 
 {{ define "background-media" }}
-{{ if .Params.video }}
-    {{ $id := .File.ContentBaseName }}
-    {{ $video := resources.Get (print "video/" $id ".mp4") }}
-    {{ if $video }}
-        {{ $start := .Params.video.start | default 0 }}
-        {{ $src := print $video.Permalink "#t=" $start }}
-        <video src="{{ $src }}" autoplay muted loop></video>
+{{ $param := .Params.video }}
+{{ if $param }}
+    {{ $res := .Resources.Get (print .File.ContentBaseName ".mp4") }}
+    {{ with $res }}
+        <video src="{{ print $res.Permalink "#t=" $param.start | default 0 }}" autoplay muted loop></video>
     {{ end }}
 {{ end }}
 {{ end }}
