@@ -56,26 +56,13 @@ html {
 a {
     border: none;
     outline: none;
-            //font-weight: 100;
-    //transition: color 0.4s;
-    &:hover, &:focus {
-        //color: var(--f_high);
-            //font-weight: 100;
-
-            //font-style: italic;
-        > h3 {
-            //transition: color 0.3s;
-            font-style: italic;
-            font-weight: 300;
-        }
-    }
+    //&:hover, &:focus {}
     //&.fade {
         //transition: color 0.4s;
         //&:hover {
             //color: var(--f_high);
         //}
     //}
-
 }
 
 address {
@@ -166,12 +153,12 @@ ol, ul {
         //margin-bottom: 0;
     }
 }
-ol {
-    //list-style-type: decimal;
-}
-ul {
-    //list-style-type: disc;
-}
+//ol {
+//    list-style-type: decimal;
+//}
+//ul {
+//    list-style-type: disc;
+//}
 
 strong {
 	font-weight: bold;

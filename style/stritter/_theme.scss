@@ -19,7 +19,7 @@ body {
 
 a {
     color: var(--f_med);
-    transition: color 0.3s;
+    transition: color 0.2s;
     &:focus, &:hover {
         transition: none;
         color: var(--f_high);
