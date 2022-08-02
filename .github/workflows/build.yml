@@ -8,14 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Setup hugo
-        uses: peaceiris/actions-hugo@v2.5.0
-        with:
-          hugo-version: "0.101.0"
-      - name: Setup npm
+      - name: Setup
         run: npm install
-      #- name: Test
-        #run: npm test
       - name: Build style
         run: npm run prod:style
       - name: Build site
