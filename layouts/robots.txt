@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /cgi-bin/
+Disallow: /usage/
+Disallow: /logs/
+Disallow: /stats/
 Disallow: /font/
 Disallow: /syleguide/
 
