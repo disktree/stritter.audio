@@ -3,9 +3,6 @@ title: "Einsiedlerpark"
 date: 2020-03-23
 weight: 997
 video: { start: 0 }
-theme: {
-    f_med: "#ed2c3e"
-}
 rss_ignore: true
 ---
 The origin of the piece is a 24 hour recording I did in 2016.  
