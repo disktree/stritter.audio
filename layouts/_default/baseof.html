@@ -25,7 +25,7 @@
         <title>{{block "title" .}}{{.Site.Title}}{{end}}{{with .Page.Title}} | {{.}}{{end}}</title>
        
         <link rel="stylesheet" href="{{ $root }}/style.css">
-        <link rel="alternate" href="feed" type="application/atom+xml" title="Stritter Audio"/>
+        <link rel="alternate" href="feed" type="application/atom+xml" title="Stritter"/>
         <link rel="manifest" href="{{ $root }}/manifest.json">
         {{ partial "site/favicons" . }}
        
@@ -34,7 +34,6 @@
 	</head>
 	<body>
         <header>
-            <!--{{ block "header" . }}{{- partial "site/header.html" . -}}{{ end }}-->
             <nav data-id="nav">{{ block "nav" . }}{{- partial "site/nav.html" . -}}{{ end }}</nav>
             <nav data-id="subnav">{{ block "subnav" . }}{{ end }}</nav>
         </header>
