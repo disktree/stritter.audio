@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf public && rm -f static/style.css*",
     "prod:hugo": "hugo --environment production --buildFuture --verbose",
-    "prod:style": "sass style/main.scss static/style.css --no-source-map --style compressed",
+    "prod:style": "sass style/main.scss static/style.css --style compressed",
     "prod": "npm run clean && npm run prod:style && npm run prod:hugo",
     "dev:style": "sass style/main.scss static/style.css --watch",
     "dev:hugo": "hugo server -D --buildFuture",
