@@ -77,7 +77,7 @@
 {{ if $param }}
     {{ $res := .Resources.Get (print .File.ContentBaseName ".mp4") }}
     {{ with $res }}
-        <!--<video src="{{ print $res.Permalink "#t=" $param.start | default 0 }}" autoplay muted loop></video>-->
+        <video src="{{ print $res.Permalink "#t=" $param.start | default 0 }}" autoplay muted loop></video>
     {{ end }}
 {{ end }}
 {{ end }}
