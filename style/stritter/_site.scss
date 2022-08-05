@@ -47,7 +47,7 @@ body {
                     &:not(:last-child)::after {
                         content: "|";
                         margin: 0 1rem;
-                        font-weight: norma l;
+                        font-weight: normal;
                         color: var(--f_med);
                     }
                     color: var(--f_low);
