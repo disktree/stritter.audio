@@ -17,16 +17,5 @@ rss_ignore: true
 ---
 Live Improvisation project of Marcin Morga, Eugene Ignashev and Frederic Stritter.
 
-- **Marcin**
-    - No Input Mixer
-    - Voice and various Effect Pedals
-- **[Eugene](https://ignashev.com/)**
-    - Lyra
-    - Acoustic Objects and Electronic
-- **Frederic**
-    - Arp 2600
-    - Voice
-    - Electromagnetic Pick Up and Electronics
-
-Instruments may vary.
+A Certain Trio (ACT) is a music and sound-art performance union based in Vienna consisting of Evgenii Ignashev, Marcin Morga, and Frederic Stritter. Trio’s work incorporates concepts of free improvisation with artistic, social and somatic concepts and practices such as ‘The Discipline of Do Easy’, the cut-up technique, Dada, and others.
 
