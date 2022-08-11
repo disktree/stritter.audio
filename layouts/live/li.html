@@ -1,5 +1,5 @@
 <li class="upcoming">
-    <h4>{{ .Date.Format "2006/01/02" }}</h4>
+    <h4>{{ .Date.Format "Monday 2006/01/02" }}</h4>
     <h3>
         <a href="{{ .RelPermalink }}">{{- .Title | markdownify | safeHTML -}}</a> 
     </h3>
