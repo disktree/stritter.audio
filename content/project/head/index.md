@@ -2,10 +2,11 @@
 title: "H.E.A.D."
 date: 2017-03-31
 description: "H.E.A.D. Revolution - Hedonic Engineering And Development"
+keywords: [disktree,tong,vr,eeg,performance,live,head,hedonic]
 weight: 998
 video: { start: 0 }
 theme: {
-    f_high: "#fff"
+    f_high: "#000"
 }
 rss_ignore: true
 ---

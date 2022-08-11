@@ -1,7 +1,7 @@
 ---
 title: Audio
 rss_ignore: true
-keywords: [some,more]
+keywords: []
 menu:
   nav:
     name: Stritter
