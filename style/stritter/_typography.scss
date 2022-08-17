@@ -44,7 +44,7 @@
 }
 
 html {
-    font-family: var(--font-primary);
+    font-family: var(--font-primary), sans;
     font-size: var(--text-base-size);
     font-weight: var(--body-font-weight, normal);
     font-optical-sizing: auto;
