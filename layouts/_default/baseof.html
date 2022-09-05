@@ -25,7 +25,8 @@
         <title>{{block "title" .}}{{.Site.Title}}{{end}}{{with .Page.Title}} | {{.}}{{end}}</title>
        
         <link rel="stylesheet" href="{{ $root }}/style.css">
-        <link rel="alternate" href="feed" type="application/atom+xml" title="Stritter"/>
+        <link rel="alternate" href="{{ $root }}index.xml" type="application/atom+xml" title="Stritter"/>
+
         <link rel="manifest" href="{{ $root }}/manifest.json">
         {{ partial "site/favicons" . }}
        
