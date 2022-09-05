@@ -1,5 +1,8 @@
 ---
 title: "Frederic Stritter"
+aliases: [
+    /contact/
+]
 rss_ignore: true
 ---
 [{{< param "contact.email" >}}](mailto:{{< param "contact.email" >}})  
