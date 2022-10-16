@@ -6,8 +6,6 @@ links: [
 ]
 rss_ignore: true
 ---
-Tape coming out soon on [Goldgelb Record](https://soundcloud.com/goldgelbrecords/).
-
 Arrangement: [Evgeny Ignashev](https://ignashev.com/) and Frederic Stritter  
 Cello: Vinzent Vogelsinger
 
@@ -17,3 +15,4 @@ Cello: Vinzent Vogelsinger
 <iframe src="https://open.spotify.com/embed/album/6ow2szLs3BKQHqL4DbFeRk" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 {{</html>}}
 -->
+https://thekickers.bandcamp.com/album/2282
