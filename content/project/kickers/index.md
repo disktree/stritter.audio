@@ -9,10 +9,6 @@ rss_ignore: true
 Arrangement: [Evgeny Ignashev](https://ignashev.com/) and Frederic Stritter  
 Cello: Vinzent Vogelsinger
 
-
-<!--
 {{<html>}}
-<iframe src="https://open.spotify.com/embed/album/6ow2szLs3BKQHqL4DbFeRk" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=74796932/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://thekickers.bandcamp.com/album/2282">2282 by The Kickers</a></iframe>
 {{</html>}}
--->
-https://thekickers.bandcamp.com/album/2282
