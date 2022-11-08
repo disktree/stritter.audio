@@ -3,7 +3,7 @@
     <h4 class="link-menu" style="margin-bottom: 4px">
         {{ with resources.Get (print "audio/" .Params.file) }}
         <a href="{{ .Permalink }}" title="{{ .MediaType }}">
-            <i class="ic-file_download" style="position:relative;top:3px;left:-4px;"></i>
+            <i class="ic-play_arrow" style="position:relative;top:1px;left:-6px;"></i>
             {{- $rec.Title | safeHTML -}}
         </a>
         {{ end }}
