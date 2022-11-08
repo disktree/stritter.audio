@@ -19,11 +19,15 @@
         <li>
             <span>Recorder:</span>
             <strong>{{- . | safeHTML -}}</strong>
+            {{ with $rec.Params.details }}
+            <span>({{- . | safeHTML -}})</span>
+            {{ end }}
         </li>
         {{ end }}
-        {{ with .Params.details }}
+        {{ with .Params.project }}
         <li>
-            <strong>{{- . | safeHTML -}}</strong>
+            <span>Project:</span>
+            <a href="/project/{{- . -}}"><strong>{{- . -}}</strong></a>
         </li>
         {{ end }}
     </ol>
