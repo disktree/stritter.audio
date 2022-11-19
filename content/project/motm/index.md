@@ -6,5 +6,6 @@ links: [
 ]
 rss_ignore: true
 ---
+{{< img src="motm.jpg" caption="5U Modules ±15 volt power supply" >}}  
+
 Ongoing DIY project since 2015.  
-5U Modules ±15 volt power supply.
