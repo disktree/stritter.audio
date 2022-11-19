@@ -1,32 +1,41 @@
 {{ define "main" }}
 <article>
     
-    <!--<section>
-        <label>News</label>
-        <ol class="nolist">
-            {{ range where .Site.RegularPages "Section" "news" }}
-                <li>
-                    <time>{{ .Date.Format "2006/01/02" }}</time>
-                    <span>{{ .Title }}</span>
-                    
-                </li>
-            {{ end }}
-        </ol>
-    </section>-->
-
     <section>
-        <label>Upcoming Events</label>
+        <label>Events</label>
         <ol class="link-menu">
-            {{ range (where .Site.RegularPages "Section" "live").ByDate }}
-            {{ if (time .Date).After now }}
+            {{ range $event := (where .Site.RegularPages "Section" "live").ByDate.Reverse }}
+            {{ $upcoming := (time $event.Params.date).After now }}
+            {{ if $upcoming }}
                 {{ .Render "li" }}
             {{ end }}
             {{ end }}
         </ol>
+        <!-- <label>Past Events</label> -->
+         <table>
+            <tbody>
+            {{ range $event := (where .Site.RegularPages "Section" "live").ByDate.Reverse }}
+                {{ $date := (time $event.Params.date) }}
+                {{ $upcoming := $date.After now }}
+                {{ if not $upcoming }}
+                <tr>
+                    <td class="f_low">{{ .Date.Format "2006/01/02" }}</td>
+                    <td>
+                        <a href="{{ .RelPermalink }}"><strong>{{ .Title | markdownify | safeHTML -}}</strong></a>
+                        {{ with .Params.location }}
+                        <i class="ic-location_on f_low"></i>
+                        <span class="f_low">{{- . | markdownify | safeHTML -}}</span>
+                        {{ end }}
+                    </td>
+                </tr>
+                {{ end }}
+            {{ end }}
+            </tbody>
+        </table>
     </section>
-    
+
     <section>
-        <label>Projects</label>
+        <label>Selected Works</label>
         <ul class="link-menu">
             {{ range where .Site.RegularPages "Section" "project" }}
             <li>
@@ -39,5 +48,6 @@
             {{ end }}
         </ul>
     </section>
+
 </article>
 {{ end }}

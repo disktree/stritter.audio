@@ -1,12 +1,12 @@
 {{ define "main" }}
 <article data-page="project">
-
     <header>
         <h2>{{- .Title | safeHTML -}}</h2>
     </header>
+    
     <div class="content">{{- .Content | safeHTML -}}</div>
 
-    {{ $images := .Resources.ByType "image" }}
+    {{ $images := .Resources.Match "gallery/*" }}
     {{ if gt (len $images) 0 }}
     <section class="gallery">
         <ul >
