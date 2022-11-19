@@ -10,6 +10,15 @@
     --b_inv: #eb3f48;
 }
 
+.f_high { color: var(--f_high); }
+.f_med  { color: var(--f_med); }
+.f_low  { color: var(--f_low); }
+.f_inv  { color: var(--f_inv); }
+.b_high { background: var(--b_high); }
+.b_med  { background: var(--b_med); }
+.b_low  { background: var(--b_low); }
+.b_inv  { background: var(--b_inv); }
+
 body {
     background: linear-gradient(to bottom, #666666, var(--background));
     background-attachment: fixed;
@@ -33,31 +42,5 @@ hr {
 *::selection {
     background: var(--b_high);
     color: var(--f_inv);
-
 }
 
-.f_high {
-    color: var(--f_high);
-}
-.f_med {
-    color: var(--f_med);
-}
-.f_low {
-    color: var(--f_low);
-}
-.f_inv {
-    color: var(--f_inv);
-}
-
-.b_high {
-    background: var(--b_high);
-}
-.b_med {
-    background: var(--b_med);
-}
-.b_low {
-    background: var(--b_low);
-}
-.b_inv {
-    background: var(--b_inv);
-}

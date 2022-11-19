@@ -5,6 +5,7 @@
     --font-primary: "Inter";
     --font-mono: "RobotoMono";
 
+	--line-height: 1.5;
     --text-base-size: 14px;
     --text-scale-ratio: 1.25;
     --body-font-weight: 500;
@@ -93,6 +94,13 @@ em {
     font-style: italic;
 }
 
+figure {
+    margin-bottom: 2rem;
+    figcaption {
+        font-family: var(--font-mono);
+        font-size: 75%;
+    }
+}
 h1, h2, h3, h4, h5, h6 {
     font-weight: var(--heading-font-weight);
     line-height: var(--heading-line-height);
@@ -153,6 +161,11 @@ ol, ul {
         //margin-bottom: 0;
     }
 }
+
+li, tr {
+    //line-height: 1;
+}
+
 //ol {
 //    list-style-type: decimal;
 //}
@@ -212,6 +225,9 @@ table {
     }
     th {
         text-align: left;
+    }
+    tr {
+        line-height: 1;
     }
 }
 tui {

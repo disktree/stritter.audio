@@ -77,7 +77,8 @@ body {
         > article {
             height: 100%;
             margin: 0 var(--site-margin);
-            padding: 1rem 0;
+            padding: 2rem 0;
+            max-width: var(--max-content-width);
             //mix-blend-mode: difference;
             > header {
                 padding: 3rem 0 2rem 0;
@@ -94,10 +95,14 @@ body {
                 max-width: 700px;
             }
             > section {
-                padding: 2rem 0;
-                max-width: var(--max-content-width);
+                width: 100%;
+                padding: 1rem 0 1rem 0;
+                //max-width: var(--max-content-width);
+                &:last-child {
+                    padding-bottom: 4rem;
+                }
                 &:not(:last-child) {
-                    border-bottom: 1px solid var(--f_low);
+                    // border-bottom: 1px solid var(--f_low);
                 }
                 .link-menu {
                     list-style: none;
@@ -114,18 +119,20 @@ body {
                     line-height: 1;
                 }
                 li.upcoming {
-                    margin: 0 0 2rem 0;
+                    margin: 1rem 0 2rem 0;
                     > a {
                         display: table;
                     }
                 }
                 &.gallery {
-                    margin: 1rem 0 1rem 0;
+                    //margin: 1rem 0 1rem 0;
+                    margin-bottom: 1rem;
                     border: none;
                     ul {
                         column-count: 2; 
                         column-gap: 0.5rem;
-                        margin: 2rem 0 0 0;
+                        //margin: rem 0 0 0;
+                        margin: 0;
                         list-style: none;
                         max-width: 1024px;
                         > li {
@@ -138,12 +145,13 @@ body {
                                     2px 2px 6px rgba(0,0,0,0.4);
                             }
                         }
-                        @media (max-width: breakpoint.$hd ) { column-count: 3; } 
+                        // @media (max-width: breakpoint.$hd ) { column-count: 3; } 
                         @media (max-width: breakpoint.$desktop ) { column-count: 2; } 
                         @media (max-width: breakpoint.$tablet ) { column-count: 1; } 
                     }
                     .photos {
-                        position: absolute;
+                        position: relative;
+                        top: 0.5rem;
                         font-family: var(--font-mono);
                         font-size: 75%;
                     }
@@ -151,7 +159,20 @@ body {
             }
             img {
                 width: 100%;
-                margin-bottom: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            figure {
+                position: relative;
+                margin: 2rem 0;
+                //padding: 1rem 0;
+                > figcaption {
+                    background: var(--b_low);
+                    color: var(--f_med);
+                    padding: 2px 0.5em;
+                    position: absolute;
+                    bottom: 0.5rem;
+                    right: 0.5rem;
+                }
             }
         }
     }

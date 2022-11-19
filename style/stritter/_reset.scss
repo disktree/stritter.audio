@@ -3,12 +3,11 @@
     margin: 0;
     padding: 0;
     border: none;
-	// border: 0;
+	border: 0;
 	border-collapse: collapse;
     border-spacing: 0;
-    outline: 0;
+    //outline: 0;
 	font: inherit;
-	// vertical-align: baseline;
 }
 *::after, *::before {
 	box-sizing: inherit;
@@ -36,5 +35,5 @@ img {
 }
 
 [tabindex='-1']:focus {
-    outline: 0 !important;
+    //outline: 0 !important;
 }
