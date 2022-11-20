@@ -1,7 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-file: ""
+file: "filename.mp3"
 microphone: ""
 recorder: ""
 details: "96kHz, 24bit"
