@@ -21,7 +21,8 @@
                 <tr>
                     <td class="f_low">{{ .Date.Format "2006/01/02" }}</td>
                     <td>
-                        <a href="{{ .RelPermalink }}"><strong>{{ .Title | markdownify | safeHTML -}}</strong></a>
+                        <!-- <a href="{{ .RelPermalink }}"><strong>{{ .Title | markdownify | safeHTML -}}</strong></a> -->
+                        <span><strong>{{ .Title | markdownify | safeHTML -}}</strong></span>
                         {{ with .Params.location }}
                         <i class="ic-location_on f_low"></i>
                         <span class="f_low">{{- . | markdownify | safeHTML -}}</span>
