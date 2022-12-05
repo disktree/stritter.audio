@@ -1,8 +1,9 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: ""
 date: {{ .Date }}
 publishDate:
 description: ""
 location: ""
 project: ""
 ---
+
