@@ -12,5 +12,5 @@ Gefördert von der Stadt Wien Kultur.
 - Cello: Vinzent Singer
 - Vocals: [Nava Hemyai](https://www.navahemyari.com/)
 
-{{< img src="das_fluestern_der_baeume-1.jpg">}}
+![](das_fluestern_der_baeume-1.jpg)
 
