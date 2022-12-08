@@ -48,4 +48,5 @@ jobs:
         with:
           name: stritter.audio
           path: public
+          retention-days: 7
 
