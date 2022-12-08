@@ -7,6 +7,7 @@ on:
       description: 'BaseURL to use in build'
       default: 'https://disktree.github.io/stritter.audio'
       type: 'string'
+      required: true
 
 jobs:
   build:
