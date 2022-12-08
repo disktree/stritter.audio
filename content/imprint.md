@@ -12,8 +12,10 @@ rss_ignore: true
 
 ---
 
-Developer: [{{< param "developer.url">}}]({{< param "developer.url">}})  
 Source: [{{< param "repository" >}}]({{< param "repository" >}})  
+Developer: [{{< param "developer.url">}}]({{< param "developer.url">}})  
+
+---
 
 This website is optimized for the [lynx browser](https://lynx.browser.org/).
 
