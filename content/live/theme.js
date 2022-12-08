@@ -36,7 +36,7 @@ function applyTheme(theme,save) {
 	if(save) saveTheme(theme);
 }
 
-window.addEventListener('load', event => {
+window.addEventListener('load', _ => {
 	style = window.getComputedStyle(document.querySelector(':root'));
 	if( style ) {
 		var theme = loadTheme();
