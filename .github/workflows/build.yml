@@ -31,16 +31,21 @@ jobs:
       - name: Build style
         run: npm run prod:style
       - name: Build site
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: npm run prod:hugo -- --baseURL ${{ inputs.base_url }}
-      - name: Store
-        uses: actions/upload-artifact@v3
-        with:
-          name: stritter.audio
-          path: public
-      - name: Deploy
+      - name: Build test site
+        if: ${{ github.event_name == 'push' }}
+        run: npm run prod:hugo -- --baseURL https://disktree.github.io/stritter.audio
+      - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages
           folder: public
           clean: true
           single-commit: true
+      - name: Store
+        uses: actions/upload-artifact@v3
+        with:
+          name: stritter.audio
+          path: public
+
