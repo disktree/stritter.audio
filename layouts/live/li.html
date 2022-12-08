@@ -1,7 +1,8 @@
 <li class="upcoming">
     <h4>{{ .Date.Format "Monday 2006/01/02" }}</h4>
     <h3>
-        <a href="{{ .RelPermalink }}">{{- .Title | markdownify | safeHTML -}}</a> 
+        <!-- <a href="{{ .RelPermalink }}">{{- .Title | markdownify | safeHTML -}}</a>  -->
+        <span>{{- .Title | markdownify | safeHTML -}}</span> 
     </h3>
     {{ with .Params.location }}
     <div style="color: var(--f_low);">
