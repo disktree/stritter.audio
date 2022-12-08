@@ -2,6 +2,11 @@ name: build
 
 on:
   push:
+  workflow_dispatch:
+    base_url:
+      description: 'BaseURL to use in build'
+      default: 'https://disktree.github.io/stritter.audio'
+      type: 'string'
 
 jobs:
   build:
@@ -13,12 +18,12 @@ jobs:
       - name: Build style
         run: npm run prod:style
       - name: Build site
-        run: npm run prod:hugo -- --baseURL https://disktree.github.io/stritter.audio
-      #- name: Store
-        #uses: actions/upload-artifact@v3
-        #with:
-          #name: stritter.audio
-          #path: public
+        run: npm run prod:hugo -- --baseURL ${{ inputs.base_url }}
+      - name: Store
+        uses: actions/upload-artifact@v3
+        with:
+          name: stritter.audio
+          path: public
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
