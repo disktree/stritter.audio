@@ -1,26 +1,32 @@
 {
-  "name": "stritter.audio",
-  "version": "0.0.0",
-  "description": "https://stritter.audio",
-  "private": true,
-  "scripts": {
-    "clean": "rm -rf public && rm -f static/style.css*",
-    "prod:hugo": "hugo --environment production --buildFuture --verbose",
-    "prod:style": "sass style/main.scss static/style.css --style compressed",
-    "prod": "npm run clean && npm run prod:style && npm run prod:hugo",
-    "dev:style": "sass style/main.scss static/style.css --watch",
-    "dev:hugo": "hugo server -D --buildFuture",
-    "start": "npm run dev:hugo"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/disktree/stritter.audio.git"
-  },
-  "author": "tong@disktree.net",
-  "license": "ISC",
-  "homepage": "https://github.com/disktree/stritter.audio/blob/master/README.md",
-  "devDependencies": {
-    "hugo-bin": "^0.96.0",
-    "sass": "^1.54.3"
-  }
+    "name": "stritter.audio",
+    "version": "0.0.0",
+    "description": "https://stritter.audio",
+    "private": true,
+    "scripts": {
+        "clean": "rm -rf public && rm -f static/style.css*",
+        "prod:hugo": "source .env && hugo --baseURL \"$STRITTER_BASE_URL\" --environment production --buildFuture --verbose",
+        "prod:style": "sass style/main.scss static/style.css --style compressed",
+        "prod": "npm run clean && npm run prod:style && npm run prod:hugo",
+        "dev:style": "sass style/main.scss static/style.css --watch",
+        "dev:hugo": "hugo server -D --buildFuture",
+        "start": "npm run dev:hugo"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/disktree/stritter.audio.git"
+    },
+    "author": "tong@disktree.net",
+    "license": "ISC",
+    "homepage": "https://github.com/disktree/stritter.audio/blob/master/README.md",
+    "devDependencies": {
+        "hugo-bin": "^0.96.0",
+        "sass": "^1.54.3"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.3"
+    },
+    "hugo-bin": {
+        "buildTags": "extended"
+    }
 }
