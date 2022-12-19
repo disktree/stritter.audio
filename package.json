@@ -5,7 +5,7 @@
     "private": true,
     "scripts": {
         "clean": "rm -rf public && rm -f static/style.css*",
-        "prod:hugo": "source .env && hugo --baseURL \"$STRITTER_BASE_URL\" --environment production --buildFuture --verbose",
+        "prod:hugo": "hugo --baseURL \"$STRITTER_BASE_URL\" --environment production --buildFuture --verbose",
         "prod:style": "sass style/main.scss static/style.css --style compressed",
         "prod": "npm run clean && npm run prod:style && npm run prod:hugo",
         "dev:style": "sass style/main.scss static/style.css --watch",
