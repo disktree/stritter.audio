@@ -2,6 +2,7 @@
 <article data-page="project">
     <header>
         <h2>{{- .Title | safeHTML -}}</h2>
+
     </header>
     
     <div class="content">{{- .Content | safeHTML -}}</div>
@@ -23,14 +24,12 @@
         {{ end }}
     </section>
     {{ end }}
-    
-    <!--{{ range .Resources.ByType "audio"  }}
-    {{ end }}-->
+
 
     {{ $events := where (where .Site.RegularPages "Section" "live") "Params.project" "==" .File.ContentBaseName }}
     {{ if gt (len $events) 0 }}
     <section>
-        <!--<label>Upcoming Events</label>-->
+        <label>Upcoming Live Events</label>
         <ol class="nolist">
             {{ range $event := $events }}
                 {{ $upcoming := (time $event.Params.date).After now }}
@@ -39,11 +38,6 @@
                 {{ end }}
             {{ end }}
         </ol>
-    </section>
-    {{ end }}
-
-    <section>
-        <!--<label>Past Events</label>-->
         <table>
             {{ range $event := $events }}
             {{ $upcoming := (time $event.Params.date).After now }}
@@ -63,8 +57,9 @@
             {{ end }}
             {{ end }}
         </table>
+
     </section>
- 
+    {{ end }}
 </article>
 {{ end }}
 

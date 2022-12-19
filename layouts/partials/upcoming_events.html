@@ -1,0 +1,8 @@
+<ol class="link-menu">
+    {{ range $event := (where .Site.RegularPages "Section" "live").ByDate }}
+    {{ $upcoming := (time $event.Params.date).After now }}
+    {{ if $upcoming }}
+        {{ .Render "li" }}
+    {{ end }}
+    {{ end }}
+</ol>
