@@ -1,11 +1,11 @@
 {{ define "main" }}
 <article data-page="project">
     <header>
-        <h2>{{- .Title | safeHTML -}}</h2>
+        <h2 data-id="title">{{- .Title | safeHTML -}}</h2>
 
     </header>
     
-    <div class="content">{{- .Content | safeHTML -}}</div>
+    <div data-id="content" class="content">{{- .Content | safeHTML -}}</div>
 
     {{ $images := .Resources.Match "gallery/*" }}
     {{ if gt (len $images) 0 }}
@@ -29,7 +29,7 @@
     {{ $events := where (where .Site.RegularPages "Section" "live") "Params.project" "==" .File.ContentBaseName }}
     {{ if gt (len $events) 0 }}
     <section>
-        <label>Upcoming Live Events</label>
+        <!-- <label>Upcoming Live Events</label> -->
         <ol class="nolist">
             {{ range $event := $events }}
                 {{ $upcoming := (time $event.Params.date).After now }}
