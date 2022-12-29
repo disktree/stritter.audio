@@ -26,21 +26,9 @@
        
         <link rel="stylesheet" href="{{ $root }}/style.css">
         <link rel="alternate" href="{{ $root }}index.xml" type="application/atom+xml" title="Stritter"/>
-
         <link rel="manifest" href="{{ $root }}/manifest.json">
         {{ partial "site/favicons" . }}
        
-        <script src="{{ (resources.Get "script/app.js").Permalink }}" async></script>
-        
-	</head>
-	<body>
-        <header>
-            <nav data-id="nav">{{ block "nav" . }}{{- partial "site/nav.html" . -}}{{ end }}</nav>
-            <nav data-id="subnav">{{ block "subnav" . }}{{ end }}</nav>
-        </header>
-        <main>{{ block "main" . }}{{- partial "site/main.html" . -}}{{ end }}</main>
-		<footer class="meta">{{ block "footer" . }}{{- partial "site/footer.html" . -}}{{ end }}</footer>
-        <div id="background-media">{{ block "background-media" .}}{{ end }}</div>
         {{ with .Params.theme }}
         <style>
             :root {
@@ -56,7 +44,20 @@
             }
         </style>
         {{ end }}
+
+        <script src="{{ (resources.Get "js/app.js").Permalink }}" async></script>
+        
+	</head>
+	<body>
+        <header>
+            <nav data-id="nav">{{ block "nav" . }}{{- partial "site/nav.html" . -}}{{ end }}</nav>
+            <nav data-id="subnav">{{ block "subnav" . }}{{ end }}</nav>
+        </header>
+        <main>{{ block "main" . }}{{- partial "site/main.html" . -}}{{ end }}</main>
+		<footer class="meta">{{ block "footer" . }}{{- partial "site/footer.html" . -}}{{ end }}</footer>
+        <div id="background-media">{{ block "background-media" .}}{{ end }}</div>
 		<div id="vignette"></div>
+        <!-- <script src="{{ $root }}/cms.js"></script> -->
     </body>
 </html>
 
