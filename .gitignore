@@ -3,9 +3,10 @@ tmp/
 node_modules/
 public/
 resources/
-nginx.conf
 .hugo_build.lock
 static/style.css*
-*.zip
 _data/
 _script/
+.DS_Store
+*.zip
+nginx.conf
