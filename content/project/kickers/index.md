@@ -16,5 +16,5 @@ Cello: Vincent Singer, Cover: Anastasia Bukhnina
 
 {{<html>}}
 <br>
-<iframe style="border: 0; width: 700px; height: 820px;" src="https://bandcamp.com/EmbeddedPlayer/album=74796932/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://thekickers.bandcamp.com/album/2282">2282 by The Kickers</a></iframe>
+<iframe title="Kickers" style="border: 0; width: 700px; height: 820px;" src="https://bandcamp.com/EmbeddedPlayer/album=74796932/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless></iframe>
 {{</html>}}

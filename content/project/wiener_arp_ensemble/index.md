@@ -20,4 +20,5 @@ Two amplified metal plates and a 20-meter long amplified piano string.
 The performance was played over a 13-channel sound system as a part of an ELAK concert.
 
 [Evgeny Ignashev](https://ignashev.com/), Wolfgang Musil, Frederic Stritter.
+
 {{< youtube id="zwC67wKWUJE">}}
