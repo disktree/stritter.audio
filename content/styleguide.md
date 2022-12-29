@@ -69,15 +69,7 @@ Term
 ---
 ###### Colors
 {{< html >}}
-<style>
-ol.theme {
-}
-ol.theme > li.color {
-    display: inline-block;
-    padding: 1rem;
-    background: red;
-}
-</style>
+
 <ol class="theme">
     <li class="color" style="background:var(--background);">background</li>
     <li class="color" style="background:var(--f_high);">f-hi</li>
