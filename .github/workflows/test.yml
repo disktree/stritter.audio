@@ -1,0 +1,61 @@
+name: test
+
+on:
+  push:
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      # - name: Cache resources
+      #   id: cache-resources
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: resources
+      #     key: hugo-resources
+      - name: Get npm cache directory
+        id: get-npm-cache-dir
+        shell: bash
+        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+      - name: Cache npm
+        id: npm-cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.get-npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: List state of npm modules
+        if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
+        continue-on-error: true
+        run: npm list
+      - name: Setup npm
+        run: npm ci
+      - name: Build style
+        run: npm run build:style
+      - name: Build site
+        run: npm run build:hugo -- --baseURL "https://disktree.github.io/stritter.audio"
+      - name: Run tests
+        run: npm test
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        with:
+          branch: gh-pages
+          folder: public
+          clean: true
+          single-commit: true
+      - name: Store
+        uses: actions/upload-artifact@v3
+        with:
+          name: stritter.audio
+          path: public
+          retention-days: 7
