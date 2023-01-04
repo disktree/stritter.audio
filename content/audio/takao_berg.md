@@ -1,5 +1,5 @@
 ---
-title: "Takao Berg, Hachioji"
+title: "Takao Berg, Hachioji 2019"
 file: "takao_berg.mp3"
 microphone: "Usi Pro [Stereo]"
 recorder: "Sound Devices Mix-Pre 6"
