@@ -1,7 +1,7 @@
 ---
 title: "Einsiedlerpark"
 date: 2020-03-23
-weight: 997
+weight: 8
 video: { start: 0 }
 rss_ignore: true
 ---

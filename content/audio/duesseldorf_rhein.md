@@ -1,8 +1,8 @@
 ---
-title: "Rhein, Düsseldorf 2019"
+title: "rec. - Rhein, Düsseldorf 2019"
 file: "duesseldorf_rhein.mp3"
-microphone: "MS Neumann rsm 191 [m/s]"
-recorder: "MixPre 6"
-details: "96kHz, 24bit"
+microphone: ""
+recorder: ""
+details: ""
 rss_ignore: true
 ---

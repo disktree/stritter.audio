@@ -1,7 +1,7 @@
 ---
 title: "Triangeln"
 date: 2020-09-23
-weight: 999
+weight: 2
 video: { start: 1 }
 theme: {
     f_high: "#ffffff",

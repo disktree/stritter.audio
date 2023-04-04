@@ -1,8 +1,8 @@
 ---
-title: "Nezu Shrine, Tokyo 2019"
-file: "nezu_shrine_tokyo.mp3"
-microphone: "Usi Pro [Stereo]"
-recorder: Sound Devices Mix-Pre 6
-details: "96kHz, 24bit"
+title: "rec. - Nezu Shrine, Tokyo 2019"
+file: "Nezu Shrine Tokyo 2019.mp3"
+microphone: ""
+recorder: 
+details: ""
 rss_ignore: true
 ---

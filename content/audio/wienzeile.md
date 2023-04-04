@@ -1,6 +1,6 @@
 ---
-title: "Wienzeile from underneath, Vienna 2014"
-file: "wienzeile.mp3"
-details: "96kHz, 24bit"
+title: "rec. - Wienzeile from underneath, Vienna 2014"
+file: "Homepage Ausschnitt Wienzeile von unten.wav"
+
 rss_ignore: true
 ---

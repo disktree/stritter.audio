@@ -1,7 +1,7 @@
 ---
 title: "Scirocco"
 date: 2022-11-07
-weight: 993
+weight: 5
 rss_ignore: true
 ---
 Wüstenstaub über Wien untersucht den Saharastaub, der im Frühjahr von Sandstürmen aufgewirbelt und durch den Mittelmeerwind **Scirocco** nach Wien getragen wird. 					
