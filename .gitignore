@@ -7,6 +7,7 @@ resources/
 static/style.css*
 _data/
 _script/
+__MACOSX
 .DS_Store
 *.zip
 nginx.conf
