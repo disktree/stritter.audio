@@ -96,7 +96,7 @@ body {
             }
             > section {
                 width: 100%;
-                padding: 1rem 0 1rem 0;
+                padding: 1rem 0 2rem 0;
                 //max-width: var(--max-content-width);
                 &:last-child {
                     padding-bottom: 4rem;
@@ -156,6 +156,15 @@ body {
                         font-size: 75%;
                     }
                 }
+                /*
+                &.audio {
+                    img {
+                        width: auto;
+                        height: 60px;
+                        float: left;
+                    }
+                }
+                */
             }
             img {
                 width: 100%;
