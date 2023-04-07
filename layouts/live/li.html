@@ -1,5 +1,9 @@
 <li class="upcoming">
+    {{ with .Params.date_tba }}
+    <h4>{{- . -}}</h4>
+    {{ else }}
     <h4>{{ .Date.Format "Monday 2006/01/02" }}</h4>
+    {{ end }}
     <h3>
         <!-- <a href="{{ .RelPermalink }}">{{- .Title | markdownify | safeHTML -}}</a>  -->
         <span>{{- .Title | markdownify | safeHTML -}}</span> 
