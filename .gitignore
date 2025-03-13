@@ -1,3 +1,4 @@
+assets/audio/
 media/
 tmp/
 node_modules/
@@ -10,4 +11,5 @@ _script/
 __MACOSX
 .DS_Store
 *.zip
+*.[0-9]/
 nginx.conf
