@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'npm'
+          cache: "npm"
       # - name: Cache resources
       #   id: cache-resources
       #   uses: actions/cache@v3
@@ -54,7 +54,7 @@ jobs:
           clean: true
           single-commit: true
       - name: Store
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: stritter.audio
           path: public
