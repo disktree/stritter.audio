@@ -7,7 +7,7 @@
     "clean": "rm -rf public && rm -f static/style.css*",
     "test:html": "for k in $(find public -type f -iname '*.html'); do html-validate --config=./.html_validate.json $k; done",
     "test": "npm run test:html",
-    "build:hugo": "hugo --baseURL \"$STRITTER_BASE_URL\" --environment production --buildFuture --verbose",
+    "build:hugo": "hugo --baseURL \"$STRITTER_BASE_URL\" --environment production --buildFuture",
     "build:style": "sass style/main.scss static/style.css --style compressed",
     "build": "npm run clean && npm run build:style && npm run build:hugo",
     "dev:style": "sass style/main.scss static/style.css --watch",
