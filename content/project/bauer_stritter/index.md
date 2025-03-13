@@ -1,5 +1,5 @@
 ---
-title: "Bauer & Stritter"
+title: "Bauer/Stritter"
 date: 2022-03-23
 weight: 7
 description: Live Performance Project 
@@ -11,4 +11,6 @@ rss_ignore: true
 ---
 Live performance project by [Nina Bauer](https://www.studio-nb.at/) & Frederic Stritter
 
-{{< youtube id="cAn961_2BSM" width="100%" height="400px">}}
+[bauer-stritter@klingt.org](https://bauer-stritter.klingt.org/)
+
+{{< youtube id="53BAIGzFtKY" width="100%" height="400px">}}

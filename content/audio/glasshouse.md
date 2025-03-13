@@ -1,5 +1,5 @@
 ---
-title: "rec. - Glasshouse 2019"
+title: "Glasshouse, Mettlach - rec 2019"
 file: "glasshouse.mp3"
 recorder: ""
 details: ""

@@ -1,5 +1,5 @@
 ---
-title: "rec. - Shopping Mall, Shibuya 2019"
+title: "Shopping Mall, Shibuya - rec 2019"
 file: "shopping_mall_shibuya.mp3"
 microphone: ""
 recorder: ""
