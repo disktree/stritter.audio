@@ -6,7 +6,6 @@ defaultContentLanguage = "en"
 disableHugoGeneratorInject = true
 enableRobotsTXT = true
 enableGitInfo = true
-paginate = 1000
 rssLimit = 100
 
 
