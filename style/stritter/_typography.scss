@@ -1,169 +1,191 @@
 @use 'breakpoint';
 
 :root {
-    
-    --font-primary: "Inter";
-    --font-mono: "RobotoMono";
 
-	--line-height: 1.5;
+  --font-primary: "Inter";
+  --font-mono: "RobotoMono";
+
+  --line-height: 1.5;
+  --text-base-size: 16px;
+  --text-scale-ratio: 1.25;
+  --body-font-weight: 500;
+  --heading-line-height: 2;
+  --heading-font-weight: 700;
+  --text-unit: var(--text-base-size); // if Em units → --text-unit: 1em;
+  --text-space-y-multiplier: 1;
+
+  --text-xs: calc((var(--text-unit) / var(--text-scale-ratio)) / var(--text-scale-ratio));
+  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
+  --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+  --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio));
+
+  --space-unit: 1rem;
+  --space-xxxxs: calc(0.125 * var(--space-unit));
+  --space-xxxs: calc(0.25 * var(--space-unit));
+  --space-xxs: calc(0.375 * var(--space-unit));
+  --space-xs: calc(0.5 * var(--space-unit));
+  --space-sm: calc(0.75 * var(--space-unit));
+  --space-md: calc(1.25 * var(--space-unit));
+  --space-lg: calc(2 * var(--space-unit));
+  --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
+  --space-xxxl: calc(8.5 * var(--space-unit));
+  --space-xxxxl: calc(13.75 * var(--space-unit));
+
+  @media screen and (min-width: breakpoint.$tablet) {
     --text-base-size: 14px;
-    --text-scale-ratio: 1.25;
-    --body-font-weight: 500;
-	--heading-line-height: 2;
-    --heading-font-weight: 700;
-	--text-unit: var(--text-base-size); // if Em units → --text-unit: 1em;
-    --text-space-y-multiplier: 1;
+  }
 
-    --text-xs: calc((var(--text-unit) / var(--text-scale-ratio)) / var(--text-scale-ratio));
-    --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
-    --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
-    --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
-    --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
-    --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
-    --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
-    --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio));
-
-    --space-unit:  1rem;
-	--space-xxxxs: calc(0.125 * var(--space-unit));
-	--space-xxxs:  calc(0.25 * var(--space-unit));
-	--space-xxs:   calc(0.375 * var(--space-unit));
-	--space-xs:    calc(0.5 * var(--space-unit));
-	--space-sm:    calc(0.75 * var(--space-unit));
-	--space-md:    calc(1.25 * var(--space-unit));
-	--space-lg:    calc(2 * var(--space-unit));
-	--space-xl:    calc(3.25 * var(--space-unit));
-	--space-xxl:   calc(5.25 * var(--space-unit));
-	--space-xxxl:  calc(8.5 * var(--space-unit));
-	--space-xxxxl: calc(13.75 * var(--space-unit));
-
-    @media screen and (min-width: breakpoint.$tablet) {
-       --text-base-size: 14px; 
-    }
-    @media screen and (min-width: breakpoint.$desktop) {
-       --text-base-size: 15px; 
-    }
+  @media screen and (min-width: breakpoint.$desktop) {
+    --text-base-size: 15px;
+  }
 }
 
 html {
-    font-family: var(--font-primary), sans;
-    font-size: var(--text-base-size);
-    font-weight: var(--body-font-weight, normal);
-    font-optical-sizing: auto;
-    line-height: var(--line-height);
-	letter-spacing: normal;
-	text-rendering: optimizelegibility;
+  font-family: var(--font-primary), sans;
+  font-size: var(--text-base-size);
+  font-weight: var(--body-font-weight, normal);
+  font-optical-sizing: auto;
+  line-height: var(--line-height);
+  letter-spacing: normal;
+  text-rendering: optimizelegibility;
 }
 
 a {
-    border: none;
-    outline: none;
-    //&:hover, &:focus {}
-    //&.fade {
-        //transition: color 0.4s;
-        //&:hover {
-            //color: var(--f_high);
-        //}
-    //}
+  border: none;
+  outline: none;
+  //&:hover, &:focus {}
+  //&.fade {
+  //transition: color 0.4s;
+  //&:hover {
+  //color: var(--f_high);
+  //}
+  //}
 }
 
 address {
-    display: inline-block;
+  display: inline-block;
 }
 
 blockquote {
-    padding-left: 1em;
-    font-style: italic;
-    border-left: 0.25rem solid var(--f_med);
+  padding-left: 1em;
+  font-style: italic;
+  border-left: 0.25rem solid var(--f_med);
 }
 
-code, pre {
-    font-family: var(--font-mono);
+code,
+pre {
+  font-family: var(--font-mono);
 }
 
 dl {
-    > dt {
-        font-weight: 200;
-        font-style: italic;
-    }
-    > dd {
-        margin-left: 1.5rem;
-    }
+  >dt {
+    font-weight: 200;
+    font-style: italic;
+  }
+
+  >dd {
+    margin-left: 1.5rem;
+  }
 }
 
 em {
-    font-style: italic;
+  font-style: italic;
 }
 
 figure {
-    margin-bottom: 2rem;
-    figcaption {
-        font-family: var(--font-mono);
-        font-size: 75%;
-    }
+  margin-bottom: 2rem;
+
+  figcaption {
+    font-family: var(--font-mono);
+    font-size: 75%;
+  }
 }
-h1, h2, h3, h4, h5, h6 {
-    font-weight: var(--heading-font-weight);
-    line-height: var(--heading-line-height);
-    text-transform: uppercase;
-    letter-spacing: -0.05em;
-    word-break: break-word;
-}
-h1 {
-    font-size: var(--text-xxxxl);
-}
-h2 {
-    font-size: var(--text-xxxl);
-}
-h3 {
-    font-size: var(--text-xxl);
-}
-h4 {
-    font-size: var(--text-xl);
-}
-h5 {
-    font-size: var(--text-lg);
-}
+
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
-    font-size: var(--text-md);
+  font-weight: var(--heading-font-weight);
+  line-height: var(--heading-line-height);
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  word-break: break-word;
+}
+
+h1 {
+  font-size: var(--text-xxxxl);
+}
+
+h2 {
+  font-size: var(--text-xxxl);
+}
+
+h3 {
+  font-size: var(--text-xxl);
+}
+
+h4 {
+  font-size: var(--text-xl);
+}
+
+h5 {
+  font-size: var(--text-lg);
+}
+
+h6 {
+  font-size: var(--text-md);
 }
 
 hr {
-    height: 1px;
-    margin: 1rem 0;
-    background: var(--f_med);
+  height: 1px;
+  margin: 1rem 0;
+  background: var(--f_med);
 }
 
-p, ol, ul {
-	margin-bottom: calc(var(--space-unit) * 0.9375 * var(--text-space-y-multiplier,1));
+p,
+ol,
+ul {
+  margin-bottom: calc(var(--space-unit) * 0.9375 * var(--text-space-y-multiplier, 1));
 }
 
 label {
-    display: inline-block;
-    //padding: 0.35em 1.25em 0.42em 1.25em;
-    margin-bottom: 1em;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    //background: var(--f_low);
-    color: var(--f_med);
-    //border-radius: 1.5em; 
-//background-clip: text;
-//color: transparent;
-//-webkit-background-clip: text;
+  display: inline-block;
+  //padding: 0.35em 1.25em 0.42em 1.25em;
+  margin-bottom: 1em;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  //background: var(--f_low);
+  color: var(--f_med);
+  //border-radius: 1.5em; 
+  //background-clip: text;
+  //color: transparent;
+  //-webkit-background-clip: text;
   //-webkit-text-fill-color: transparent;
 }
 
-ol, ul {
-    margin-left: 1em;
-    margin-bottom: 1em;
-    ol, ul {
-        padding-left: 1rem;
-        //margin-bottom: 0;
-    }
+ol,
+ul {
+  margin-left: 1em;
+  margin-bottom: 1em;
+
+  ol,
+  ul {
+    padding-left: 1rem;
+    //margin-bottom: 0;
+  }
 }
 
-li, tr {
-    //line-height: 1;
+li,
+tr {
+  //line-height: 1;
 }
 
 //ol {
@@ -174,11 +196,12 @@ li, tr {
 //}
 
 strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 
-sub, sup {
-    font-size: 50%;
+sub,
+sup {
+  font-size: 50%;
 }
 
 
@@ -213,36 +236,43 @@ sub, sup {
 }*/
 table {
 
-    &, td, th {
-        border: 1px solid var(--fg);
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 0.25rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    th {
-        text-align: left;
-    }
-    tr {
-        line-height: 1;
-    }
+  &,
+  td,
+  th {
+    border: 1px solid var(--fg);
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  tr {
+    line-height: 1;
+  }
 }
 
 .tui {
-    display: none;
+  display: none;
 }
 
 div.footnotes {
-    font-size: 75%;
-    ol {
-        > li {
-            p {
-                display: inline;
-                margin: 0;
-            }
-        }
+  font-size: 75%;
+
+  ol {
+    >li {
+      p {
+        display: inline;
+        margin: 0;
+      }
     }
+  }
 }

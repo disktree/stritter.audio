@@ -5,28 +5,35 @@
 $thick: math.div(1rem, 2.5) !default;
 
 *::-webkit-scrollbar {
-    border: none;
-    &:horizontal {
-        //display: none;
-    }
-    &:vertical {
-        width: $thick;
-    }
+  border: none;
+
+  &:horizontal {
+    //display: none;
+  }
+
+  &:vertical {
+    width: $thick;
+  }
 }
+
 ::-webkit-scrollbar-button,
 ::-webkit-scrollbar-corner {
-    display: none !important;
+  display: none !important;
 }
+
 ::-webkit-scrollbar-track {
-    background: var(--background);
+  background: var(--background);
 }
+
 ::-webkit-scrollbar-thumb {
-    background: var(--f_low);
-    //background: color.adjust(theme.$bg, $lightness: -20%);
-    &:hover {
-        background: var(--f_med);
-    }
-    &:active {
-        background: var(--f_high);
-    }
+  background: var(--f_low);
+
+  //background: color.adjust(theme.$bg, $lightness: -20%);
+  &:hover {
+    background: var(--f_med);
+  }
+
+  &:active {
+    background: var(--f_high);
+  }
 }

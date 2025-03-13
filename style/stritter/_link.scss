@@ -1,25 +1,25 @@
+@mixin effect-1($time: 0.3s, $thick: 1px, $top: 1.5em, $border-radius: 0px) {
+  position: relative;
 
-@mixin effect-1($time:0.3s, $thick:1px, $top: 1.5em, $border-radius: 0px) {
-    position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: $top;
+    width: 100%;
+    height: $thick;
+    //border-radius: $border-radius;
+    background: var(--f_med);
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform $time ease-in-out;
+  }
+
+  &:hover {
     &::before {
-        content: '';
-        position: absolute;
-        top: $top;
-        width: 100%;
-        height: $thick;
-        //border-radius: $border-radius;
-        background: var(--f_med);
-        bottom: 0;
-        left: 0;
-        transform-origin: right;
-        transform: scaleX(0);
-        transition: transform $time ease-in-out;
+      transform-origin: left;
+      transform: scaleX(1);
     }
-    &:hover {
-        &::before {
-            transform-origin: left;
-            transform: scaleX(1);
-        }
-    }
+  }
 }
- 
