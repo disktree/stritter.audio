@@ -36,6 +36,8 @@ body {
     >nav[data-id="nav"] {
       display: flex;
       flex-wrap: nowrap;
+      // overflow: hidden;
+      // white-space: nowrap;
       width: 100%;
 
       >ul {
@@ -46,6 +48,8 @@ body {
         list-style: none;
 
         >li {
+          //white-space: nowrap;
+
           &:first-child {
             font-weight: bold;
           }
@@ -79,6 +83,15 @@ body {
           }
         }
       }
+    }
+
+    >nav[data-id="subnav"] {
+      width: 100%;
+      display: flex;
+      // flex-wrap: nowrap;
+      white-space: nowrap;
+      // overflow: hidden;
+      justify-content: flex-end;
     }
   }
 

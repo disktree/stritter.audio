@@ -1,6 +1,5 @@
 'use strict';
 
-console.info('Was nichts kostet ist nichts wert');
 console.info('Source: https://github.com/disktree/stritter.audio');
 console.info('https://disktree.net');
 

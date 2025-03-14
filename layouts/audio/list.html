@@ -1,6 +1,9 @@
-{{ define "main" }}
+{{ define "head" }}
 <link rel="stylesheet" href="{{ (resources.Get "css/audio.css").Permalink }}">
 <script src="{{ (resources.Get "js/audio.js").Permalink }}" async></script>
+{{ end }}
+
+{{ define "main" }}
 <ol data-type="playlist">
   {{ range $rec := .RegularPages }}
   <li>
@@ -12,21 +15,27 @@
     {{/*{{ else }}*/}}
     {{/* {{ warnf "image [%s] not found" $res_id }}*/}}
     {{/*{{ end }}*/}}
-      <img src="image/{{ . }}">
+    <img src="image/{{ . }}">
     {{ end }}
     <div class="content">
       {{ $path := print "file/" .Params.file }}
-      <div class="title">{{ .Title | safeHTML }}</div>
+      <h6 class="title">{{ .Title | safeHTML }}</h6>
       <div class="text">{{ .Content }}</div>
-            {{/*{{ with .Params.project }}*/}}
-            {{/*<div>*/}}
-            {{/*    <span>Project:</span>*/}}
-            {{/*    <a href="/project/{{- . -}}"><strong>{{- . -}}</strong></a>*/}}
-            {{/*</div>*/}}
-            {{/*{{ end }}*/}}
+      {{/*{{ with .Params.project }}*/}}
+      {{/*<div>*/}}
+        {{/* <span>Project:</span>*/}}
+        {{/* <a href="/project/{{- . -}}"><strong>{{- . -}}</strong></a>*/}}
+        {{/*</div>*/}}
+      {{/*{{ end }}*/}}
       <audio src="{{ $path }}" controls></audio>
     </div>
   </li>
   {{ end }}
 </ol>
+{{ end }}
+
+
+{{ define "subnav" }}
+<div id="audio-info">
+</div>
 {{ end }}

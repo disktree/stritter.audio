@@ -46,7 +46,9 @@
         {{ end }}
 
         <script src="{{ (resources.Get "js/app.js").Permalink }}" async></script>
-        
+
+        {{ block "head" . }}{{ end }}
+
 	</head>
 	<body>
         <header>
