@@ -1,46 +1,32 @@
 {{ define "main" }}
-<article data-page="audio">
-    {{ range $rec := .RegularPages }}
-    <section class="audio">
-        {{ $rec := . }}
-        {{ $id := .File.ContentBaseName }}
-        <!-- <img src="{{$id}}.jpg" alt=""> -->
-        <h4 class="link-menu" style="margin-bottom: 4px">
-            {{ with resources.Get (print "audio/" .Params.file) }}
-            <a href="{{ .Permalink }}" title="{{ .MediaType }}">
-                <i class="ic-play_arrow" style="position:relative;top:1px;left:-6px;"></i>
-                {{- $rec.Title | safeHTML -}}
-            </a>
-            {{ end }}
-        </h4>
-        <ol class="nolist meta">
-            {{ with .Params.microphone }}
-            <li>
-                <span>Microphone:</span>
-                <strong>{{- . | safeHTML -}}</strong>
-            </li>
-            {{ end }}
-            {{ with .Params.recorder }}
-            <li>
-                <span>Recorder:</span>
-                <strong>{{- . | safeHTML -}}</strong>
-                {{ with $rec.Params.details }}
-                <span>({{- . | safeHTML -}})</span>
-                {{ end }}
-            </li>
-            {{ end }}
-            {{ with .Params.project }}
-            <li>
-                <span>Project:</span>
-                <a href="/project/{{- . -}}"><strong>{{- . -}}</strong></a>
-            </li>
-            {{ end }}
-        </ol>
-        {{ with .Content }}
-        <br>
-        <div class="content">{{- . | safeHTML -}}</div>
-        {{ end }}
-    </section>
+<link rel="stylesheet" href="{{ (resources.Get "css/audio.css").Permalink }}">
+<script src="{{ (resources.Get "js/audio.js").Permalink }}" async></script>
+<ol data-type="playlist">
+  {{ range $rec := .RegularPages }}
+  <li>
+    {{ with .Params.image }}
+    {{/*{{ $res_id := print "image/" . }}*/}}
+    {{/*{{ $res := resources.Get $res_id }}*/}}
+    {{/*{{ with $res }}*/}}
+    {{/*<img src="{{ $res.RelPermalink}}"></img>*/}}
+    {{/*{{ else }}*/}}
+    {{/* {{ warnf "image [%s] not found" $res_id }}*/}}
+    {{/*{{ end }}*/}}
+      <img src="image/{{ . }}"></img>
     {{ end }}
-</article>
+    <div class="content">
+      {{ $path := print "file/" .Params.file }}
+      <div class="title">{{ .Title | safeHTML }}</div>
+      <div class="text">{{ .Content }}</div>
+            {{/*{{ with .Params.project }}*/}}
+            {{/*<div>*/}}
+            {{/*    <span>Project:</span>*/}}
+            {{/*    <a href="/project/{{- . -}}"><strong>{{- . -}}</strong></a>*/}}
+            {{/*</div>*/}}
+            {{/*{{ end }}*/}}
+      <audio src="{{ $path }}" controls></audio>
+    </div>
+  </li>
+  {{ end }}
+</ol>
 {{ end }}
