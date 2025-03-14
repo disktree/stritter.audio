@@ -13,3 +13,7 @@ __MACOSX
 *.zip
 *.[0-9]/
 nginx.conf
+*.flac
+*.mp3
+*.ogg
+*.wav
