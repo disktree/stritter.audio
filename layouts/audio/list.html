@@ -1,5 +1,22 @@
 {{ define "head" }}
-<link rel="stylesheet" href="{{ (resources.Get "css/audio.css").Permalink }}">
+{{ with resources.Get "css/audio.scss" }}
+  {{ $opts := dict
+    "enableSourceMap" (not hugo.IsProduction)
+    "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
+    "targetPath" "css/audio.css"
+    "transpiler" "libsass"
+  }}
+  {{ with . | toCSS $opts }}
+    {{ if hugo.IsProduction }}
+      {{ with . | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      {{ end }}
+    {{ else }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{/*<link rel="stylesheet" href="{{ (resources.Get "css/audio.css").Permalink }}">*/}}
 <script src="{{ (resources.Get "js/audio.js").Permalink }}" async></script>
 {{ end }}
 
@@ -7,6 +24,10 @@
 <ol data-type="playlist">
   {{ range $rec := .RegularPages }}
   <li>
+    {{ $img := .Params.image }}
+    {{ if eq $img nil }}
+      {{/*{{ .Params.project }}*/}}
+    {{ end }}
     {{ with .Params.image }}
     {{/*{{ $res_id := print "image/" . }}*/}}
     {{/*{{ $res := resources.Get $res_id }}*/}}
@@ -20,6 +41,9 @@
     <div class="content">
       {{ $path := print "file/" .Params.file }}
       <h6 class="title">{{ .Title | safeHTML }}</h6>
+      {{ with .Params.project }}
+      <a href="/project/{{.}}" class="project">{{.}}</a>
+      {{ end }}
       <div class="text">{{ .Content }}</div>
       {{/*{{ with .Params.project }}*/}}
       {{/*<div>*/}}
@@ -27,8 +51,8 @@
         {{/* <a href="/project/{{- . -}}"><strong>{{- . -}}</strong></a>*/}}
         {{/*</div>*/}}
       {{/*{{ end }}*/}}
-      <audio src="{{ $path }}" controls></audio>
     </div>
+      <audio src="{{ $path }}" controls></audio>
   </li>
   {{ end }}
 </ol>
@@ -36,6 +60,5 @@
 
 
 {{ define "subnav" }}
-<div id="audio-info">
-</div>
+<div id="audio-info"></div>
 {{ end }}

@@ -32,12 +32,13 @@ body {
     padding: var(--site-margin) 0 var(--site-margin) 0;
     text-transform: uppercase;
     border-bottom: 1px solid var(--f_med);
+    overflow-x: hidden;
 
     >nav[data-id="nav"] {
       display: flex;
       flex-wrap: nowrap;
       // overflow: hidden;
-      // white-space: nowrap;
+      white-space: nowrap;
       width: 100%;
 
       >ul {
