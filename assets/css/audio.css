@@ -25,6 +25,7 @@ ol[data-type="playlist"]>li img {
   object-fit: cover;
   z-index: 10;
   /*filter: saturate(0%);*/
+  user-select: none;
 }
 
 ol[data-type="playlist"]>li div.content {

@@ -36,13 +36,13 @@
   --space-xxxl: calc(8.5 * var(--space-unit));
   --space-xxxxl: calc(13.75 * var(--space-unit));
 
-  @media screen and (min-width: breakpoint.$tablet) {
-    --text-base-size: 14px;
-  }
-
-  @media screen and (min-width: breakpoint.$desktop) {
-    --text-base-size: 15px;
-  }
+  // @media screen and (min-width: breakpoint.$tablet) {
+  //   --text-base-size: 14px;
+  // }
+  //
+  // @media screen and (min-width: breakpoint.$desktop) {
+  //   --text-base-size: 15px;
+  // }
 }
 
 html {
