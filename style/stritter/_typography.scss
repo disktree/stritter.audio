@@ -6,7 +6,7 @@
   --font-mono: "RobotoMono";
 
   --line-height: 1.5;
-  --text-base-size: 16px;
+  --text-base-size: 14px;
   --text-scale-ratio: 1.25;
   --body-font-weight: 500;
   --heading-line-height: 2;
@@ -36,6 +36,9 @@
   --space-xxxl: calc(8.5 * var(--space-unit));
   --space-xxxxl: calc(13.75 * var(--space-unit));
 
+  @media screen and (min-width: breakpoint.$desktop) {
+    --text-base-size: 16px;
+  }
   // @media screen and (min-width: breakpoint.$tablet) {
   //   --text-base-size: 14px;
   // }

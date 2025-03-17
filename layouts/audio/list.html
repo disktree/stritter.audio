@@ -16,41 +16,33 @@
     {{ end }}
   {{ end }}
 {{ end }}
-{{/*<link rel="stylesheet" href="{{ (resources.Get "css/audio.css").Permalink }}">*/}}
-<script src="{{ (resources.Get "js/audio.js").Permalink }}" async></script>
+<script src="{{ (resources.Get "js/audio.js" | minify).Permalink }}" async></script>
 {{ end }}
 
 {{ define "main" }}
+{{ $baseURL:= .Site.BaseURL }}
 <ol data-type="playlist">
   {{ range $rec := .RegularPages }}
   <li>
     {{ $img := .Params.image }}
     {{ if eq $img nil }}
-      {{/*{{ .Params.project }}*/}}
+      {{/*{{ with .Params.project }}*/}}
+      {{/*{{ $img = print "/project/" . "/" "feature.jpg" }}*/}}
+      {{/*{{ end }}*/}}
+      {{/*{{with .Resources.Get $img }}*/}}
+      {{/*{{.}}*/}}
+      {{/*{{ end }}*/}}
+    {{ else }}
+      {{ $img = print "image/" $img }}
     {{ end }}
-    {{ with .Params.image }}
-    {{/*{{ $res_id := print "image/" . }}*/}}
-    {{/*{{ $res := resources.Get $res_id }}*/}}
-    {{/*{{ with $res }}*/}}
-    {{/*<img src="{{ $res.RelPermalink}}"></img>*/}}
-    {{/*{{ else }}*/}}
-    {{/* {{ warnf "image [%s] not found" $res_id }}*/}}
-    {{/*{{ end }}*/}}
-    <img src="image/{{ . }}">
-    {{ end }}
+    {{ if ne $img nil }}<img src="{{ $img }}">{{ end }}
     <div class="content">
       {{ $path := print "file/" .Params.file }}
       <h6 class="title">{{ .Title | safeHTML }}</h6>
       {{ with .Params.project }}
-      <a href="/project/{{.}}" class="project">{{.}}</a>
+      <a href="{{ $baseURL }}project/{{.}}" class="project">{{.}}</a>
       {{ end }}
-      <div class="text">{{ .Content }}</div>
-      {{/*{{ with .Params.project }}*/}}
-      {{/*<div>*/}}
-        {{/* <span>Project:</span>*/}}
-        {{/* <a href="/project/{{- . -}}"><strong>{{- . -}}</strong></a>*/}}
-        {{/*</div>*/}}
-      {{/*{{ end }}*/}}
+      <div class="text">{{- .Content -}}</div>
     </div>
       <audio src="{{ $path }}" controls></audio>
   </li>

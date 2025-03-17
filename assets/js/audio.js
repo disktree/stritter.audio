@@ -5,10 +5,10 @@ const ol = document.querySelector('ol[data-type="playlist"]');
 const items = ol.querySelectorAll("li");
 const info = document.getElementById("audio-info")
 
-ol.style.opacity = "0";
-window.onload = () => {
-  ol.style.opacity = "1";
-}
+// ol.style.opacity = "0";
+// window.onload = () => {
+//   ol.style.opacity = "1";
+// }
 
 let activeItem;
 
@@ -40,6 +40,7 @@ items.forEach(item => {
   audio.onpause = e => {
     //console.log("pause")
     item.classList.remove("active")
+    //info.textContent = "";
     // activeItem = null;
   }
   // audio.onended = e => {
@@ -57,7 +58,7 @@ items.forEach(item => {
     }
     activeItem = item;
     item.classList.toggle("active")
-    info.textContent = item.querySelector(".title").textContent;
+    //info.textContent = item.querySelector(".title").textContent;
   }
   /*
   //console.log(item.getAttribute("href"));

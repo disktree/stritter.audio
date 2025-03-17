@@ -129,7 +129,12 @@ body {
       >div.content {
         max-width: 700px;
       }
-
+      // a {
+      //   border-bottom: 1px solid var(--f_med);
+      //   &:hover, &:focus {
+      //     border-bottom: 1px solid var(--f_high);
+      //   }
+      // }
       >section {
         width: 100%;
         padding: 1rem 0 2rem 0;

@@ -1,7 +1,7 @@
 ---
 title: "Einsiedlerpark"
 file: "einsiedlerpark.mp3"
-image: "einsiedlerpark.jpg"
+#image: "einsiedlerpark.jpg"
 microphone: ""
 recorder: ""
 details: "Soundscape Composition"
