@@ -20,22 +20,23 @@
 {{ end }}
 
 {{ define "main" }}
+{{ $site:= .Site }}
 {{ $baseURL:= .Site.BaseURL }}
 <ol data-type="playlist">
   {{ range $rec := .RegularPages }}
   <li>
-    {{ $img := .Params.image }}
-    {{ if eq $img nil }}
-      {{/*{{ with .Params.project }}*/}}
-      {{/*{{ $img = print "/project/" . "/" "feature.jpg" }}*/}}
-      {{/*{{ end }}*/}}
-      {{/*{{with .Resources.Get $img }}*/}}
-      {{/*{{.}}*/}}
-      {{/*{{ end }}*/}}
+    {{ with .Params.image }}
+      <img src="{{ print "image/" .}}">
     {{ else }}
-      {{ $img = print "image/" $img }}
+      {{ with .Params.project }}
+        {{ with $site.GetPage (print "project/" .)}}
+            {{ $res := .Resources.GetMatch "feature.jpg" }}
+            {{ with $res }}
+              <img src="{{ .Permalink }}">
+            {{ end }}
+        {{ end }}
     {{ end }}
-    {{ if ne $img nil }}<img src="{{ $img }}">{{ end }}
+    {{ end }}
     <div class="content">
       {{ $path := print "file/" .Params.file }}
       <h6 class="title">{{ .Title | safeHTML }}</h6>
@@ -49,7 +50,6 @@
   {{ end }}
 </ol>
 {{ end }}
-
 
 {{ define "subnav" }}
 <div id="audio-info"></div>
