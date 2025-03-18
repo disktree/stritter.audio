@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "{{ .Site.BaseURL }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{- .Site.Params.author.fullname -}}",
+    "jobTitle": "Musician",
+    "email": "mailto:{{ .Site.Params.author.email }}"
+  },
+  "description": "{{- .Site.Params.description -}}"
+}
+</script>
