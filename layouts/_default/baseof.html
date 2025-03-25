@@ -24,9 +24,9 @@
         
         <title>{{block "title" .}}{{.Site.Title}}{{end}}{{with .Page.Title}} | {{.}}{{end}}</title>
        
-        <link rel="stylesheet" href="{{ $root }}/style.css">
+        <link rel="stylesheet" href="{{ $root }}style.css">
         <link rel="alternate" href="{{ $root }}index.xml" type="application/atom+xml" title="Stritter"/>
-        <link rel="manifest" href="{{ $root }}/manifest.json">
+        <link rel="manifest" href="{{ $root }}manifest.json">
         {{ partial "site/favicons" . }}
        
         {{ with .Params.theme }}
@@ -47,6 +47,7 @@
 
         <script src="{{ (resources.Get "js/app.js").Permalink }}" async></script>
 
+		{{ block "schema" . }}{{ end }}
         {{ block "head" . }}{{ end }}
 
 	</head>
