@@ -1,9 +1,9 @@
 ---
-title: "live Zacherlfabrik velak 20th bday, Vienna 2024"
+title: "Zacherlfabrik, Vienna"
 file: "velak_bday_resonantplay_HP.mp3"
 image: "velak20.jpg"
 microphone: ""
 recorder: ""
 rss_ignore: true
-weight: 1
+weight: 3
 ---

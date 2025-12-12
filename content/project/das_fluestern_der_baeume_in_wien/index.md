@@ -52,4 +52,4 @@ I am pleased that the graphic notation of the cherry tree was interpreted by the
 - Cello: Vinzent Singer
 - Synthesizer: Frederic Stritter
 
-Gefördert von der Stadt Wien Kultur.
+Gefördert von der Stadt Wien Kultur und Bundesministerium für Kunst und Kultur.
