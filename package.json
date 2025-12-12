@@ -22,12 +22,12 @@
   "license": "ISC",
   "homepage": "https://github.com/disktree/stritter.audio/blob/master/README.md",
   "devDependencies": {
-    "hugo-bin": "^0.142.0",
-    "sass": "^1.85.1",
-    "html-validate": "^9.5.1"
+    "hugo-bin": "^0.149.2",
+    "sass": "^1.96.0",
+    "html-validate": "^10.4.0"
   },
   "dependencies": {
-    "dotenv": "^16.0.3"
+    "dotenv": "^17.2.3"
   },
   "hugo-bin": {
     "buildTags": "extended"
